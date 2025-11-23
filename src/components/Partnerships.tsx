@@ -3,7 +3,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
-import { Heart, Building2, Users, School, ChevronDown, ChevronUp, Sparkles, Award, TrendingUp } from 'lucide-react'
+import { Heart, Building2, Users, School, ChevronDown, ChevronUp, TrendingUp } from 'lucide-react'
 
 export function Partnerships() {
   const partnersRef = useRef<HTMLDivElement>(null)
@@ -14,13 +14,7 @@ export function Partnerships() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animação do badge
-      gsap.fromTo('.partnership-badge',
-        { opacity: 0, scale: 0.8, y: -20 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.7)' }
-      )
-
-      // Animação do título com efeito de escrita
+      // Animação do título
       gsap.fromTo('.partnerships-title', 
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.2 }
@@ -31,7 +25,7 @@ export function Partnerships() {
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.4 }
       )
 
-      // Animação contínua dos logos - suave e fluida
+      // Animação contínua dos logos
       if (logosRef.current && !showAllPartners) {
         const logos = logosRef.current
         const totalWidth = logos.scrollWidth / 2
@@ -44,7 +38,7 @@ export function Partnerships() {
         })
       }
 
-      // Animação dos cards de estatísticas com efeito cascata
+      // Animação dos cards de estatísticas
       gsap.fromTo('.stats-card',
         { opacity: 0, y: 40, scale: 0.9 },
         {
@@ -160,7 +154,7 @@ export function Partnerships() {
 
       <div className="container mx-auto px-4 relative z-10">
         
-        {/* Header com badge */}
+        {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="partnerships-title text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Nossos{' '}
@@ -186,11 +180,11 @@ export function Partnerships() {
           </p>
         </div>
 
-        {/* Logos Marquee com melhor visual */}
+        {/* Logos Marquee */}
         {!showAllPartners && (
           <div className="relative mb-20 md:mb-24">
             
-            {/* Gradientes laterais mais suaves */}
+            {/* Gradientes laterais */}
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
             
@@ -217,7 +211,6 @@ export function Partnerships() {
                       group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-[#FAB900]/10
                       relative overflow-hidden
                     ">
-                      {/* Brilho no hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/0 to-transparent group-hover:via-white/30 transition-all duration-500" />
                       
                       <div className="text-4xl md:text-5xl group-hover:scale-125 transition-transform duration-500 relative z-10">
@@ -281,7 +274,6 @@ export function Partnerships() {
                         flex flex-col items-center text-center
                         group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-[#FAB900]/5
                       ">
-                        {/* Brilho no hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/0 to-transparent group-hover:via-white/40 rounded-3xl transition-all duration-500" />
                         
                         <div className="
@@ -314,7 +306,7 @@ export function Partnerships() {
           </div>
         )}
 
-        {/* Botão toggle melhorado */}
+        {/* Botão toggle */}
         <div className="text-center mb-20 md:mb-24">
           <button
             onClick={toggleShowAllPartners}
@@ -331,7 +323,6 @@ export function Partnerships() {
               overflow-hidden
             "
           >
-            {/* Efeito de brilho animado */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             
             <span className="relative z-10">
@@ -346,7 +337,7 @@ export function Partnerships() {
           </button>
         </div>
 
-        {/* Stats Cards melhorados */}
+        {/* Stats Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-24">
           {stats.map((stat, index) => (
             <div
@@ -419,9 +410,6 @@ export function Partnerships() {
             </div>
           ))}
         </div>
-
-        {/* CTA Section melhorada */}
-        
       </div>
     </section>
   )

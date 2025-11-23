@@ -1,5 +1,5 @@
 // components/sections/Locations.tsx
-import {ExternalLink, School, Users, Calendar } from "lucide-react"
+import { ExternalLink, School, Users, Calendar } from "lucide-react"
 import { useState } from "react"
 
 export function Locations() {
@@ -117,16 +117,6 @@ export function Locations() {
   )
 }
 
-// Subcomponente: Badge
-function SectionBadge({ icon: Icon, text }: { icon: any, text: string }) {
-  return (
-    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/20 backdrop-blur-sm text-white rounded-full px-2 sm:px-3 py-1 sm:py-1.5 border border-white/30">
-      <Icon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-      <span className="text-xs font-semibold">{text}</span>
-    </div>
-  )
-}
-
 // Subcomponente: Título
 function SectionTitle({ prefix, highlighted }: { prefix: string, highlighted: string }) {
   return (
@@ -139,7 +129,7 @@ function SectionTitle({ prefix, highlighted }: { prefix: string, highlighted: st
   )
 }
 
-// Subcomponente: Lista de Escolas Atualizada
+// Subcomponente: Lista de Escolas
 function SchoolList({ 
   schools, 
   selectedSchool, 
@@ -206,7 +196,7 @@ function SchoolList({
   )
 }
 
-// Subcomponente: Cartão do Mapa Interativo Atualizado
+// Subcomponente: Cartão do Mapa Interativo
 function InteractiveMapCard({ 
   schools, 
   selectedSchool, 
@@ -219,7 +209,6 @@ function InteractiveMapCard({
   const [isHovered, setIsHovered] = useState(false)
 
   const handleCardClick = () => {
-    // Aqui você pode adicionar a lógica para abrir um modal ou redirecionar
     console.log("Card clicado - abrir mapa interativo")
   }
 
@@ -315,7 +304,7 @@ function InteractiveMapCard({
   )
 }
 
-// Subcomponente: Pino de Localização Atualizado
+// Subcomponente: Pino de Localização
 function LocationPin({ school, isSelected, onClick }: { 
   school: any
   isSelected: boolean
