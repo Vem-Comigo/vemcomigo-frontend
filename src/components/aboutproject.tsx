@@ -1,5 +1,5 @@
 // components/sections/AboutProject.tsx
-import { CheckCircle2, Heart, MapPin } from "lucide-react"
+import { CheckCircle2, MapPin } from "lucide-react"
 
 export function AboutProject() {
   const features = [
@@ -14,7 +14,6 @@ export function AboutProject() {
         
         {/* Text Content */}
         <div className="space-y-6">
-          <SectionBadge icon={Heart} text="Sobre Nós" />
           
           <SectionTitle 
             prefix="Sobre o"
