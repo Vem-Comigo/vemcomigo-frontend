@@ -1,5 +1,5 @@
 // components/sections/AboutProject.tsx
-import { CheckCircle2, MapPin } from "lucide-react"
+import { CheckCircle2} from "lucide-react"
 
 export function AboutProject() {
   const features = [
@@ -92,10 +92,6 @@ function MissionCard() {
             Transformar escolas em ambientes de acolhimento, respeito e 
             desenvolvimento saudável para todos os estudantes.
           </p>
-          <div className="flex items-center gap-2 text-sm lg:text-base opacity-80">
-            <MapPin className="w-4 h-4" />
-            <span>Atuando nas escolas públicas do Distrito Federal</span>
-          </div>
         </div>
       </div>
       

@@ -1,5 +1,5 @@
 // components/sections/Locations.tsx
-import { MapPin, ExternalLink, School, Users, Calendar } from "lucide-react"
+import {ExternalLink, School, Users, Calendar } from "lucide-react"
 import { useState } from "react"
 
 export function Locations() {
