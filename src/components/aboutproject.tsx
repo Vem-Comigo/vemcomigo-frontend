@@ -1,12 +1,12 @@
 // components/sections/AboutProject.tsx
-import { CheckCircle2} from "lucide-react"
+import { CheckCircle2 } from "lucide-react";
 
 export function AboutProject() {
   const features = [
     "Combater o bullying e promover relações mais empáticas",
-    "Conscientizar sobre saúde mental e quebrar tabus", 
+    "Conscientizar sobre saúde mental e quebrar tabus",
     "Promover o bem-estar integral dos estudantes"
-  ]
+  ];
 
   return (
     <section className="container mx-auto px-4 mb-20 md:mb-28">
@@ -42,29 +42,19 @@ export function AboutProject() {
         <MissionCard />
       </div>
     </section>
-  )
-}
-
-// Subcomponente: Badge da Seção
-function SectionBadge({ icon: Icon, text }: { icon: any, text: string }) {
-  return (
-    <div className="inline-flex items-center gap-2 bg-[#FAB900]/10 text-[#66388C] rounded-full px-4 py-2 border border-[#FAB900]/20">
-      <Icon className="w-4 h-4" />
-      <span className="text-sm font-semibold">{text}</span>
-    </div>
-  )
+  );
 }
 
 // Subcomponente: Título da Seção
-function SectionTitle({ prefix, highlighted }: { prefix: string, highlighted: string }) {
+function SectionTitle({ prefix, highlighted }: { prefix: string; highlighted: string }) {
   return (
     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-      {prefix}{' '}
+      {prefix}{" "}
       <span className="bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
         {highlighted}
       </span>
     </h2>
-  )
+  );
 }
 
 // Subcomponente: Lista de Features
@@ -78,7 +68,7 @@ function FeatureList({ features }: { features: string[] }) {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 // Subcomponente: Cartão de Missão
@@ -94,10 +84,10 @@ function MissionCard() {
           </p>
         </div>
       </div>
-      
+
       {/* Decorative Elements */}
       <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#FAB900]/20 rounded-full blur-xl" />
       <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#66388C]/20 rounded-full blur-xl" />
     </div>
-  )
+  );
 }
