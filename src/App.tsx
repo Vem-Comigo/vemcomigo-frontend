@@ -6,7 +6,7 @@ import { Locations } from "./components/Locations";
 import { Partnerships } from "./components/Partnerships";
 import { ActionsProjects } from "./components/ActionsProjects";
 import { ContactSection } from "./components/ContactSection";
-import { Footer } from "./components/footer";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
