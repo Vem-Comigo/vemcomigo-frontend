@@ -4,6 +4,9 @@ import { AboutProject } from "./components/aboutproject";
 import { Achievements } from "./components/Achievements";
 import { Locations } from "./components/Locations";
 import { Partnerships } from "./components/Partnerships";
+import { ActionsProjects } from "./components/ActionsProjects";
+import { ContactSection } from "./components/ContactSection";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <Achievements/>
       <Locations/>
       <Partnerships/>
+      <ActionsProjects/>
+      <ContactSection />
+      <Footer />
     </div>
   );
 }
