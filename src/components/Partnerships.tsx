@@ -143,7 +143,7 @@ export function Partnerships() {
   }
 
   return (
-    <section ref={partnersRef} className="relative bg-gradient-to-br from-white via-gray-50 to-[#FAB900]/5">
+    <section id='Parceiros' ref={partnersRef} className="relative bg-gradient-to-br from-white via-gray-50 to-[#FAB900]/5">
       
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

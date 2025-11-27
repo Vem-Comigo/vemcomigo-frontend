@@ -73,7 +73,7 @@ export function Locations() {
   const [selectedSchool, setSelectedSchool] = useState(schools[0])
 
   return (
-    <section className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20">
+    <section id="Locais" className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-4 left-4 sm:top-10 sm:left-10 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/10 rounded-full blur-xl" />

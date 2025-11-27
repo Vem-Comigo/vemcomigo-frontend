@@ -10,7 +10,7 @@ export function Achievements() {
     ]
 
     return (
-        <section className="container mx-auto px-4 mb-20 md:mb-28">
+        <section id="Conquistas" className="container mx-auto px-4 mb-20 md:mb-28">
             <SectionHeader
                 title="Nossas Conquistas"
                 description="Resultados que mostram o impacto positivo do nosso trabalho na comunidade escolar"
