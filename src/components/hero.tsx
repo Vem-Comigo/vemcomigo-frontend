@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className="bg-[#FAB900] relative overflow-hidden">
+    <section id="Início" className="bg-[#FAB900] relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 xl:py-24">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
           

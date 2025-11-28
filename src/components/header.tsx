@@ -25,7 +25,7 @@ export function Header() {
 
           {/* NAVIGATION */}
           <nav className="hidden lg:flex items-center gap-2">
-            {["Início", "Sobre", "Ações", "Recursos", "Contato"].map((item) => (
+            {["Início", "Sobre", "Locais", "Parceiros", "Ações", "Contato"].map((item) => (
               <Button
                 key={item}
                 onClick={() => IrAteSecao(item)}
