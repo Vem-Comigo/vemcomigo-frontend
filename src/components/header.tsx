@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button"
 
 export function Header() {
+
+  //Função que conecta os botões do header com as respectivas seções da página.
+  const IrAteSecao = (idSection: string) => {
+    const section = document.getElementById(idSection)
+    if (section) {
+      section.scrollIntoView({behavior: "smooth"})
+    }
+  }
+
   return (
     <header className="bg-[#63348C] text-white sticky top-0 z-50 shadow-lg shadow-black/10">
       <div className="container mx-auto px-4 py-4 lg:py-5">
@@ -19,6 +28,7 @@ export function Header() {
             {["Início", "Sobre", "Ações", "Recursos", "Contato"].map((item) => (
               <Button
                 key={item}
+                onClick={() => IrAteSecao(item)}
                 variant="ghost"
                 className="
                   text-white font-medium text-lg
