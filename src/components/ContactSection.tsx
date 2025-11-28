@@ -174,7 +174,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contato" className="bg-gradient-to-br from-gray-50 to-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="Contato" className="bg-gradient-to-br from-gray-50 to-white py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         
         {/* Header */}
