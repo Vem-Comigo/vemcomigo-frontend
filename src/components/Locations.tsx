@@ -90,7 +90,7 @@ export function Locations() {
         <div className="absolute bottom-16 left-16 sm:bottom-20 sm:left-20 w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-[#FAB900]/15 rounded-full blur-xl" />
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl relative z-10">
+      <div className="container mx-auto py-8 px-3 sm:px-4 md:px-6 max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 items-start">
           
           {/* Text Content */}

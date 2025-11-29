@@ -9,7 +9,7 @@ export function AboutProject() {
   ];
 
   return (
-    <section id="Sobre" className="container mx-auto px-4 mb-20 md:mb-28">
+    <section id="Sobre" className="container mx-auto px-4 pt-22 max-sm:pt-12 max-lg:pt-16 mb-20 md:mb-28">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Text Content */}

@@ -152,7 +152,7 @@ export function Partnerships() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#66388C]/3 to-[#FAB900]/3 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto pt-22 max-sm:pt-12 max-lg:pt-16 px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
