@@ -100,7 +100,7 @@ export function WhereWeAct() {
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-gradient-to-r from-[#66388C]/10 to-[#FAB900]/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto pt-22 max-sm:pt-12 max-lg:pt-16 px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16">
