@@ -10,16 +10,18 @@ export function AboutProject() {
 
   return (
     <section id="Sobre" className="container mx-auto px-4 mb-20 md:mb-28">
+      {/* Título centralizado */}
+      <div className="flex justify-center items-center mb-12 md:mb-16">
+        <SectionTitle 
+          prefix="Sobre o"
+          highlighted="Projeto"
+        />
+      </div>
+      
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Text Content */}
         <div className="space-y-6">
-          
-          <SectionTitle 
-            prefix="Sobre o"
-            highlighted="Projeto"
-          />
-
           <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
             <p className="text-xl md:text-2xl font-semibold text-[#66388C]">
               O Vem Comigo nasceu da necessidade urgente de criar ambientes escolares 
@@ -48,7 +50,7 @@ export function AboutProject() {
 // Subcomponente: Título da Seção
 function SectionTitle({ prefix, highlighted }: { prefix: string; highlighted: string }) {
   return (
-    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight text-center">
       {prefix}{" "}
       <span className="bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
         {highlighted}
