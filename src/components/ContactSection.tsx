@@ -180,7 +180,7 @@ export function ContactSection() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center">
-            ENTRE EM <span className="text-[#66388C]">CONTATO</span>
+            Entre em <span className="text-[#66388C]">Contato</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Estamos aqui para ajudar. Entre em contato conosco e vamos juntos 

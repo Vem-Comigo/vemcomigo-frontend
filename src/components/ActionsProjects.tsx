@@ -124,7 +124,7 @@ export function ActionsProjects() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center">
-            AÇÕES & <span className="text-[#66388C]">PROJETOS</span>
+            Ações & <span className="text-[#66388C]">Projetos</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Desenvolvemos iniciativas completas para combater o bullying e promover 
