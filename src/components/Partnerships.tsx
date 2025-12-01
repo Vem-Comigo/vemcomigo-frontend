@@ -5,6 +5,11 @@ import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { Heart, Building2, Users, School, ChevronDown, ChevronUp, TrendingUp } from 'lucide-react'
 
+import LogoGEPEM from "../assets/Parceiros/GEPEM.png"
+import LogoSEEDF from "../assets/Parceiros/SecretariaDeEducação.png"
+import LogoUNESP from "../assets/Parceiros/UNESP.png"
+import LogoUNICAMP from "../assets/Parceiros/UNICAMP.jpg"
+
 export function Partnerships() {
   const partnersRef = useRef<HTMLDivElement>(null)
   const logosRef = useRef<HTMLDivElement>(null)
@@ -74,25 +79,25 @@ export function Partnerships() {
   const partnerLogos = [
     { 
       name: 'GEPEM', 
-      icon: '🧠',
+      icon: <img src={LogoGEPEM} alt="" />,
       category: 'Governo', 
       description: 'Grupo de Estudos e Pesquisas em Educação Moral' 
     },
     { 
       name: 'Secretaria de Educação', 
-      icon: '📘',
+      icon: <img src={LogoSEEDF} alt="" />,
       category: 'Governo', 
       description: 'Órgão responsável pela educação pública' 
     },
     { 
       name: 'UNESP', 
-      icon: '🎓',
+      icon: <img src={LogoUNESP} alt="" />,
       category: 'Educação', 
       description: 'Universidade Estadual Paulista' 
     },
     { 
       name: 'UNICAMP', 
-      icon: '🔬',
+      icon: <img src={LogoUNICAMP} alt="" />,
       category: 'Educação', 
       description: 'Universidade Estadual de Campinas' 
     },
