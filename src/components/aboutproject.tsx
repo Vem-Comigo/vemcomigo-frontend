@@ -1,17 +1,25 @@
 // components/sections/AboutProject.tsx
+"use client";
+
 import { CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function AboutProject() {
+  const [isVisible, setIsVisible] = useState(false);
   const features = [
     "Combater o bullying e promover relações mais empáticas",
     "Conscientizar sobre saúde mental e quebrar tabus",
     "Promover o bem-estar integral dos estudantes"
   ];
 
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <section id="Sobre" className="container mx-auto px-4 mb-20 md:mb-28">
-      {/* Título centralizado */}
-      <div className="flex justify-center items-center mb-12 md:mb-16">
+      {/* Título centralizado com animação */}
+      <div className={`flex justify-center items-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <SectionTitle 
           prefix="Sobre o"
           highlighted="Projeto"
