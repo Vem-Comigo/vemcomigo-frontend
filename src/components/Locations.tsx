@@ -172,7 +172,7 @@ function SchoolList({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 max-h-[350px] sm:max-h-[400px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
-        {schools.map((school, index) => (
+        {schools.map((school) => ( // Removido o parâmetro não utilizado 'index'
           <button
             key={school.id}
             onClick={() => onSchoolSelect(school)}
@@ -247,8 +247,6 @@ function InteractiveMapCard({
   selectedSchool: any
   onSchoolSelect: (school: any) => void
 }) {
-  const [isHovered, setIsHovered] = useState(false)
-
   const handleViewMap = (e: React.MouseEvent) => {
     e.stopPropagation()
     window.open(selectedSchool.googleMapsUrl, '_blank', 'noopener,noreferrer')
@@ -264,8 +262,6 @@ function InteractiveMapCard({
       {/* Mapa Container */}
       <div
         className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 relative min-h-[250px] sm:min-h-[280px] md:min-h-[320px] aspect-video w-full"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {/* Mapa de Fundo Real - iframe do Google Maps */}
         <div className="absolute inset-0 overflow-hidden">
