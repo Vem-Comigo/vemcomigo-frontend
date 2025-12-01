@@ -123,7 +123,7 @@ export function ActionsProjects() {
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center">
             AÇÕES & <span className="text-[#66388C]">PROJETOS</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">

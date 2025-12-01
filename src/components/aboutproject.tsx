@@ -17,7 +17,7 @@ export function AboutProject() {
   }, []);
 
   return (
-    <section id="Sobre" className="container mx-auto px-4 mb-20 md:mb-28">
+    <section id="Sobre" className="container mx-auto px-4 mb-20 md:mb-28 ">
       {/* Título centralizado com animação */}
       <div className={`flex justify-center items-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <SectionTitle 
@@ -58,7 +58,7 @@ export function AboutProject() {
 // Subcomponente: Título da Seção
 function SectionTitle({ prefix, highlighted }: { prefix: string; highlighted: string }) {
   return (
-    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight text-center">
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight text-center pt-9">
       {prefix}{" "}
       <span className="bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
         {highlighted}
