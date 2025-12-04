@@ -269,13 +269,7 @@ export function Footer() {
                 </a>
               </div>
             </div>
-
-            <div className="flex items-center gap-2 text-sm text-gray-400">
-              <span>Feito com</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-              <span>para um mundo melhor</span>
-            </div>
-
+            
             {/* Scroll to Top Button */}
             <button
               onClick={scrollToTop}
