@@ -1,0 +1,177 @@
+/* ===========================================
+   CHAT N8N — TEMA PROJETO VEM COMIGO 💜✨
+   =========================================== */
+
+/* ------------------------------
+   FUNDO DA JANELA DO CHAT
+------------------------------ */
+.n8n-chat-window {
+  width: 420px !important;
+  height: 640px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #63348C 0%, #A77BD7 40%, #FAB900 120%) !important;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35) !important;
+  border: 2px solid #ffffff20 !important;
+  animation: fadeInChat 0.4s ease-out;
+}
+
+/* animação suave da janela */
+@keyframes fadeInChat {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------
+   CABEÇALHO DO CHAT
+------------------------------ */
+.n8n-chat-header {
+  background: linear-gradient(90deg, #63348C, #A77BD7) !important;
+  color: white !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  padding: 16px !important;
+  border-bottom: 2px solid #ffffff20;
+  letter-spacing: 0.5px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px;
+}
+
+/* Avatar do bot */
+.n8n-chat-header::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-image: url('/src/assets/images/logo-vemcomigo.png'); /* troque aqui se quiser */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ffffff70;
+  box-shadow: 0 0 8px #ffffff50;
+}
+
+/* ------------------------------
+   MENSAGENS BOT
+------------------------------ */
+.n8n-chat-message-bot {
+  background: #ffffffee !important;
+  color: #222 !important;
+  border-radius: 18px 18px 18px 6px !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 1px solid #00000010;
+  animation: msgAppear 0.25s ease-out;
+}
+
+/* ------------------------------
+   MENSAGENS USUÁRIO
+------------------------------ */
+.n8n-chat-message-user {
+  background: #63348C !important;
+  color: white !important;
+  border-radius: 18px 18px 6px 18px !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  border: 2px solid #A77BD7;
+  box-shadow: 0 4px 12px rgba(99,52,140,0.5);
+  animation: msgAppear 0.25s ease-out;
+}
+
+@keyframes msgAppear {
+  from { transform: translateY(4px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------
+   ÁREA DE MENSAGENS
+------------------------------ */
+.n8n-chat-messages {
+  padding: 20px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #63348C #ffffff30 !important;
+}
+
+/* Scrollbar custom */
+.n8n-chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+.n8n-chat-messages::-webkit-scrollbar-thumb {
+  background: #63348C;
+  border-radius: 8px;
+}
+.n8n-chat-messages::-webkit-scrollbar-track {
+  background: #ffffff30;
+}
+
+/* ------------------------------
+   ÁREA DE INPUT
+------------------------------ */
+.n8n-chat-input {
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 12px !important;
+  border: 2px solid #A77BD7 !important;
+  outline: none !important;
+  color: #222 !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+  transition: 0.2s ease-in-out;
+}
+
+.n8n-chat-input:focus {
+  border-color: #63348C !important;
+  box-shadow: 0 4px 24px rgba(99,52,140,0.4) !important;
+}
+
+/* Placeholder */
+.n8n-chat-input::placeholder {
+  color: #666 !important;
+}
+
+/* ------------------------------
+   BOTÃO ENVIAR
+------------------------------ */
+.n8n-chat-send-button {
+  background: linear-gradient(135deg, #63348C, #A77BD7) !important;
+  border-radius: 14px !important;
+  padding: 10px !important;
+  margin-left: 8px !important;
+  box-shadow: 0 4px 12px rgba(99,52,140,0.5) !important;
+  transition: 0.25s ease-out;
+}
+
+.n8n-chat-send-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(99,52,140,0.7) !important;
+}
+
+/* ------------------------------
+   BOTÃO FLUTUANTE
+------------------------------ */
+.n8n-chat-floating-button {
+  width: 78px !important;
+  height: 78px !important;
+  bottom: 22px !important;
+  right: 22px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(145deg, #63348C, #A77BD7) !important;
+  border: 3px solid #ffffff50 !important;
+  box-shadow: 0 10px 30px rgba(99,52,140,0.6) !important;
+  animation: pulseBot 2s infinite ease-in-out;
+}
+
+/* efeito pulsante do botão */
+@keyframes pulseBot {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Ícone do botão */
+.n8n-chat-floating-button svg {
+  width: 36px !important;
+  height: 36px !important;
+  color: white !important;
+}

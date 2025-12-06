@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "@n8n/chat/style.css";
+import "./chat-custom.css"; // ⬅ IMPORTAÇÃO DO CSS PERSONALIZADO
+
 import { createChat } from "@n8n/chat";
 
 import { Header } from "./components/header";
@@ -13,7 +15,6 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
 function App() {
-
   useEffect(() => {
     createChat({
       webhookUrl: import.meta.env.VITE_N8N_PRODUCTION_WEBHOOK_URL,
@@ -36,13 +37,7 @@ function App() {
         },
       },
 
-      style: {
-        width: 400,
-        height: 600,
-        position: "right",
-        backgroundColor: "#2865f1",
-        fontFamily: "sans-serif",
-      },
+      // 🚫 style REMOVIDO — não existe em ChatOptions
     });
   }, []);
 
