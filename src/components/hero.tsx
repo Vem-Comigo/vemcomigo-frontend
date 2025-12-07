@@ -2,24 +2,36 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 // importa as imagens 
-import kid1 from "../assets/images/kid-1.png";
-import kid2 from "../assets/images/imagem-1.jpg";
-import kid3 from "../assets/images/imagem-2.jpg";
+import img1 from "../assets/images/imagem-1.jpg";
+import img2 from "../assets/images/imagem-2.jpg";
+import img3 from "../assets/images/imagem-3.jpg";
+import img4 from "../assets/images/imagem-4.jpg";
+import img5 from "../assets/images/imagem-5.jpg";
+import { img } from "framer-motion/client";
 
 const heroImages = [
   {
-    src: kid1,
-    alt: "Criança feliz brincando de balanço",
+    src: img1,
+    alt: "Atividade do projeto Vem Comigo",
   },
   {
-    src: kid2,
-    alt: "Estudantes sorrindo em ambiente escolar",
+    src: img2,
+    alt: "Dinâmica com alunos em sala",
   },
   {
-    src: kid3,
-    alt: "Criança participando de atividade ao ar livre",
+    src: img3,
+    alt: "Equipe Vem Comigo com estudantes",
+  },
+  {
+    src: img4,
+    alt: "Ação do projeto em ambiente escolar",
+  },
+  {
+    src: img5,
+    alt: "Foto equipe vemcomigo.",
   },
 ];
+
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
