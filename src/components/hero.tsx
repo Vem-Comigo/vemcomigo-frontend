@@ -7,7 +7,7 @@ import img2 from "../assets/images/imagem-2.jpg";
 import img3 from "../assets/images/imagem-3.jpg";
 import img4 from "../assets/images/imagem-4.jpg";
 import img5 from "../assets/images/imagem-5.jpg";
-import { img } from "framer-motion/client";
+
 
 const heroImages = [
   {
@@ -28,7 +28,7 @@ const heroImages = [
   },
   {
     src: img5,
-    alt: "Foto equipe vemcomigo.",
+    alt: "Foto da queipe vemcomigo.",
   },
 ];
 
@@ -86,14 +86,36 @@ export function Hero() {
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-4 sm:top-6 right-0 w-24 sm:w-32 md:w-36 lg:w-40 h-8 sm:h-10 md:h-12 lg:h-14 bg-[#63348C] rounded-full opacity-80 blur-sm translate-x-4 sm:translate-x-6 -translate-y-4 sm:-translate-y-6" />
               <div className="absolute top-12 sm:top-16 right-0 w-8 sm:w-10 md:w-12 lg:w-14 h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 bg-[#63348C] rounded-full opacity-90 translate-x-3 sm:translate-x-4" />
-              <div className="absolute bottom-0 right-8 sm:right-12 md:right-16 lg:right-20 w-32 sm:w-40 md:w-48 lg:w-52 h-32 sm:h-40 md:h-44 lg:h-48 xl:h-52 bg-[#63348C] rounded-full opacity-90 blur-[1px]" />
               <div className="absolute top-1/4 -left-8 sm:-left-10 md:-left-12 lg:-left-16 w-32 sm:w-40 md:w-48 lg:w-52 h-32 sm:h-40 md:h-44 lg:h-48 xl:h-52 bg-[#63348C] rounded-full opacity-85 blur-[1px]" />
             </div>
 
+            {/* Caixa da imagem + carrossel */}
             <div className="relative z-10 drop-shadow-2xl mx-4 sm:mx-0">
               <div
-                className="rounded-2xl sm:rounded-3xl overflow-hidden border-4 border-white shadow-xl hover:scale-[1.02] transition-all duration-300 w-[300px] h-[380px] sm:w-[360px] sm:h-[460px] md:w-[420px] md:h-[520px] lg:w-[700px] lg:h-[580px] ">
-                <img src={heroImages[currentIndex].src} alt={heroImages[currentIndex].alt} className="object-cover w-full h-full" loading="eager" />
+                className="
+                  relative
+                  rounded-2xl sm:rounded-3xl overflow-hidden border-4 border-white shadow-xl
+                  hover:scale-[1.02] transition-all duration-300
+                  w-[300px] h-[380px]
+                  sm:w-[360px] sm:h-[460px]
+                  md:w-[420px] md:h-[520px]
+                  lg:w-[700px] lg:h-[580px]
+                "
+              >
+                {/* Imagens em camadas com fade suave */}
+                {heroImages.map((image, index) => (
+                  <img
+                    key={image.src}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`
+                      absolute inset-0 w-full h-full object-cover
+                      transition-opacity duration-700 ease-in-out
+                      ${index === currentIndex ? "opacity-100" : "opacity-0"}
+                    `}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                ))}
               </div>
 
               {/* Bolinhas do carrossel */}
