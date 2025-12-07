@@ -119,7 +119,7 @@ export function ActionsProjects() {
   const currentProject = projects[currentSlide]
 
   return (
-    <section id="Ações" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="Ações" className="bg-white pb-20">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

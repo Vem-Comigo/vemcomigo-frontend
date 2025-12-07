@@ -6,82 +6,64 @@ export function Locations() {
   const schools = [
     {
       id: 1,
-      name: "CEF 01 de Planaltina",
-      address: "Área Especial, Setor Norte - Planaltina/DF",
+      name: "CEF 01 GUARÁ",
+      address: "Área Especial - Guará/DF",
       students: 1200,
       since: "2023",
-      coordinates: { top: "25%", left: "30%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+01+de+Planaltina+Área+Especial+Setor+Norte+Planaltina+DF"
+      coordinates: { top: "35%", left: "25%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CEF+01+GUARÁ+Área+Especial+Guará+DF"
     },
     {
       id: 2,
-      name: "CEF 02 de Planaltina",
-      address: "Quadra 10, Conjunto A - Planaltina/DF",
+      name: "CEF 02 GUARÁ",
+      address: "Quadra 2 - Guará/DF",
       students: 950,
       since: "2023",
-      coordinates: { top: "35%", left: "70%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+02+de+Planaltina+Quadra+10+Conjunto+A+Planaltina+DF"
+      coordinates: { top: "45%", left: "60%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CEF+02+GUARÁ+Quadra+2+Guará+DF"
     },
     {
       id: 3,
-      name: "CEF 03 de Planaltina",
-      address: "Setor Educacional, Lote 15 - Planaltina/DF",
+      name: "CEF 04 GUARÁ",
+      address: "Setor Oeste - Guará/DF",
       students: 1100,
       since: "2024",
-      coordinates: { top: "60%", left: "20%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+03+de+Planaltina+Setor+Educacional+Lote+15+Planaltina+DF"
+      coordinates: { top: "60%", left: "40%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CEF+04+GUARÁ+Setor+Oeste+Guará+DF"
     },
     {
       id: 4,
-      name: "CEF 04 de Planaltina",
-      address: "Área Rural, Zona de Expansão - Planaltina/DF",
+      name: "CEF 08 GUARÁ",
+      address: "Área Especial 8 - Guará/DF",
       students: 650,
       since: "2024",
-      coordinates: { top: "70%", left: "80%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+04+de+Planaltina+Área+Rural+Zona+de+Expansão+Planaltina+DF"
+      coordinates: { top: "75%", left: "75%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CEF+08+GUARÁ+Área+Especial+8+Guará+DF"
     },
     {
       id: 5,
-      name: "CEF 05 de Planaltina",
-      address: "Setor Sul, Quadra 5 - Planaltina/DF",
+      name: "CED 01 GUARÁ",
+      address: "Setor Educacional - Guará/DF",
       students: 850,
       since: "2023",
-      coordinates: { top: "45%", left: "50%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+05+de+Planaltina+Setor+Sul+Quadra+5+Planaltina+DF"
+      coordinates: { top: "25%", left: "70%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CED+01+GUARÁ+Setor+Educacional+Guará+DF"
     },
     {
       id: 6,
-      name: "CEF 06 de Planaltina",
-      address: "Núcleo Rural, Chácara 12 - Planaltina/DF",
+      name: "CED 04 GUARÁ",
+      address: "Quadra 4 - Guará/DF",
       students: 500,
       since: "2024",
-      coordinates: { top: "80%", left: "40%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+06+de+Planaltina+Núcleo+Rural+Chácara+12+Planaltina+DF"
-    },
-    {
-      id: 7,
-      name: "CEF 07 de Planaltina",
-      address: "Setor Central, Quadra 8 - Planaltina/DF",
-      students: 1300,
-      since: "2023",
-      coordinates: { top: "20%", left: "60%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+07+de+Planaltina+Setor+Central+Quadra+8+Planaltina+DF"
-    },
-    {
-      id: 8,
-      name: "CEF 08 de Planaltina",
-      address: "Setor Oeste, Conjunto B - Planaltina/DF",
-      students: 750,
-      since: "2024",
-      coordinates: { top: "55%", left: "65%" },
-      googleMapsUrl: "https://www.google.com/maps/search/CEF+08+de+Planaltina+Setor+Oeste+Conjunto+B+Planaltina+DF"
+      coordinates: { top: "65%", left: "20%" },
+      googleMapsUrl: "https://www.google.com/maps/search/CED+04+GUARÁ+Quadra+4+Guará+DF"
     }
   ]
 
   const [selectedSchool, setSelectedSchool] = useState(schools[0])
 
   return (
-    <section id="Locais" className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden pt-9 py-9 ">
+    <section id="Locais" className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden pt-9 py-15 ">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-4 left-4 sm:top-10 sm:left-10 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/10 rounded-full blur-xl" />
@@ -104,12 +86,12 @@ export function Locations() {
           <div className="space-y-3 sm:space-y-4 md:space-y-5">
             <div className="mb-6 md:mb-8">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">
-                Nossa Presença em Planaltina
+                Nossa Presença no Guará
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed">
                 Estamos presentes em escolas públicas do Distrito Federal,
                 levando nosso projeto para comunidades que mais precisam de apoio.
-                Atualmente atendemos 8 Centros de Ensino Fundamental em Planaltina.
+                Atualmente atendemos 6 escolas no Guará, incluindo Centros de Ensino Fundamental e Educação de Jovens e Adultos.
               </p>
             </div>
 
@@ -171,16 +153,16 @@ function SchoolList({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 max-h-[350px] sm:max-h-[400px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
-        {schools.map((school) => ( // Removido o parâmetro não utilizado 'index'
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+        {schools.map((school) => (
           <button
             key={school.id}
             onClick={() => onSchoolSelect(school)}
             className={`
-              flex items-center gap-3 p-3 sm:p-4 rounded-lg transition-all duration-300 cursor-pointer
-              backdrop-blur-sm border relative overflow-hidden group min-w-0 min-h-[70px] sm:min-h-[80px]
+              flex items-start gap-3 p-3 sm:p-4 rounded-lg transition-all duration-300 cursor-pointer
+              backdrop-blur-sm border relative overflow-hidden group min-w-0
               ${selectedSchool.id === school.id
-                ? 'bg-white/20 border-white/30 shadow-lg scale-[1.02] ring-2 ring-white/20'
+                ? 'bg-white/20 border-white/30 shadow-lg scale-[1.02] ring-1 ring-white/20'
                 : 'bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/30 hover:scale-[1.01]'
               }
               text-left
@@ -193,10 +175,10 @@ function SchoolList({
 
             {/* Número da escola */}
             <div className={`
-              w-8 h-8 sm:w-10 sm:h-10 rounded-full flex-shrink-0 relative z-10
+              w-7 h-7 sm:w-8 sm:h-8 rounded-full flex-shrink-0 relative z-10
               flex items-center justify-center transition-all duration-300
               ${selectedSchool.id === school.id
-                ? 'bg-[#FAB900] text-white scale-125 shadow-lg shadow-[#FAB900]/50'
+                ? 'bg-[#FAB900] text-white scale-110 shadow-md shadow-[#FAB900]/30'
                 : 'bg-white/20 text-white group-hover:bg-white/30'
               }
             `}>
@@ -214,19 +196,19 @@ function SchoolList({
                 </span>
               )}
               <div className="flex items-center gap-2 mt-1 text-xs text-white/60">
-                <Users className="w-3 h-3" />
-                <span>{school.students} alunos</span>
-                <span className="mx-1">•</span>
-                <Calendar className="w-3 h-3" />
-                <span>Desde {school.since}</span>
+                <Users className="w-3 h-3 flex-shrink-0" />
+                <span className="truncate">{school.students} alunos</span>
+                <span className="mx-1 flex-shrink-0">•</span>
+                <Calendar className="w-3 h-3 flex-shrink-0" />
+                <span className="truncate">Desde {school.since}</span>
               </div>
             </div>
 
             {/* Ícone de seleção */}
             {selectedSchool.id === school.id && (
-              <div className="relative z-10 flex-shrink-0">
+              <div className="relative z-10 flex-shrink-0 mt-1">
                 <div className="bg-[#FAB900] rounded-full p-1.5">
-                  <MapPin className="w-4 h-4 text-white" />
+                  <MapPin className="w-3.5 h-3.5 text-white" />
                 </div>
               </div>
             )}
@@ -266,7 +248,7 @@ function InteractiveMapCard({
         {/* Mapa de Fundo Real - iframe do Google Maps */}
         <div className="absolute inset-0 overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61645.89527329896!2d-47.68189634863281!3d-15.61880005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3d8a5f4e3e3f%3A0x4f8f5c5e5c5e5c5e!2sPlanaltina%2C%20Bras%C3%ADlia%20-%20Federal%20District!5e0!3m2!1sen!2sbr!4v1234567890123!5m2!1sen!2sbr"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61404.457102342865!2d-48.075440569985614!3d-15.833423128972724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a324bbb311dbd%3A0x3cd9369bf95f9a79!2zR3VhcsOhLCBCcmFzw61saWEgLSBETg!5e0!3m2!1spt-BR!2sbr!4v1702079857959!5m2!1spt-BR!2sbr"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -294,10 +276,10 @@ function InteractiveMapCard({
         </div>
 
         {/* Botão de Ação */}
-        <div className="absolute top-3 left-3 z-30">
+        <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-30">
           <button
             onClick={handleViewMap}
-            className="inline-flex items-center gap-1.5 bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-sm text-[#66388C] rounded-full px-3 py-1.5 border-2 border-white/50 hover:from-white hover:to-white hover:border-[#FAB900] hover:text-[#FAB900] hover:scale-105 transition-all duration-300 group/btn text-xs font-bold shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-1.5 bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-sm text-[#66388C] rounded-full px-2.5 py-1.5 border-2 border-white/50 hover:from-white hover:to-white hover:border-[#FAB900] hover:text-[#FAB900] hover:scale-105 transition-all duration-300 group/btn text-xs font-bold shadow-lg hover:shadow-xl"
           >
             <Navigation className="w-3.5 h-3.5 group-hover/btn:rotate-45 transition-transform duration-300" />
             <span>Ver no Google Maps</span>
@@ -305,15 +287,17 @@ function InteractiveMapCard({
           </button>
         </div>
 
-        {/* Indicador de região */}
-        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 text-[#66388C] text-xs font-bold border border-white/30 shadow-lg z-20">
-          📍 Planaltina/DF
+        {/* Indicador de região - COM ÍCONE FONT AWESOME */}
+        <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-white/95 backdrop-blur-sm rounded-lg px-2.5 py-1.5 text-[#66388C] text-xs font-bold border border-white/30 shadow-lg z-20 flex items-center gap-1.5">
+          <i className="fas fa-map-marker-alt text-[#66388C] text-xs"></i>
+          Guará/DF
         </div>
 
-        {/* Indicador de interatividade */}
-        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-black/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-white text-xs font-medium border border-white/20 shadow-lg">
-            👆 Clique nos pinos para ver detalhes
+        {/* Indicador de interatividade - COM ÍCONE FONT AWESOME */}
+        <div className="absolute bottom-2.5 left-1/2 transform -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-black/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-white text-xs font-medium border border-white/20 shadow-lg flex items-center gap-2">
+            <i className="fas fa-hand-pointer text-[#FAB900] text-xs"></i>
+            Clique nos pinos para ver detalhes
           </div>
         </div>
       </div>
@@ -338,24 +322,26 @@ function InteractiveMapCard({
 
             <p className="text-gray-600 text-sm mb-4 flex items-start gap-2">
               <MapPin className="w-4 h-4 text-[#66388C] flex-shrink-0 mt-0.5" />
-              <span>{selectedSchool.address}</span>
+              <span className="truncate">{selectedSchool.address}</span>
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5">
-                <Users className="w-4 h-4 text-[#66388C]" />
-                <span className="text-sm font-medium">{selectedSchool.students.toLocaleString()} alunos</span>
+              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5 min-w-0">
+                <Users className="w-4 h-4 text-[#66388C] flex-shrink-0" />
+                <span className="text-sm font-medium truncate">{selectedSchool.students.toLocaleString()} alunos</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5">
-                <Calendar className="w-4 h-4 text-[#66388C]" />
-                <span className="text-sm font-medium">Desde {selectedSchool.since}</span>
+              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5 min-w-0">
+                <Calendar className="w-4 h-4 text-[#66388C] flex-shrink-0" />
+                <span className="text-sm font-medium truncate">Desde {selectedSchool.since}</span>
               </div>
             </div>
           </div>
 
           <div className="flex-shrink-0">
             <div className="bg-gradient-to-br from-[#FAB900] to-[#f5a600] text-white rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-center shadow-lg">
-              <div className="text-xs font-bold">CEF</div>
+              <div className="text-xs font-bold">
+                {selectedSchool.name.includes("CED") ? "CED" : "CEF"}
+              </div>
               <div className="text-2xl sm:text-3xl font-black leading-none">
                 {selectedSchool.id.toString().padStart(2, '0')}
               </div>
@@ -398,7 +384,7 @@ function LocationPin({ school, isSelected, onClick }: {
         {/* Corpo do pino */}
         <div className="relative filter drop-shadow-lg">
           <MapPin className={`
-            w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 transition-all duration-300
+            w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-all duration-300
             ${isSelected
               ? 'text-[#FAB900] fill-[#FAB900]'
               : 'text-[#66388C] fill-[#66388C] group-hover/pin:text-[#7A45A3] group-hover/pin:fill-[#7A45A3]'
@@ -419,22 +405,16 @@ function LocationPin({ school, isSelected, onClick }: {
         <div className="hidden sm:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none z-50">
           <div className="bg-gray-900 text-white text-xs rounded-lg py-2 px-3 whitespace-nowrap shadow-2xl border border-white/10 max-w-[200px]">
             <div className="font-bold text-[#FAB900] truncate">{school.name}</div>
-            <div className="text-white/80 text-[10px] mt-1">📍 {school.students.toLocaleString()} alunos</div>
+            <div className="text-white/80 text-[10px] mt-1 flex items-center gap-1">
+              <i className="fas fa-users text-[#FAB900] text-[9px]"></i>
+              {school.students.toLocaleString()} alunos
+            </div>
           </div>
           <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px">
             <div className="border-[6px] border-transparent border-t-gray-900" />
           </div>
         </div>
       </div>
-
-      {/* Ondas de radiação quando selecionado */}
-      {isSelected && (
-        <>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border-2 border-[#FAB900] rounded-full animate-ping opacity-75" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 border-2 border-[#FAB900] rounded-full animate-ping opacity-40" style={{ animationDelay: '0.3s' }} />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 border border-[#FAB900] rounded-full animate-ping opacity-20" style={{ animationDelay: '0.6s' }} />
-        </>
-      )}
     </div>
   )
 }

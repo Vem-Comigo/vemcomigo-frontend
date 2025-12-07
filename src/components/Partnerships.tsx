@@ -129,30 +129,6 @@ export function Partnerships() {
       category: 'Social', 
       description: 'Proteção de direitos da criança' 
     },
-    { 
-      name: 'PSIC-DF', 
-      icon: '🌟',
-      category: 'Saúde', 
-      description: 'Rede de psicólogos' 
-    },
-    { 
-      name: 'Fundação Educacional', 
-      icon: '📚',
-      category: 'Educação', 
-      description: 'Apoio educacional' 
-    },
-    { 
-      name: 'Saúde Mental DF', 
-      icon: '❤️‍🩹',
-      category: 'Saúde', 
-      description: 'Centro de atenção psicossocial' 
-    },
-    { 
-      name: 'Juventude Ativa', 
-      icon: '🚀',
-      category: 'Social', 
-      description: 'Programa de desenvolvimento juvenil' 
-    },
   ]
 
   // Agrupar por categoria
@@ -199,10 +175,10 @@ export function Partnerships() {
   ]
 
   const categoryIcons = {
-    'Governo': '🏛️',
-    'Educação': '📚',
-    'Saúde': '❤️‍🩹',
-    'Social': '🤝'
+    'Governo': <i className="fas fa-landmark text-2xl text-purple-600"></i>,
+    'Educação': <i className="fas fa-book-open text-2xl text-blue-600"></i>,
+    'Saúde': <i className="fas fa-heart-pulse text-2xl text-red-500"></i>,
+    'Social': <i className="fas fa-handshake text-2xl text-green-600"></i>
   }
 
   const toggleShowAllPartners = () => {
@@ -243,7 +219,7 @@ export function Partnerships() {
             </span>
           </h2>
 
-          <p className="partnerships-description text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="partnerships-description text-lg md:text-xl pt-10 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Juntos construímos uma <span className="font-semibold text-[#66388C]">rede de apoio sólida</span> para transformar a educação 
             e promover <span className="font-semibold text-[#FAB900]">saúde mental</span> nas escolas do Distrito Federal.
           </p>
@@ -283,7 +259,7 @@ export function Partnerships() {
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/0 to-transparent group-hover:via-white/30 transition-all duration-500" />
                       
                       <div className="w-full h-full p-4 flex items-center justify-center group-hover:scale-125 transition-transform duration-500 relative z-10">
-                        <span className="text-4xl md:text-5xl">
+                        <span className="text-4xl md:text-5xl flex items-center justify-center">
                           {partner.icon}
                         </span>
                       </div>
@@ -318,7 +294,9 @@ export function Partnerships() {
                 <div className="flex items-center justify-center gap-3 mb-10">
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300" />
                   <div className="flex items-center gap-3 bg-gradient-to-r from-[#66388C]/10 to-[#FAB900]/10 px-6 py-3 rounded-full border border-gray-200">
-                    <span className="text-2xl">{categoryIcons[category as keyof typeof categoryIcons]}</span>
+                    <span className="text-2xl">
+                      {categoryIcons[category as keyof typeof categoryIcons]}
+                    </span>
                     <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
                       {category}
                     </h3>
@@ -356,7 +334,7 @@ export function Partnerships() {
                           transition-all duration-500
                           relative z-10 p-2
                         ">
-                          <span className="text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-500">
+                          <span className="text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
                             {partner.icon}
                           </span>
                         </div>
@@ -378,7 +356,7 @@ export function Partnerships() {
         )}
 
         {/* Botão toggle */}
-        <div className="text-center mb-20 md:mb-24">
+        <div className="text-center mb-20 md:mb-24 pb-10">
           <button
             onClick={toggleShowAllPartners}
             disabled={isAnimatingToggle}
@@ -407,80 +385,7 @@ export function Partnerships() {
             )}
           </button>
         </div>
-
-        {/* Stats Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-24">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className="stats-card group relative"
-              onMouseEnter={() => setHoveredStat(index)}
-              onMouseLeave={() => setHoveredStat(null)}
-            >
-              <div className="
-                relative bg-white rounded-3xl p-8 
-                border-2 border-gray-100 shadow-lg
-                hover:shadow-2xl hover:scale-[1.08] hover:-translate-y-2
-                transition-all duration-500 cursor-pointer
-                overflow-hidden
-              ">
-                
-                {/* Background gradient no hover */}
-                <div className={`
-                  absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
-                  ${stat.color === 'purple' 
-                    ? 'bg-gradient-to-br from-[#66388C]/5 to-[#66388C]/10' 
-                    : 'bg-gradient-to-br from-[#FAB900]/5 to-[#FAB900]/10'
-                  }
-                `} />
-
-                {/* Ícone */}
-                <div className={`
-                  relative z-10 inline-flex items-center justify-center 
-                  w-16 h-16 rounded-2xl mb-5
-                  shadow-lg group-hover:shadow-xl group-hover:scale-110
-                  transition-all duration-500
-                  ${stat.color === 'purple' 
-                    ? 'bg-gradient-to-br from-[#66388C] to-[#7A45A3] text-white' 
-                    : 'bg-gradient-to-br from-[#FAB900] to-[#FFC830] text-white'
-                  }
-                `}>
-                  <stat.icon className="w-8 h-8" />
-                </div>
-
-                {/* Número */}
-                <div className="relative z-10 text-4xl md:text-5xl font-black text-gray-900 mb-3 group-hover:scale-110 transition-transform duration-500">
-                  {stat.number}
-                </div>
-
-                {/* Label */}
-                <div className="relative z-10 text-sm md:text-base text-gray-600 font-bold mb-3 leading-tight">
-                  {stat.label}
-                </div>
-
-                {/* Trend (visível no hover) */}
-                <div className={`
-                  relative z-10 flex items-center justify-center gap-2
-                  text-xs font-semibold
-                  ${stat.color === 'purple' ? 'text-[#66388C]' : 'text-[#FAB900]'}
-                  transition-all duration-500
-                  ${hoveredStat === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
-                `}>
-                  <TrendingUp className="w-4 h-4" />
-                  {stat.trend}
-                </div>
-
-                {/* Decoração de canto */}
-                <div className={`
-                  absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-10
-                  group-hover:scale-150 group-hover:opacity-20
-                  transition-all duration-500
-                  ${stat.color === 'purple' ? 'bg-[#66388C]' : 'bg-[#FAB900]'}
-                `} />
-              </div>
-            </div>
-          ))}
-        </div>
+       
       </div>
     </section>
   )

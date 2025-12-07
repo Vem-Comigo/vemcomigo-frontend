@@ -86,7 +86,7 @@ export function Footer() {
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                AntiBullying
+                Vem Comigo
               </span>
             </div>
 
@@ -214,26 +214,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* PARTNERS */}
-        <div className="border-t border-white/10 py-10">
-          <h4 className="text-center text-gray-400 text-xs tracking-wide mb-6">Apoiadores</h4>
-
-          <div className="flex flex-wrap justify-center gap-4 opacity-60">
-            {["Escolas Parceiras", "MEC", "UNICEF", "ONGs Locais"].map((p, i) => (
-              <div
-                key={i}
-                className="text-gray-400 text-xs px-4 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition cursor-pointer"
-              >
-                {p}
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* BOTTOM BAR */}
         <div className="border-t border-white/10 bg-black/20">
           <div className="container mx-auto px-6 max-w-7xl py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} AntiBullying. Todos os direitos reservados.</p>
+            <p className="text-gray-400 text-xs">&copy; Vem Comigo. Todos os direitos reservados.</p>
 
             <button
               onClick={scrollToTop}
