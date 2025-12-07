@@ -3,7 +3,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
-import { Heart, Building2, Users, School, ChevronDown, ChevronUp, TrendingUp } from 'lucide-react'
+import { ChevronDown, ChevronUp, TrendingUp } from 'lucide-react'
 
 import LogoGEPEM from "../assets/Parceiros/GEPEM.png"
 import LogoSEEDF from "../assets/Parceiros/SecretariaDeEducação.png"
@@ -171,7 +171,7 @@ export function Partnerships() {
           <div className={`mb-20 md:mb-24 transition-all duration-500 ${isAnimatingToggle ? 'opacity-0' : 'opacity-100'}`}>
             {Object.entries(partnersByCategory).map(([category, partners]) => (
               <div key={category} className="mb-16 last:mb-0">
-
+                
                 <div className="flex items-center justify-center gap-3 mb-10">
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300" />
                   <div className="flex items-center gap-3 bg-gradient-to-r from-[#66388C]/10 to-[#FAB900]/10 px-6 py-3 rounded-full border border-gray-200">
