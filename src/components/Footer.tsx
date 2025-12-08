@@ -38,7 +38,6 @@ export function Footer() {
   const quickLinks = [
     { name: "Início", href: "#Início" },
     { name: "Sobre o Vem Comigo", href: "#Sobre" },
-    { name: "Avanços e Consquistas", href: "#Conquistas"},
     { name: "Onde Atuamos", href: "#Locais"},
     { name: "Nossos Parceiros", href: "#Parceiros"},
     { name: "Ações & Projetos", href: "#Ações" },
