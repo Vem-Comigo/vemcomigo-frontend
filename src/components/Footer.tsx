@@ -87,10 +87,40 @@ export function Footer() {
     }
   ]
 
+
+  // ------------------------------------------------------------
+  // 🔥 SEÇÃO DA EQUIPE DO SITE (MODERNA E ELEGANTE)
+  // ------------------------------------------------------------
+
+  const team = [
+    {
+      name: "Lucas Fonseca",
+      img: "https://avatars.githubusercontent.com/u/126473218?v=4",
+      href: "https://github.com/lucas19fonseca"
+    },
+    {
+      name: "Pedro Delgado",
+      img: "https://avatars.githubusercontent.com/u/126472951?v=4",
+      href: "https://github.com/PedroDelgo"
+    },
+    {
+      name: "Gabriel Lima",
+      img: "https://avatars.githubusercontent.com/u/126473024?v=4",
+      href: "https://github.com/gabriellima-4"
+    },
+    {
+      name: "Felipe Queiroz",
+      img: "https://avatars.githubusercontent.com/u/95952269?v=4",
+      href: "https://github.com/felipethecreator"
+    }
+  ]
+
+
   return (
     <footer className="bg-[#0d0d0f] text-white border-t border-white/5">
       <div className="relative">
 
+        {/* BACKGROUND LIGHTS */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="w-72 h-72 bg-purple-600/20 blur-3xl rounded-full absolute -top-10 -left-10" />
           <div className="w-72 h-72 bg-yellow-500/20 blur-3xl rounded-full absolute bottom-0 right-0" />
@@ -178,7 +208,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* NEWSLETTER & CONTACT */}
+          {/* NEWSLETTER + CONTATO */}
           <div>
             <h3 className="text-lg font-semibold mb-6 tracking-wide">
               Contato & Newsletter
@@ -235,6 +265,37 @@ export function Footer() {
                 </a>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* ------------------------------------------------------- */}
+        {/* 🔥 SEÇÃO DA EQUIPE — MODERNA, CENTRALIZADA E ELEGANTE */}
+        {/* ------------------------------------------------------- */}
+
+        <div className="container mx-auto max-w-7xl px-6 mb-10">
+          <h3 className="text-center text-xl font-semibold mb-12 tracking-wide ">
+            Equipe de Desenvolvimento
+          </h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center">
+            {team.map((person, i) => (
+              <a
+                key={i}
+                href={person.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center"
+              >
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  className="w-20 h-20 rounded-full border border-white/10 shadow-lg group-hover:scale-110 transition-all duration-300"
+                />
+                <p className="mt-2 text-sm text-gray-300 group-hover:text-white transition">
+                  {person.name}
+                </p>
+              </a>
+            ))}
           </div>
         </div>
 
