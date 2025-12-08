@@ -3,9 +3,9 @@ import { Users, School, Calendar, Heart } from "lucide-react"
 
 export function Achievements() {
     const stats = [
-        { icon: Users, number: "5.000+", label: "Alunos Atendidos" },
+        { icon: Users, number: "200+", label: "Alunos Participantes" },
         { icon: School, number: "7", label: "Escolas Participantes" },
-        { icon: Calendar, number: "120+", label: "Eventos Realizados" },
+        { icon: Calendar, number: "20+", label: "Eventos Realizados" },
         { icon: Heart, number: "95%", label: "Satisfação dos Participantes" }
     ]
 

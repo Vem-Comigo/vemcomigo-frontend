@@ -36,13 +36,12 @@ export function ActionsProjects() {
       color: "from-blue-500 to-cyan-500",
       featured: {
         title: "Capacitação de Educadores",
-        description: "Oferecemos formação continuada para professores e coordenadores, fornecendo ferramentas práticas para identificar situações de bullying, mediar conflitos e promover um ambiente escolar mais acolhedor e inclusivo.",
+        description: "Oferecemos formação continua para educadores com ferramentas práticas para identificar e agir diante de situações de violência, como bullying e cyberbullying. O objetivo é mediar conflitos e promover um ambiente escolar mais acolhedor e inclusivo.",
         icon: BookOpen,
         benefits: [
-          "Identificação de sinais de bullying",
+          "Identificação e protocolo de possíveis casos de bullying",
           "Técnicas de mediação de conflitos",
-          "Estratégias de intervenção eficazes",
-          "Suporte psicológico para educadores"
+          "Implantação de práticas morais",
         ]
       }
     },
@@ -90,13 +89,12 @@ export function ActionsProjects() {
       color: "from-purple-500 to-violet-500",
       featured: {
         title: "Suporte Emocional",
-        description: "Oferecemos acompanhamento psicológico especializado para estudantes, com foco no desenvolvimento de resiliência e saúde mental.",
+        description: "A CCA é formada por estudantes capacitados em valores, escuta ativa e comunicação não violenta, criando uma rede de apoio entre colegas. Com acompanhamento de professores do Projeto Vem Comigo, eles ajudam a lidar com bullying, exclusão e outros conflitos na escola.",
         icon: Shield,
         benefits: [
-          "Atendimento individual especializado",
-          "Desenvolvimento de resiliência",
-          "Acompanhamento contínuo",
-          "Suporte à família e educadores"
+          "Ajudar os estudantes a conhecer melhor uns aos outros",
+          "Estabelecer uma rede de ajuda entre os pares",
+          "Detectar conflitos, analisá-los, e encaminhá-los aos tutores que vão direcionar os casos mais graves aos especialistas da escola, como Orientador Educacional, Pedagogo e psicólogo",
         ]
       }
     }
@@ -112,7 +110,7 @@ export function ActionsProjects() {
 
   // Auto-rotate
   useEffect(() => {
-    const interval = setInterval(nextSlide, 6000)
+    const interval = setInterval(nextSlide, 10000)
     return () => clearInterval(interval)
   }, [nextSlide])
 

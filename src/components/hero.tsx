@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-// importa as imagens 
+// importa as imagens
 import img1 from "../assets/images/imagem-1.jpg";
 import img2 from "../assets/images/imagem-2.jpg";
 import img3 from "../assets/images/imagem-3.jpg";
@@ -58,6 +58,12 @@ export function Hero() {
                   rounded-full text-base sm:text-lg font-semibold shadow-lg
                   w-full sm:w-auto max-w-xs sm:max-w-none
                 "
+                onClick={() => {
+                  const contactSection = document.getElementById("Sobre");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Saiba mais
               </Button>
