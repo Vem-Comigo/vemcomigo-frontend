@@ -28,7 +28,7 @@ const heroImages = [
   },
   {
     src: img5,
-    alt: "Foto da queipe vemcomigo.",
+    alt: "Foto da equipe vemcomigo.",
   },
 ];
 
