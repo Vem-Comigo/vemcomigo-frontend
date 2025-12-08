@@ -13,15 +13,15 @@ export function AboutProject() {
 
   const features = [
     {
-      text: "Combater o bullying e promover relações mais empáticas",
+      text: "Combater o bullying conscientizando e sensibilizando os membros da comunidade escolar.",
       icon: Users,
     },
     {
-      text: "Conscientizar sobre saúde mental e quebrar tabus",
+      text: "Promover relações mais respeitosas e empáticas entre os estudantes.",
       icon: Heart,
     },
     {
-      text: "Promover o bem-estar integral dos estudantes",
+      text: "Conscientizar sobre a importância de ter uma boa saúde mental.",
       icon: Target,
     },
   ];
@@ -43,18 +43,15 @@ export function AboutProject() {
         <div className="space-y-8">
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p className="text-2xl md:text-3xl font-bold text-[#66388C] bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
-              O Vem Comigo nasceu da necessidade urgente de criar ambientes
-              escolares mais saudáveis e acolhedores para nossos jovens.
+              O Projeto VEM COMIGO surgiu da necessidade de criar espaços de fala e de escuta ativa nas escolas.
             </p>
 
             <p className="text-gray-700 text-lg md:text-xl">
-              Desenvolvido especialmente para escolas públicas do Distrito
-              Federal, nosso projeto combina educação, psicologia e ação social.
+              Proporcionado uma melhor convivência, dando a  formação para professores serem mediadores desses espaços, auxiliando-os no enfrentamento as ações perturbadoras e violentas.
             </p>
 
             <p className="font-semibold text-gray-800 text-lg md:text-xl">
-              Através de oficinas, palestras e rodas de conversa, trabalhamos
-              diretamente com estudantes, professores e famílias para:
+              Por meio das rodas de conversas temáticas, assembléias escolares, palestras  e oficinas com estudantes, professores e famílias para:
             </p>
           </div>
 
@@ -151,18 +148,17 @@ function MissionCard() {
           </div>
 
           <p
-            className={`text-xl lg:text-2xl leading-relaxed font-medium bg-white/5 p-6 rounded-2xl backdrop-blur-sm transition-transform duration-300 ${
+            className={`text-xl lg:text-xl text-justify leading-relaxed font-medium bg-white/5 p-6 rounded-2xl backdrop-blur-sm transition-transform duration-300 ${
               isHovered ? "scale-102" : ""
             }`}
           >
-            Transformar escolas em ambientes de acolhimento, respeito e
-            desenvolvimento saudável para todos os estudantes.
+            Melhoria da convivência escolar, com a criação de  espaços de falas e escuta ativa, por meio das rodas de conversas temáticas e assembléias escolares, proporcionando um ambiente acolhedor e democrático. Potencializando  o protagonismo estudantil com as Comunidades de Cuidado e Apoio.
           </p>
 
           {/* Botão de Reportagem */}
           <div className="pt-2">
             <a
-              href="https://youtu.be/SUA_LINK_AQUI"
+              href="https://g1.globo.com/df/distrito-federal/df2/video/projeto-de-escola-publica-do-guara-envolve-estudantes-no-combate-ao-bullying-12977444.ghtml"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-lg border border-white/20 hover:border-white/40"
@@ -176,7 +172,7 @@ function MissionCard() {
               <div className="text-left">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-white group-hover:text-[#FAB900] transition-colors">
-                    Reportagem na TV
+                    Reportagem na globo
                   </span>
                   <svg
                     className="w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -193,7 +189,7 @@ function MissionCard() {
                   </svg>
                 </div>
                 <p className="text-sm text-white/80 group-hover:text-white">
-                  Assista nossa matéria no Youtube
+                  Assista nossa matéria no G1
                 </p>
               </div>
             </a>

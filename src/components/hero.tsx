@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-// importa as imagens 
+// importa as imagens
 import img1 from "../assets/images/imagem-1.jpg";
 import img2 from "../assets/images/imagem-2.jpg";
 import img3 from "../assets/images/imagem-3.jpg";
 import img4 from "../assets/images/imagem-4.jpg";
 import img5 from "../assets/images/imagem-5.jpg";
-
 
 const heroImages = [
   {
@@ -32,7 +31,6 @@ const heroImages = [
   },
 ];
 
-
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -46,22 +44,27 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="Início" className="bg-[#FAB900] relative overflow-hidden scroll-mt-12 md:scroll-mt-20">
+    <section
+      id="Início"
+      className="bg-[#FAB900] relative overflow-hidden scroll-mt-12 md:scroll-mt-20"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 xl:py-24">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
-
           {/* LEFT TEXT */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-tight md:leading-tight font-inter drop-shadow-lg">
-              Educação<br />
-              Saúde Mental<br />
-              e Bem-Estar<br />
-              <span className="text-[#63348C]">nas Escolas</span>
+              Convivência ética
+              <br />
+              Saúde mental e<br />
+                Bem-estar<br />
+              <span className="text-[#63348C]">nas escolas</span>
             </h1>
 
-            <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md px-4 sm:px-0">
-              Um projeto dedicado ao combate ao bullying e à promoção da saúde mental
-              em escolas públicas do Distrito Federal.
+            <p className="text-white text-base sm:text-lg md:text-xl lg:text-xl font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md px-4 sm:px-0">
+              O Projeto "Vem Comigo" foca em prevenir a violência escolar e
+              melhorar a convivência, combatendo bullying, preconceito e
+              agressões através de estratégias construtivas de resolução de
+              conflitos.
             </p>
 
             <div className="flex justify-center lg:justify-start pt-4">
@@ -73,6 +76,12 @@ export function Hero() {
                   rounded-full text-base sm:text-lg font-semibold shadow-lg
                   w-full sm:w-auto max-w-xs sm:max-w-none
                 "
+                onClick={() => {
+                  const contactSection = document.getElementById("Sobre");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Saiba mais
               </Button>
@@ -81,7 +90,6 @@ export function Hero() {
 
           {/* RIGHT IMAGE / CAROUSEL */}
           <div className="relative flex items-center justify-center lg:justify-end order-first lg:order-last">
-
             {/* Decorative Shapes - Responsive */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-4 sm:top-6 right-0 w-24 sm:w-32 md:w-36 lg:w-40 h-8 sm:h-10 md:h-12 lg:h-14 bg-[#63348C] rounded-full opacity-80 blur-sm translate-x-4 sm:translate-x-6 -translate-y-4 sm:-translate-y-6" />
@@ -125,10 +133,11 @@ export function Hero() {
                     key={index}
                     type="button"
                     onClick={() => setCurrentIndex(index)}
-                    className={`h-2.5 w-2.5 rounded-full border border-white transition-all ${index === currentIndex
-                      ? "bg-white scale-110"
-                      : "bg-white/40 hover:bg-white/70"
-                      }`}
+                    className={`h-2.5 w-2.5 rounded-full border border-white transition-all ${
+                      index === currentIndex
+                        ? "bg-white scale-110"
+                        : "bg-white/40 hover:bg-white/70"
+                    }`}
                     aria-label={`Ir para imagem ${index + 1}`}
                   />
                 ))}
