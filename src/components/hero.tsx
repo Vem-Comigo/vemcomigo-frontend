@@ -46,7 +46,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="Início" className="bg-[#FAB900] relative overflow-hidden">
+    <section id="Início" className="bg-[#FAB900] relative overflow-hidden scroll-mt-12 md:scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 xl:py-24">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
 

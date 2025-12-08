@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import "@n8n/chat/style.css";
-import { createChat } from "@n8n/chat";
 
 import { Header } from "./components/header";
 import { Hero } from "./components/hero";

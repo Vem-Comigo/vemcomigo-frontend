@@ -29,7 +29,7 @@ export function AboutProject() {
   return (
     <section
       id="Sobre"
-      className="container mx-auto px-4 mb-20 md:mb-28"
+      className="container mx-auto px-4 mb-20 md:mb-28 scroll-mt-12 md:scroll-mt-20"
       ref={ref}
       style={{ overflow: "hidden" }}
     >

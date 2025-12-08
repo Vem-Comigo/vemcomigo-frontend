@@ -172,7 +172,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="Contato" className="bg-gray-50 py-20 relative">
+    <section id="Contato" className="bg-gray-50 py-20 relative scroll-mt-12 md:scroll-mt-20">
       {/* Background circles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-10 -left-10 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-30" />

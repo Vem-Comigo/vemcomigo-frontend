@@ -95,7 +95,7 @@ export function Partnerships() {
   }
 
   return (
-    <section id='Parceiros' ref={partnersRef} className="relative bg-gradient-to-br from-white via-gray-50 to-[#FAB900]/5 pt-9">
+    <section id='Parceiros' ref={partnersRef} className="relative bg-gradient-to-br from-white via-gray-50 to-[#FAB900]/5 pt-9 scroll-mt-12 md:scroll-mt-20">
 
       {/* Background decorativo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
