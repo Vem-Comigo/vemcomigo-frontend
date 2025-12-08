@@ -62,16 +62,35 @@ export function Footer() {
   ]
 
   const contactInfo = [
-    { icon: Mail, text: "projeto.vemcomigooficial@gmail.com", href: "mailto:projeto.vemcomigooficial@gmail.com" },
-    { icon: Phone, text: "61 99254-0195 - Prof. Especialista Márcia Delgado", href: "tel:+5561992540195" },
-    { icon: Phone, text: "61 99635-9100 - Prof. Doutoranda Rita de Cássia Rezende", href: "tel:+5561996359100" },
-    { icon: MapPin, text: "Horário de Atendimento: 08h às 18h", href: "#" }
+    { 
+      icon: Mail, 
+      text: "projeto.vemcomigooficial@gmail.com", 
+      href: "mailto:projeto.vemcomigooficial@gmail.com" 
+    },
+
+    { 
+      icon: Phone, 
+      text: "61 99254-0195 - Prof. Especialista Márcia Delgado", 
+      href: "https://wa.me/5561992540195" 
+    },
+
+    { 
+      icon: Phone, 
+      text: "61 99635-9100 - Prof. Doutoranda Rita de Cássia Rezende", 
+      href: "https://wa.me/5561996359100" 
+    },
+
+    { 
+      icon: MapPin, 
+      text: "Horário de Atendimento: 08h às 18h", 
+      href: "#" 
+    }
   ]
 
   return (
     <footer className="bg-[#0d0d0f] text-white border-t border-white/5">
       <div className="relative">
-        {/* GLOW DECOR */}
+
         <div className="absolute inset-0 pointer-events-none">
           <div className="w-72 h-72 bg-purple-600/20 blur-3xl rounded-full absolute -top-10 -left-10" />
           <div className="w-72 h-72 bg-yellow-500/20 blur-3xl rounded-full absolute bottom-0 right-0" />
@@ -95,7 +114,6 @@ export function Footer() {
               Educação, apoio e transformação social com impacto real.
             </p>
 
-            {/* SOCIAL */}
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, target, color }, i) => (
                 <a
@@ -205,7 +223,13 @@ export function Footer() {
 
             <div className="mt-6 space-y-3">
               {contactInfo.map(({ icon: Icon, text, href }, i) => (
-                <a key={i} href={href} className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition">
+                <a 
+                  key={i} 
+                  href={href} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition"
+                >
                   <Icon className="w-4 h-4 text-yellow-500" />
                   <span className="hover:underline">{text}</span>
                 </a>
