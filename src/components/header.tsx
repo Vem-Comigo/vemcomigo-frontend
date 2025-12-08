@@ -17,7 +17,7 @@ export function Header() {
           
           {/* LOGO */}
           <a href="/" className="flex-shrink-0 group">
-            <div className="text-[#FAB900] font-extrabold text-2xl md:text-3xl font-nunito leading-5 tracking-tight transition-all group-hover:scale-[1.05]">
+            <div className="text-[#FAB900] font-extrabold text-2xl md:text-3xl font-nunito leading-7 text-center tracking-tight transition-all group-hover:scale-[1.05]">
               <div>VEM</div>
               <div>COMIGO!</div>
             </div>
@@ -51,7 +51,9 @@ export function Header() {
               transition-all duration-300
               text-md font-bold
               rounded-full px-6 md:px-8 py-2
+              cursor-pointer
             "
+            onClick={() => IrAteSecao("Contato")}
           >
             Fale Conosco
           </Button>
