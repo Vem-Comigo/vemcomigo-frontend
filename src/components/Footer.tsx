@@ -97,22 +97,22 @@ export function Footer() {
     {
       name: "Lucas Fonseca",
       img: "https://avatars.githubusercontent.com/u/126473218?v=4",
-      href: "https://github.com/lucas19fonseca"
+      href: "https://www.linkedin.com/in/lucas-andrade-5511022b3/"
     },
     {
       name: "Pedro Delgado",
       img: "https://avatars.githubusercontent.com/u/126472951?v=4",
-      href: "https://github.com/PedroDelgo"
+      href: "https://www.linkedin.com/in/pedrodelgo/"
     },
     {
       name: "Gabriel Lima",
       img: "https://avatars.githubusercontent.com/u/126473024?v=4",
-      href: "https://github.com/gabriellima-4"
+      href: "https://www.linkedin.com/in/gabriel-de-medeiros-lima/"
     },
     {
       name: "Felipe Queiroz",
       img: "https://avatars.githubusercontent.com/u/95952269?v=4",
-      href: "https://github.com/felipethecreator"
+      href: "https://www.linkedin.com/in/felipe-rodrigues-queiroz-564377171/"
     }
   ]
 
