@@ -36,12 +36,13 @@ export function Footer() {
   }
 
   const quickLinks = [
-    { name: "Início", href: "#inicio" },
-    { name: "Sobre Nós", href: "#sobre" },
-    { name: "Ações & Projetos", href: "#projetos" },
-    { name: "Estatísticas", href: "#estatisticas" },
-    { name: "Depoimentos", href: "#depoimentos" },
-    { name: "Contato", href: "#contato" },
+    { name: "Início", href: "#Início" },
+    { name: "Sobre o Vem Comigo", href: "#Sobre" },
+    { name: "Avanços e Consquistas", href: "#Conquistas"},
+    { name: "Onde Atuamos", href: "#Locais"},
+    { name: "Nossos Parceiros", href: "#Parceiros"},
+    { name: "Ações & Projetos", href: "#Ações" },
+    { name: "Entre em Contato", href: "#Contato" },
   ]
 
   const services = [
@@ -148,7 +149,7 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, i) => (
                 <li key={i}>
-                  <a className="flex items-center gap-2 text-gray-300 hover:text-white transition group text-sm">
+                  <a href={link.href} className="flex items-center gap-2 text-gray-300 hover:text-white transition group text-sm">
                     <ArrowRight className="w-4 h-4 text-purple-500 group-hover:translate-x-1 transition-transform" />
                     {link.name}
                   </a>
