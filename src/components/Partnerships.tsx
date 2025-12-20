@@ -324,7 +324,7 @@ export function Partnerships() {
         )}
 
         {/* Botão toggle */}
-        <div className="text-center pt-4">
+        <div className="text-center pt-8">
           <button
             onClick={toggleShowAllPartners}
             disabled={isAnimatingToggle}
