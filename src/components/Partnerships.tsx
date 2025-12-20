@@ -3,7 +3,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
-import { ChevronDown, ChevronUp, Handshake } from 'lucide-react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 
 import LogoGEPEM from "../assets/Parceiros/GEPEM.png"
 import LogoSEEDF from "../assets/Parceiros/SecretariaDeEducação.png"
