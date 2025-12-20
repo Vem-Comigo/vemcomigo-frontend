@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 // importa as imagens
 import img1 from "../assets/images/imagem-1.jpg";
@@ -49,24 +48,20 @@ export function Hero() {
             </p>
 
             <div className="flex justify-center lg:justify-start pt-4">
-              <Button
-                className="
+              <button className="
                   bg-white text-[#63348C] 
                   px-8 sm:px-10 py-5 sm:py-6 
                   hover:bg-white/90 hover:scale-[1.03]
                   transition-all duration-300 ease-out
                   rounded-full text-base sm:text-lg font-semibold shadow-lg
-                  w-full sm:w-auto max-w-xs sm:max-w-none
-                "
+                  w-full sm:w-auto max-w-xs sm:max-w-none"
                 onClick={() => {
                   const contactSection = document.getElementById("Sobre");
                   if (contactSection) {
                     contactSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-              >
-                Saiba mais
-              </Button>
+              >Saiba mais</button>
             </div>
           </div>
 
@@ -113,11 +108,10 @@ export function Hero() {
                     key={index}
                     type="button"
                     onClick={() => setCurrentIndex(index)}
-                    className={`h-2.5 w-2.5 rounded-full border border-white transition-all ${
-                      index === currentIndex
+                    className={`h-2.5 w-2.5 rounded-full border border-white transition-all ${index === currentIndex
                         ? "bg-white scale-110"
                         : "bg-white/40 hover:bg-white/70"
-                    }`}
+                      }`}
                     aria-label={`Ir para imagem ${index + 1}`}
                   />
                 ))}

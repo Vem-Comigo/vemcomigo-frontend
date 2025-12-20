@@ -1,73 +1,227 @@
 // components/sections/AboutProject.tsx
 "use client";
 
-import { Target, Heart, Users, Tv } from "lucide-react";
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { Target, Heart, Users, Tv, ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Registrar o ScrollTrigger
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function AboutProject() {
-  const { ref } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const missionCardRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
 
+  // Dados das features
   const features = [
     {
-      text: "Combater o bullying conscientizando e sensibilizando os membros da comunidade escolar.",
       icon: Users,
+      title: "Combater o bullying",
+      description: "Conscientizar e sensibilizar a comunidade escolar",
+      color: "from-purple-500 to-purple-600",
     },
     {
-      text: "Promover relações mais respeitosas e empáticas entre os estudantes.",
       icon: Heart,
+      title: "Promover relações respeitosas",
+      description: "Fomentar empatia entre os estudantes",
+      color: "from-pink-500 to-rose-600",
     },
     {
-      text: "Conscientizar sobre a importância de ter uma boa saúde mental.",
       icon: Target,
-    },
+      title: "Saúde mental",
+      description: "Conscientizar sobre importância do bem-estar",
+      color: "from-amber-500 to-yellow-600",
+    }
   ];
 
+  // Animação inicial
+  useEffect(() => {
+    if (!sectionRef.current || hasAnimated.current) return;
+
+    const ctx = gsap.context(() => {
+      // Animação do título
+      gsap.from(titleRef.current, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+        }
+      });
+
+      // Animação dos elementos de fundo
+      gsap.from(".bg-gradient", {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center",
+        }
+      });
+
+      // Animação das features
+      gsap.from(".feature-item", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: featuresRef.current,
+          start: "top center-=50",
+          toggleActions: "play none none reverse",
+        }
+      });
+
+      // Animação do cartão de missão
+      gsap.from(missionCardRef.current, {
+        scale: 0.9,
+        opacity: 0,
+        rotationY: -10,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: missionCardRef.current,
+          start: "top center",
+          toggleActions: "play none none reverse",
+        }
+      });
+
+      // Animação do conteúdo descritivo
+      gsap.from(".content-text", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: ".content-text",
+          start: "top center-=30",
+        }
+      });
+
+    }, sectionRef);
+
+    hasAnimated.current = true;
+
+    return () => ctx.revert();
+  }, []);
+
+  // Animação ao interagir com as features
+  useEffect(() => {
+    if (activeFeature !== null) {
+      const featureElement = document.querySelector(`[data-feature-index="${activeFeature}"]`);
+      if (featureElement) {
+        gsap.to(featureElement, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+    }
+
+    // Reset das features não ativas
+    features.forEach((_, index) => {
+      if (index !== activeFeature) {
+        const featureElement = document.querySelector(`[data-feature-index="${index}"]`);
+        if (featureElement) {
+          gsap.to(featureElement, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        }
+      }
+    });
+  }, [activeFeature, features.length]);
+
   return (
-    <section
-      id="Sobre"
-      className="container mx-auto px-4 mb-20 md:mb-28 scroll-mt-12 md:scroll-mt-20"
-      ref={ref}
-      style={{ overflow: "hidden" }}
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen w-full bg-gradient-to-br from-white via-purple-50/30 to-amber-50/20 flex items-center justify-center overflow-hidden"
     >
-      {/* Título centralizado */}
-      <div className="flex justify-center items-center mb-12 md:mb-16">
-        <SectionTitle prefix="Sobre o" highlighted="Projeto" />
+      {/* Elementos de fundo */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Gradientes de fundo com classes para animação */}
+        <div className="bg-gradient absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-purple-100/40 to-transparent rounded-full blur-3xl" />
+        <div className="bg-gradient absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-amber-100/30 to-transparent rounded-full blur-3xl" />
+        
+        {/* Grid sutil */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `linear-gradient(90deg, #66388C 1px, transparent 1px),
+                            linear-gradient(180deg, #66388C 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
+        />
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        {/* Text Content */}
-        <div className="space-y-8">
-          <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-            <p className="text-2xl md:text-3xl font-bold text-[#66388C] bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
-              O Projeto VEM COMIGO surgiu da necessidade de criar espaços de fala e de escuta ativa nas escolas.
-            </p>
-
-            <p className="text-gray-700 text-lg md:text-xl">
-              Proporcionado uma melhor convivência, dando a  formação para professores serem mediadores desses espaços, auxiliando-os no enfrentamento as ações perturbadoras e violentas.
-            </p>
-
-            <p className="font-semibold text-gray-800 text-lg md:text-xl">
-              Por meio das rodas de conversas temáticas, assembléias escolares, palestras  e oficinas com estudantes, professores e famílias para:
-            </p>
-          </div>
-
-          <FeatureList features={features} />
+      {/* Conteúdo principal */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* TÍTULO CENTRALIZADO */}
+        <div ref={titleRef} className="text-center mb-8 md:mb-12 lg:mb-16">
+          <SectionTitle prefix="Sobre o" highlighted="Projeto" /> 
         </div>
 
-        {/* Mission Card */}
-        <div className="relative">
-          <MissionCard />
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+          
+          {/* Coluna esquerda - Sobre o projeto */}
+          <div className="space-y-8">
+            {/* Descrição com classes para animação */}
+            <div className="space-y-6">
+              <p className="content-text text-gray-700 text-lg leading-relaxed">
+                O <span className="font-semibold text-[#66388C]">Projeto VEM COMIGO</span> surgiu para transformar 
+                relações através do diálogo e empatia, proporcionando formação para professores 
+                como mediadores e combatendo ações perturbadoras.
+              </p>
+
+              <div className="content-text bg-gradient-to-r from-purple-50 to-amber-50/50 p-6 rounded-2xl border border-purple-100">
+                <p className="font-semibold text-gray-800 text-lg">
+                  Por meio de rodas de conversa, assembleias escolares e oficinas, buscamos:
+                </p>
+              </div>
+            </div>
+
+            {/* Features */}
+            <div ref={featuresRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+              {features.map((feature, index) => (
+                <FeatureItem
+                  key={index}
+                  feature={feature}
+                  index={index}
+                  isActive={activeFeature === index}
+                  onClick={() => setActiveFeature(index)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Coluna direita - Mission Card */}
+          <div ref={missionCardRef}>
+            <MissionCard />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-// Subcomponente: Título da Seção
+// COMPONENTE SectionTitle
 function SectionTitle({
   prefix,
   highlighted,
@@ -76,142 +230,217 @@ function SectionTitle({
   highlighted: string;
 }) {
   return (
-    <div className="relative text-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight pt-9">
+    <div className="inline-block">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight text-center">
         {prefix}{" "}
-        <span className="relative inline-block">
-          <span className="bg-gradient-to-r from-[#66388C] via-[#8B5DAF] to-[#FAB900] bg-clip-text text-transparent">
-            {highlighted}
-          </span>
+        <span className="bg-gradient-to-r from-[#66388C] via-[#8B5DAF] to-[#FAB900] bg-clip-text text-transparent">
+          {highlighted}
         </span>
       </h2>
+      <div className="h-1 w-24 sm:w-32 md:w-40 mx-auto bg-gradient-to-r from-[#66388C]/50 to-[#FAB900]/50 rounded-full mt-2" />
     </div>
   );
 }
 
-// Subcomponente: Lista de Features
-function FeatureList({
-  features,
-}: {
-  features: Array<{ text: string; icon: any }>;
+// Componente Feature Item - COM ANIMAÇÕES
+function FeatureItem({ 
+  feature, 
+  index, 
+  isActive,
+  onClick 
+}: { 
+  feature: any; 
+  index: number; 
+  isActive: boolean;
+  onClick: () => void;
 }) {
-  return (
-    <div className="space-y-4">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer group"
-        >
-          <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#66388C] to-[#FAB900] p-0.5">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-5 h-5 text-[#66388C]" />
-              </div>
-            </div>
-          </div>
+  const itemRef = useRef<HTMLDivElement>(null);
 
-          <span className="text-gray-800 text-lg font-medium group-hover:text-[#66388C] transition-colors duration-300">
-            {feature.text}
-          </span>
+  // Animação do ícone ao passar o mouse
+  const handleMouseEnter = () => {
+    if (itemRef.current) {
+      const icon = itemRef.current.querySelector('.feature-icon');
+      gsap.to(icon, {
+        rotationY: 360,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  return (
+    <div
+      ref={itemRef}
+      data-feature-index={index}
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      className={`feature-item relative p-4 rounded-xl cursor-pointer transition-all duration-300 ${
+        isActive 
+          ? 'bg-white shadow-lg border-2 border-purple-200' 
+          : 'bg-white/80 hover:bg-white border border-gray-100'
+      }`}
+    >
+      <div className="flex flex-col items-center text-center space-y-3">
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} p-0.5 feature-icon`}>
+          <div className="w-full h-full rounded-xl bg-white flex items-center justify-center">
+            <feature.icon className="w-6 h-6" />
+          </div>
         </div>
-      ))}
+        
+        <div>
+          <h3 className="font-semibold text-gray-800 text-sm mb-1">
+            {feature.title}
+          </h3>
+          <p className="text-xs text-gray-600">
+            {feature.description}
+          </p>
+        </div>
+      </div>
+
+      {/* Indicador ativo com animação */}
+      {isActive && (
+        <div 
+          className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-[#66388C] to-[#FAB900]"
+          style={{
+            animation: "pulse 2s infinite"
+          }}
+        />
+      )}
     </div>
   );
 }
 
-// Subcomponente: Cartão de Missão
+// Componente Mission Card - COM ANIMAÇÕES
 function MissionCard() {
-  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Efeito de brilho sutil
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Animação de brilho contínuo
+      gsap.to(".shine-effect", {
+        backgroundPosition: "200% center",
+        duration: 3,
+        repeat: -1,
+        ease: "none"
+      });
+
+      // Animação do botão ao passar o mouse
+      const button = cardRef.current?.querySelector('.report-button');
+      if (button) {
+        button.addEventListener('mouseenter', () => {
+          gsap.to(button, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+
+        button.addEventListener('mouseleave', () => {
+          gsap.to(button, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      }
+    }, cardRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className="relative" style={{ overflow: "hidden" }}>
-      <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="bg-gradient-to-br from-[#66388C] via-[#7A4B9E] to-[#FAB900] rounded-2xl p-8 lg:p-12 text-white shadow-2xl"
-        style={{ overflow: "hidden" }}
-      >
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10" style={{ overflow: "hidden" }}>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-32 -translate-x-32"></div>
-        </div>
-
-        <div className="relative z-10 space-y-8" style={{ overflow: "hidden" }}>
-          <div className="flex items-center gap-4" style={{ overflow: "hidden" }}>
-            <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
-              <Target className="w-7 h-7 text-white" />
+    <div className="relative" ref={cardRef}>
+      {/* Efeito de brilho */}
+      <div className="shine-effect absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%] rounded-2xl" />
+      
+      {/* Cartão principal */}
+      <div className="relative bg-gradient-to-br from-[#66388C] via-[#7A4B9E] to-[#FAB900] rounded-2xl p-8 text-white shadow-2xl overflow-hidden">
+        <div className="relative z-10 space-y-6">
+          {/* Cabeçalho */}
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+              <Target className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl lg:text-4xl font-bold">
-              Nossa <span className="text-[#FAB900]">Missão</span>
-            </h3>
+            <div>
+              <h2 className="text-3xl font-bold">
+                Nossa <span className="text-[#FAB900]">Missão</span>
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-white to-[#FAB900] rounded-full mt-2" />
+            </div>
           </div>
 
-          <p
-            className={`text-xl lg:text-xl text-justify leading-relaxed font-medium bg-white/5 p-6 rounded-2xl backdrop-blur-sm transition-transform duration-300 ${
-              isHovered ? "scale-102" : ""
-            }`}
-          >
-            Melhoria da convivência escolar, com a criação de  espaços de falas e escuta ativa, por meio das rodas de conversas temáticas e assembléias escolares, proporcionando um ambiente acolhedor e democrático. Potencializando  o protagonismo estudantil com as Comunidades de Cuidado e Apoio.
-          </p>
+          {/* Texto da missão */}
+          <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
+            <p className="text-lg leading-relaxed">
+              Melhorar a convivência escolar criando espaços de fala e escuta ativa, 
+              promovendo um ambiente acolhedor e democrático através de rodas de conversa 
+              e assembleias escolares.
+            </p>
+          </div>
 
-          {/* Botão de Reportagem */}
-          <div className="pt-2">
+          {/* Botão de reportagem */}
+          <div>
             <a
               href="https://g1.globo.com/df/distrito-federal/df2/video/projeto-de-escola-publica-do-guara-envolve-estudantes-no-combate-ao-bullying-12977444.ghtml"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-lg border border-white/20 hover:border-white/40"
+              className="report-button group inline-flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-4 rounded-xl transition-all duration-300 hover:scale-105 border border-white/20 hover:border-white/40"
             >
-              <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FAB900] to-[#FFD700] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Tv className="w-5 h-5 text-[#66388C]" />
-                </div>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[#FAB900] to-[#FFD700] flex items-center justify-center">
+                <Tv className="w-6 h-6 text-[#66388C]" />
               </div>
-
               <div className="text-left">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-white group-hover:text-[#FAB900] transition-colors">
-                    Reportagem na globo
-                  </span>
-                  <svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-semibold">Reportagem na Globo</span>
+                  <ChevronDown className="w-4 h-4 group-hover:rotate-90 transition-transform" />
                 </div>
-                <p className="text-sm text-white/80 group-hover:text-white">
-                  Assista nossa matéria no G1
-                </p>
+                <p className="text-sm text-white/80">Assista nossa matéria</p>
               </div>
             </a>
           </div>
 
-          <div className="pt-2">
-            <div className="inline-flex items-center gap-2 text-white/80 text-sm lg:text-base">
-              <div className="w-2 h-2 rounded-full bg-[#FAB900]"></div>
-              Impactando vidas através da educação emocional
+          {/* Rodapé com pontos animados */}
+          <div className="pt-4 border-t border-white/20">
+            <div className="flex items-center gap-3 text-sm">
+              <div className="flex gap-1">
+                {[...Array(3)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-[#FAB900]"
+                    style={{
+                      animation: `bounce 1.5s infinite ${i * 0.2}s`
+                    }}
+                  />
+                ))}
+              </div>
+              <span>Transformando vidas pela educação</span>
             </div>
           </div>
         </div>
-
-        {/* Gradient border */}
-        <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-white/20 to-transparent -z-10">
-          <div className="w-full h-full rounded-2xl bg-gradient-to-br from-[#66388C] via-[#7A4B9E] to-[#FAB900]"></div>
-        </div>
       </div>
-
-      {/* Decoration */}
-      <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#FAB900]/20 rounded-full blur-xl"></div>
-      <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#66388C]/20 rounded-full blur-xl"></div>
     </div>
   );
+}
+
+// Adicionar estilos CSS para animações
+const styles = `
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+`;
+
+// Adicionar estilos ao documento
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = styles;
+  document.head.appendChild(styleSheet);
 }
