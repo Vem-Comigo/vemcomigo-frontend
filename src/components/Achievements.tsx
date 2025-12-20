@@ -60,37 +60,37 @@ export function Achievements() {
     }
   ];
 
-  // Animações de entrada
+  // Animações de entrada - MAIS RÁPIDAS
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animação do título
+      // Animação do título - delay reduzido de 0.2 para 0
       gsap.from(".section-title", {
         y: 50,
         opacity: 0,
-        duration: 1,
+        duration: 0.6, // reduzido de 1
         ease: "power3.out",
-        delay: 0.2
+        delay: 0 // reduzido de 0.2
       });
 
-      // Animação da descrição
+      // Animação da descrição - delay reduzido
       gsap.from(".section-description", {
         y: 30,
         opacity: 0,
-        duration: 0.8,
-        delay: 0.5,
+        duration: 0.5, // reduzido de 0.8
+        delay: 0.15, // reduzido de 0.5
         ease: "power2.out"
       });
 
-      // Animação dos cards com stagger
+      // Animação dos cards com stagger - delay reduzido
       gsap.from(".achievement-card", {
         y: 60,
         opacity: 0,
         scale: 0.8,
-        stagger: 0.15,
-        duration: 0.8,
-        delay: 0.8,
+        stagger: 0.08, // reduzido de 0.15
+        duration: 0.5, // reduzido de 0.8
+        delay: 0.3, // reduzido de 0.8
         ease: "back.out(1.4)"
       });
 
@@ -180,17 +180,17 @@ function AchievementCard({
   useEffect(() => {
     if (!cardRef.current) return;
 
-    // Animar número quando entrar na viewport
+    // Animar número quando entrar na viewport - threshold reduzido para começar mais cedo
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isAnimated) {
             onAnimate();
             
-            // Animar contagem
+            // Animar contagem - MAIS RÁPIDO
             const targetNumber = parseInt(stat.number);
             let current = 0;
-            const increment = targetNumber / 50; // Para animação mais suave
+            const increment = targetNumber / 40; // reduzido de 50 para 40 para ser mais rápido
             
             const timer = setInterval(() => {
               current += increment;
@@ -206,16 +206,16 @@ function AchievementCard({
                 : Math.floor(current).toString();
               
               setDisplayNumber(displayValue);
-            }, 40);
+            }, 25); // reduzido de 40 para 25ms para animação mais rápida
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 } // reduzido de 0.5 para 0.2 - inicia animação mais cedo
     );
 
     observer.observe(cardRef.current);
 
-    // Efeito de hover com GSAP
+    // Efeito de hover com GSAP - MAIS RÁPIDO
     const card = cardRef.current;
     
     const handleMouseEnter = () => {
@@ -223,7 +223,7 @@ function AchievementCard({
       gsap.to(card, {
         y: -10,
         scale: 1.05,
-        duration: 0.3,
+        duration: 0.2, // reduzido de 0.3
         ease: "power2.out"
       });
     };
@@ -233,7 +233,7 @@ function AchievementCard({
       gsap.to(card, {
         y: 0,
         scale: 1,
-        duration: 0.3,
+        duration: 0.2, // reduzido de 0.3
         ease: "power2.out"
       });
     };
@@ -255,16 +255,16 @@ function AchievementCard({
     >
       {/* Cartão principal */}
       <div className={`relative ${stat.bgColor} rounded-2xl p-6 md:p-8 text-center shadow-lg 
-        hover:shadow-2xl transition-all duration-500 border ${stat.borderColor} 
+        hover:shadow-2xl transition-all duration-300 border ${stat.borderColor} 
         hover:border-opacity-50 overflow-hidden`}>
         
-        {/* Efeito de brilho no hover */}
+        {/* Efeito de brilho no hover - MAIS RÁPIDO */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent 
-          -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-        {/* Ícone decorativo superior */}
+        {/* Ícone decorativo superior - MAIS RÁPIDO */}
         <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-white/80 to-transparent 
-          flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
+          flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
           <Sparkles className="w-6 h-6" style={{ color: stat.iconColor }} />
         </div>
 
@@ -274,7 +274,7 @@ function AchievementCard({
           <div className="flex justify-center">
             <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.color} p-1`}>
               <div className={`w-full h-full rounded-2xl ${stat.bgColor.includes('gradient') ? 'bg-white' : stat.bgColor} flex items-center justify-center 
-                transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}>
+                transition-transform duration-200 ${isHovered ? 'scale-110' : ''}`}>
                 <stat.icon className="w-10 h-10" 
                   style={{ 
                     color: stat.iconColor
@@ -311,8 +311,8 @@ function AchievementCard({
         <div className={`absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 ${stat.borderColor} rounded-br-2xl`} />
       </div>
 
-      {/* Sombra projetada personalizada */}
-      <div className={`absolute inset-0 rounded-2xl -z-10 transition-all duration-500 ${
+      {/* Sombra projetada personalizada - MAIS RÁPIDA */}
+      <div className={`absolute inset-0 rounded-2xl -z-10 transition-all duration-300 ${
         isHovered 
           ? 'bg-gradient-to-br opacity-100 translate-y-4' 
           : 'opacity-0'
