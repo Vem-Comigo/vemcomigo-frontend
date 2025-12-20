@@ -1,7 +1,7 @@
 // components/sections/Achievements.tsx
 "use client";
 
-import { Users, School, Calendar, Heart, Target, Award, TrendingUp, Sparkles } from "lucide-react";
+import { Users, School, Calendar, Heart, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
@@ -147,7 +147,6 @@ export function Achievements() {
             <AchievementCard
               key={index}
               stat={stat}
-              index={index}
               isAnimated={animatedNumbers[index] || false}
               onAnimate={() => {
                 const newState = [...animatedNumbers];
@@ -167,12 +166,10 @@ export function Achievements() {
 // Componente Achievement Card
 function AchievementCard({ 
   stat, 
-  index, 
   isAnimated,
   onAnimate 
 }: { 
   stat: any; 
-  index: number; 
   isAnimated: boolean;
   onAnimate: () => void;
 }) {
