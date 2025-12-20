@@ -80,7 +80,7 @@ export function Hero() {
 
               <div
                 className="
-                  relative overflow-hidden rounded-2xl sm:rounded-3xl border-4 border-white shadow-xl
+                  relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl
                   hover:scale-[1.02] transition-all duration-300
                   h-[360px] sm:h-[430px] md:h-[500px] lg:h-[560px]
                   w-full

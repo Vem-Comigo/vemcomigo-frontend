@@ -88,30 +88,30 @@ export function Locations() {
   return (
     <section
       id="Locais"
-      className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden pt-9 py-15 scroll-mt-12 md:scroll-mt-20"
+      className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden py-10 md:py-12 scroll-mt-12 md:scroll-mt-20"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-4 left-4 sm:top-10 sm:left-10 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/10 rounded-full blur-xl" />
-        <div className="absolute bottom-4 right-4 sm:bottom-10 sm:right-10 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-[#FAB900]/20 rounded-full blur-2xl" />
-        <div className="absolute top-1/2 left-1/3 w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/5 rounded-full blur-lg" />
-        <div className="absolute bottom-16 left-16 sm:bottom-20 sm:left-20 w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-[#FAB900]/15 rounded-full blur-xl" />
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl" />
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#FAB900]/20 rounded-full blur-2xl" />
+        <div className="absolute top-1/2 left-1/3 w-14 h-14 bg-white/5 rounded-full blur-lg" />
+        <div className="absolute bottom-20 left-20 w-20 h-20 bg-[#FAB900]/15 rounded-full blur-xl" />
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+        <div className="text-center mb-8 md:mb-10">
           <SectionTitle prefix="Onde" highlighted="Atuamos" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5">
-            <div className="mb-6 md:mb-8">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-5 md:gap-6">
+          <div className="space-y-4">
+            <div className="mb-4">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                 Nossa Presença no Guará
               </h3>
-              <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed">
+              <p className="text-sm text-white/90 leading-relaxed">
                 Estamos presentes em escolas públicas do Distrito Federal,
                 levando nosso projeto para comunidades que mais precisam de
-                apoio. Atualmente atendemos 6 escolas no Guará, incluindo
+                apoio. Atualmente atendemos 7 escolas no Guará, incluindo
                 Centros de Ensino Fundamental e Educação de Jovens e Adultos.
               </p>
             </div>
@@ -123,7 +123,7 @@ export function Locations() {
             />
           </div>
 
-          <div className="space-y-3 sm:space-y-4 md:space-y-5">
+          <div className="space-y-4">
             <InteractiveMapCard
               schools={schools}
               selectedSchool={selectedSchool}
@@ -145,13 +145,13 @@ function SectionTitle({
 }) {
   return (
     <div className="inline-block">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight text-center">
         {prefix}{" "}
         <span className="bg-gradient-to-r from-white to-[#FAB900] bg-clip-text text-transparent">
           {highlighted}
         </span>
       </h2>
-      <div className="h-1 w-24 sm:w-32 md:w-40 mx-auto bg-gradient-to-r from-white/50 to-[#FAB900]/50 rounded-full" />
+      <div className="h-0.5 w-28 md:w-36 mx-auto bg-gradient-to-r from-white/50 to-[#FAB900]/50 rounded-full mt-2" />
     </div>
   );
 }
@@ -166,29 +166,29 @@ function SchoolList({
   onSchoolSelect: (school: any) => void;
 }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-3 sm:p-4">
-      <div className="flex items-center gap-2 mb-3 sm:mb-4">
-        <School className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-        <h4 className="text-base sm:text-lg md:text-xl font-bold text-white">
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-3">
+      <div className="flex items-center gap-2 mb-3">
+        <School className="w-4 h-4 text-white" />
+        <h4 className="text-sm md:text-base font-bold text-white">
           Escolas Atendidas
         </h4>
-        <span className="bg-[#FAB900] text-white text-xs font-bold rounded-full px-2 py-1 ml-auto">
+        <span className="bg-[#FAB900] text-white text-xs font-bold rounded-full px-2 py-0.5 ml-auto flex-shrink-0">
           {schools.length} escolas
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
         {schools.map((school) => (
           <button
             key={school.id}
             onClick={() => onSchoolSelect(school)}
             className={`
-              flex items-start gap-3 p-3 sm:p-4 rounded-lg transition-all duration-300 cursor-pointer
-              backdrop-blur-sm border relative overflow-hidden group min-w-0
+              flex items-start gap-2 p-2.5 rounded-lg transition-all duration-300 cursor-pointer
+              backdrop-blur-sm border relative overflow-hidden group w-full
               ${
                 selectedSchool.id === school.id
-                  ? "bg-white/20 border-white/30 shadow-lg scale-[1.02] ring-1 ring-white/20"
-                  : "bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/30 hover:scale-[1.01]"
+                  ? "bg-white/20 border-white/30 shadow-lg"
+                  : "bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/30"
               }
               text-left
             `}
@@ -199,42 +199,42 @@ function SchoolList({
 
             <div
               className={`
-              w-7 h-7 sm:w-8 sm:h-8 rounded-full flex-shrink-0 relative z-10
+              w-7 h-7 rounded-full flex-shrink-0 relative z-10
               flex items-center justify-center transition-all duration-300
               ${
                 selectedSchool.id === school.id
-                  ? "bg-[#FAB900] text-white scale-110 shadow-md shadow-[#FAB900]/30"
+                  ? "bg-[#FAB900] text-white shadow-md shadow-[#FAB900]/30"
                   : "bg-white/20 text-white group-hover:bg-white/30"
               }
             `}
             >
-              <span className="font-bold text-sm sm:text-base">
+              <span className="font-bold text-xs">
                 {school.id}
               </span>
             </div>
 
             <div className="relative z-10 flex-1 min-w-0">
-              <span className="text-white font-semibold block truncate text-sm sm:text-base">
+              <span className="text-white font-semibold block text-sm">
                 {school.name}
               </span>
               {selectedSchool.id === school.id && (
-                <span className="text-white/70 text-xs block truncate mt-1">
+                <span className="text-white/70 text-xs block mt-0.5">
                   {school.address}
                 </span>
               )}
-              <div className="flex items-center gap-2 mt-1 text-xs text-white/60">
+              <div className="flex items-center gap-1.5 mt-1 text-xs text-white/60 flex-wrap">
                 <Users className="w-3 h-3 flex-shrink-0" />
-                <span className="truncate">{school.students} alunos</span>
-                <span className="mx-1 flex-shrink-0">•</span>
+                <span>{school.students} alunos</span>
+                <span className="flex-shrink-0">•</span>
                 <Calendar className="w-3 h-3 flex-shrink-0" />
-                <span className="truncate">Desde {school.since}</span>
+                <span>Desde {school.since}</span>
               </div>
             </div>
 
             {selectedSchool.id === school.id && (
-              <div className="relative z-10 flex-shrink-0 mt-1">
-                <div className="bg-[#FAB900] rounded-full p-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-white" />
+              <div className="relative z-10 flex-shrink-0">
+                <div className="bg-[#FAB900] rounded-full p-1">
+                  <MapPin className="w-3 h-3 text-white" />
                 </div>
               </div>
             )}
@@ -265,29 +265,29 @@ function InteractiveMapCard({
   };
 
   return (
-    <div className="space-y-3 sm:space-y-4">
-      <div className="flex justify-between items-center mb-2 px-1">
+    <div className="space-y-3">
+      <div className="flex justify-between items-center">
         <button
           onClick={handleViewMap}
-          className="inline-flex items-center gap-1.5 bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-sm text-[#66388C] rounded-full px-2.5 py-1.5 border-2 border-white/50 hover:from-white hover:to-white hover:border-[#FAB900] hover:text-[#FAB900] hover:scale-105 transition-all duration-300 group/btn text-xs font-bold shadow-lg hover:shadow-xl"
+          className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#66388C] rounded-full px-2.5 py-1.5 border border-white/50 hover:border-[#FAB900] hover:text-[#FAB900] hover:scale-105 transition-all duration-300 group/btn text-xs font-bold shadow-lg"
         >
-          <Navigation className="w-3.5 h-3.5 group-hover/btn:rotate-45 transition-transform duration-300" />
+          <Navigation className="w-3 h-3 group-hover/btn:rotate-45 transition-transform duration-300" />
           <span>Ver no Google Maps</span>
-          <ExternalLink className="w-3 h-3 opacity-70" />
+          <ExternalLink className="w-2.5 h-2.5 opacity-70" />
         </button>
 
-        <div className="bg-white/95 backdrop-blur-sm rounded-lg px-2.5 py-1.5 text-[#66388C] text-xs font-bold border border-white/30 shadow-lg flex items-center gap-1.5">
-          <i className="fas fa-map-marker-alt text-[#66388C] text-xs"></i>
+        <div className="bg-white/95 backdrop-blur-sm rounded-lg px-2 py-1 text-[#66388C] text-xs font-bold border border-white/30 shadow-lg flex items-center gap-1">
+          <MapPin className="w-3 h-3" />
           Guará/DF
         </div>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 relative min-h-[250px] sm:min-h-[280px] md:min-h-[320px] aspect-video w-full">
+      <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl transition-all duration-500 border border-white/20 relative h-56 md:h-72 w-full group">
         <div className="absolute inset-0 overflow-hidden bg-gray-100">
           <img
             src={mapaGuara}
             alt="Mapa das escolas no Guará"
-            className="w-full h-full object-fill"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#66388C]/20 via-transparent to-[#FAB900]/10 pointer-events-none" />
         </div>
@@ -303,46 +303,46 @@ function InteractiveMapCard({
           ))}
         </div>
 
-        <div className="absolute bottom-2.5 left-1/2 transform -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <div className="bg-black/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-white text-xs font-medium border border-white/20 shadow-lg flex items-center gap-2">
-            <i className="fas fa-hand-pointer text-[#FAB900] text-xs"></i>
-            Clique nos pinos para ver detalhes
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="bg-black/80 backdrop-blur-sm rounded-full px-2.5 py-1 text-white text-xs font-medium border border-white/20 shadow-lg flex items-center gap-1.5">
+            <MapPin className="w-3 h-3 text-[#FAB900]" />
+            Clique nos pinos
           </div>
         </div>
       </div>
 
-      <div className="bg-white backdrop-blur-md rounded-xl p-4 sm:p-6 shadow-2xl border-2 border-[#FAB900] transform transition-all duration-500 hover:shadow-[#FAB900]/20">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="bg-[#66388C] rounded-full p-2">
-                <School className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+      <div className="bg-white backdrop-blur-md rounded-xl p-3 shadow-2xl border-2 border-[#FAB900] transition-all duration-500">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="bg-[#66388C] rounded-full p-1.5">
+                <School className="w-3.5 h-3.5 text-white" />
               </div>
-              <div>
-                <div className="text-xs font-bold text-[#66388C] uppercase tracking-wider">
+              <div className="min-w-0">
+                <div className="text-[10px] font-bold text-[#66388C] uppercase tracking-wider">
                   Escola Selecionada
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mt-1">
+                <h3 className="text-sm md:text-base font-bold text-gray-900 mt-0.5">
                   {selectedSchool.name}
                 </h3>
               </div>
             </div>
 
-            <p className="text-gray-600 text-sm mb-4 flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-[#66388C] flex-shrink-0 mt-0.5" />
-              <span className="truncate">{selectedSchool.address}</span>
+            <p className="text-gray-600 text-xs mb-2 flex items-start gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0 mt-0.5" />
+              <span>{selectedSchool.address}</span>
             </p>
 
-            <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5 min-w-0">
-                <Users className="w-4 h-4 text-[#66388C] flex-shrink-0" />
-                <span className="text-sm font-medium truncate">
+            <div className="flex flex-wrap gap-2">
+              <div className="flex items-center gap-1.5 text-gray-700 bg-gray-100 rounded-full px-2.5 py-1">
+                <Users className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0" />
+                <span className="text-xs font-medium">
                   {selectedSchool.students.toLocaleString()} alunos
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700 bg-gray-100 rounded-full px-3 py-1.5 min-w-0">
-                <Calendar className="w-4 h-4 text-[#66388C] flex-shrink-0" />
-                <span className="text-sm font-medium truncate">
+              <div className="flex items-center gap-1.5 text-gray-700 bg-gray-100 rounded-full px-2.5 py-1">
+                <Calendar className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0" />
+                <span className="text-xs font-medium">
                   Desde {selectedSchool.since}
                 </span>
               </div>
@@ -350,11 +350,11 @@ function InteractiveMapCard({
           </div>
 
           <div className="flex-shrink-0">
-            <div className="bg-gradient-to-br from-[#FAB900] to-[#f5a600] text-white rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-center shadow-lg">
-              <div className="text-xs font-bold">
-                {selectedSchool.name.includes("CED") ? "CED" : "CEF"}
+            <div className="bg-gradient-to-br from-[#FAB900] to-[#f5a600] text-white rounded-xl px-2.5 py-2 text-center shadow-lg">
+              <div className="text-[10px] font-bold">
+                {selectedSchool.name.includes("CED") ? "CED" : selectedSchool.name.includes("CEM") ? "CEM" : "CEF"}
               </div>
-              <div className="text-2xl sm:text-3xl font-black leading-none">
+              <div className="text-xl font-black leading-none">
                 {selectedSchool.id.toString().padStart(2, "0")}
               </div>
             </div>
@@ -381,7 +381,7 @@ function LocationPin({
         ${
           isSelected
             ? "z-40 scale-125"
-            : "z-30 scale-100 hover:scale-110 hover:z-35"
+            : "z-30 scale-100 hover:scale-110"
         }
       `}
       style={{
@@ -405,7 +405,7 @@ function LocationPin({
         <div className="relative filter drop-shadow-lg">
           <MapPin
             className={`
-            w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-all duration-300
+            w-7 h-7 md:w-8 md:h-8 transition-all duration-300
             ${
               isSelected
                 ? "text-[#FAB900] fill-[#FAB900]"
@@ -417,7 +417,7 @@ function LocationPin({
           <div
             className="
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[70%] 
-            text-white font-black text-[10px] sm:text-[11px] pointer-events-none
+            text-white font-black text-[10px] pointer-events-none
             drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]
           "
           >
@@ -425,13 +425,13 @@ function LocationPin({
           </div>
         </div>
 
-        <div className="hidden sm:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none z-50">
+        <div className="hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none z-50">
           <div className="bg-gray-900 text-white text-xs rounded-lg py-2 px-3 whitespace-nowrap shadow-2xl border border-white/10 max-w-[200px]">
-            <div className="font-bold text-[#FAB900] truncate">
+            <div className="font-bold text-[#FAB900]">
               {school.name}
             </div>
             <div className="text-white/80 text-[10px] mt-1 flex items-center gap-1">
-              <i className="fas fa-users text-[#FAB900] text-[9px]"></i>
+              <Users className="w-3 h-3 text-[#FAB900]" />
               {school.students.toLocaleString()} alunos
             </div>
           </div>
