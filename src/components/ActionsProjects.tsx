@@ -1,100 +1,92 @@
-// components/sections/ActionsProjects.tsx
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { ChevronLeft, ChevronRight, Users, MessageCircle, Heart, Shield, BookOpen, Users2 } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface Project {
   id: number
   title: string
   description: string
-  icon: React.ComponentType<{ className?: string }>
   color: string
+  bgColor: string
   featured: {
     title: string
     description: string
-    icon: React.ComponentType<{ className?: string }>
+    icon: string
     benefits: string[]
   }
 }
 
-interface ProjectCardProps {
-  project: Project
-  isActive: boolean
-  onClick: () => void
-}
-
 export function ActionsProjects() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
   const projects: Project[] = [
     {
       id: 1,
       title: "Palestras Educativas",
-      description: "Sessões informativas sobre prevenção ao bullying, cyberbullying e promoção da cultura de paz nas escolas.",
-      icon: MessageCircle,
-      color: "from-blue-500 to-cyan-500",
+      description: "Sessões sobre prevenção ao bullying e promoção da cultura de paz.",
+      color: "from-[#66388C] to-[#8B5DAF]",
+      bgColor: "bg-gradient-to-br from-[#66388C]/10 to-[#8B5DAF]/10",
       featured: {
         title: "Capacitação de Educadores",
-        description: "Oferecemos formação continua para educadores com ferramentas práticas para identificar e agir diante de situações de violência, como bullying e cyberbullying. O objetivo é mediar conflitos e promover um ambiente escolar mais acolhedor e inclusivo.",
-        icon: BookOpen,
+        description: "Formação continua para educadores com ferramentas práticas para identificar e agir diante de situações de violência.",
+        icon: "fa-solid fa-chalkboard-user",
         benefits: [
-          "Identificação e protocolo de possíveis casos de bullying",
+          "Identificação de casos de bullying",
           "Técnicas de mediação de conflitos",
-          "Implantação de práticas morais",
-        ]
-      }
-    },
-    {
-      id: 2,
-      title: "Oficinas Interativas",
-      description: "Atividades práticas que envolvem estudantes em dinâmicas de grupo, role-playing e debates sobre empatia.",
-      icon: Users,
-      color: "from-green-500 to-emerald-500",
-      featured: {
-        title: "Dinâmicas de Grupo",
-        description: "Desenvolvemos atividades interativas que promovem a empatia, trabalho em equipe e resolução pacífica de conflitos entre os estudantes.",
-        icon: Users2,
-        benefits: [
-          "Atividades práticas e envolventes",
-          "Desenvolvimento de habilidades sociais",
-          "Fortalecimento da autoestima",
-          "Promoção do trabalho em equipe"
+          "Implantação de práticas morais"
         ]
       }
     },
     {
       id: 3,
       title: "Rodas de Conversa",
-      description: "Espaços seguros para diálogo aberto onde alunos podem compartilhar experiências e buscar soluções.",
-      icon: Heart,
-      color: "from-pink-500 to-rose-500",
+      description: "Espaços seguros para diálogo aberto entre alunos.",
+      color: "from-[#8B5DAF] to-[#66388C]",
+      bgColor: "bg-gradient-to-br from-[#8B5DAF]/10 to-[#66388C]/10",
       featured: {
         title: "Mediação de Conflitos",
-        description: "Criamos ambientes seguros para discussão aberta, facilitando a comunicação entre estudantes e promovendo entendimento mútuo.",
-        icon: Heart,
+        description: "Ambientes seguros para discussão aberta, facilitando a comunicação entre estudantes.",
+        icon: "fa-solid fa-comments",
         benefits: [
           "Ambientes seguros e confidenciais",
           "Facilitação por profissionais",
-          "Resolução pacífica de conflitos",
-          "Desenvolvimento da comunicação"
+          "Resolução pacífica de conflitos"
+        ]
+      }
+    },
+    {
+      id: 2,
+      title: "Oficinas Interativas",
+      description: "Dinâmicas de grupo, role-playing e debates sobre empatia.",
+      color: "from-[#FAB900] to-[#FFD166]",
+      bgColor: "bg-gradient-to-br from-[#FAB900]/10 to-[#FFD166]/10",
+      featured: {
+        title: "Dinâmicas de Grupo",
+        description: "Atividades interativas que promovem empatia, trabalho em equipe e resolução pacífica de conflitos.",
+        icon: "fa-solid fa-people-group",
+        benefits: [
+          "Atividades práticas e envolventes",
+          "Desenvolvimento de habilidades sociais",
+          "Fortalecimento da autoestima"
         ]
       }
     },
     {
       id: 4,
       title: "Apoio Psicológico",
-      description: "Atendimento especializado para vítimas de bullying e apoio emocional para desenvolvimento de resiliência.",
-      icon: Shield,
-      color: "from-purple-500 to-violet-500",
+      description: "Atendimento especializado e apoio emocional para desenvolvimento de resiliência.",
+      color: "from-[#66388C] to-[#FAB900]",
+      bgColor: "bg-gradient-to-br from-[#66388C]/10 to-[#FAB900]/10",
       featured: {
         title: "Suporte Emocional",
-        description: "A CCA é formada por estudantes capacitados em valores, escuta ativa e comunicação não violenta, criando uma rede de apoio entre colegas. Com acompanhamento de professores do Projeto Vem Comigo, eles ajudam a lidar com bullying, exclusão e outros conflitos na escola.",
-        icon: Shield,
+        description: "Estudantes capacitados em valores e escuta ativa, criando rede de apoio entre colegas.",
+        icon: "fa-solid fa-heart-circle-check",
         benefits: [
-          "Ajudar os estudantes a conhecer melhor uns aos outros",
-          "Estabelecer uma rede de ajuda entre os pares",
-          "Detectar conflitos, analisá-los, e encaminhá-los aos tutores que vão direcionar os casos mais graves aos especialistas da escola, como Orientador Educacional, Pedagogo e psicólogo",
+          "Rede de ajuda entre os pares",
+          "Detecção e análise de conflitos",
+          "Encaminhamento aos especialistas"
         ]
       }
     }
@@ -108,41 +100,78 @@ export function ActionsProjects() {
     setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length)
   }, [projects.length])
 
-  // Auto-rotate
   useEffect(() => {
-    const interval = setInterval(nextSlide, 10000)
+    if (!isAutoPlaying) return
+    
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 5000)
+    
     return () => clearInterval(interval)
-  }, [nextSlide])
+  }, [isAutoPlaying, nextSlide])
+
+  const handleSlideChange = (index: number) => {
+    setCurrentSlide(index)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 8000)
+  }
 
   const currentProject = projects[currentSlide]
 
   return (
-    <section id="Ações" className="bg-white pb-20 scroll-mt-12 md:scroll-mt-20">
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center">
-            Ações & <span className="text-[#66388C]">Projetos</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Desenvolvemos iniciativas completas para combater o bullying e promover 
-            ambientes escolares mais saudáveis e inclusivos.
+    <section id="Ações" className="py-16 md:py-24 bg-white scroll-mt-20">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#66388C]/10 to-[#FAB900]/10 px-4 py-2 rounded-full mb-4">
+            <i className="fas fa-bullseye text-[#66388C]"></i>
+            <span className="text-sm font-medium text-[#66388C]">4 Projetos Ativos</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4">
+            Ações &{" "}
+            <span className="bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
+              Projetos
+            </span>
+          </h2>
+          
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            Iniciativas para combater bullying e promover ambientes escolares saudáveis.
           </p>
         </div>
 
         <div className="relative">
-          {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-white shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="grid lg:grid-cols-2 min-h-[500px]">
               
-              {/* Left Side - Project Cards */}
-              <div className="relative p-6 sm:p-8 md:p-12">
-                {/* Progress Bar */}
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                    <i className="fas fa-layer-group text-[#66388C]"></i>
+                    Nossos Projetos
+                  </h3>
+                  <button
+                    onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                    className="text-sm px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors flex items-center gap-2"
+                  >
+                    {isAutoPlaying ? (
+                      <>
+                        <i className="fas fa-pause"></i>
+                        <span>Pausar</span>
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-play"></i>
+                        <span>Reproduzir</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
                 <div className="flex gap-1 mb-6">
                   {projects.map((_, index) => (
                     <div 
                       key={index}
-                      className={`h-1 flex-1 rounded-full transition-all duration-1000 ${
+                      className={`h-1 flex-1 rounded-full transition-all duration-700 ${
                         currentSlide === index 
                           ? 'bg-[#66388C]' 
                           : 'bg-gray-200'
@@ -151,87 +180,156 @@ export function ActionsProjects() {
                   ))}
                 </div>
 
-                {/* Cards Container */}
-                <div className="relative h-64 sm:h-72 md:h-80">
-                  {projects.map((project, index) => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                      isActive={currentSlide === index}
-                      onClick={() => setCurrentSlide(index)}
-                    />
-                  ))}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  {projects.map((project, index) => {
+                    const isActive = currentSlide === index
+    
+                    return (
+                      <button
+                        key={project.id}
+                        onClick={() => handleSlideChange(index)}
+                        className={`
+                          group relative overflow-hidden rounded-xl transition-all duration-300 text-left
+                          ${project.bgColor}
+                          ${isActive 
+                            ? 'border-2 border-[#66388C] shadow-lg' 
+                            : 'border border-gray-200 hover:border-gray-300 hover:shadow-md'
+                          }
+                        `}
+                      >
+                        <div className="relative z-10 pt-6 pb-4 px-4">
+                          <div className="flex flex-col items-center text-center mb-3">
+                            <div className={`p-3 rounded-full mb-3 ${
+                              isActive 
+                                ? 'bg-white/40 border-2 border-white/50' 
+                                : 'bg-white/30 border border-white/40'
+                            }`}>
+                              <i className={`fas ${
+                                // Corrigindo os ícones baseado na imagem
+                                project.id === 1 ? 'fa-chalkboard-teacher' : // Palestras Educativas
+                                project.id === 3 ? 'fa-comments' : // Rodas de Conversa
+                                project.id === 2 ? 'fa-users' : // Oficinas Interativas
+                                'fa-heart' // Apoio Psicológico (mudei de fa-hands-helping para fa-heart)
+                              } ${isActive ? 'text-white' : 'text-white/90'} text-lg`}></i>
+                            </div>
+                            
+                            <h4 className={`font-bold text-base mb-2 ${
+                              isActive ? 'text-gray-900' : 'text-gray-800'
+                            }`}>
+                              {project.title}
+                            </h4>
+                            
+                            <p className="text-sm text-gray-700 line-clamp-2 mb-3">
+                              {project.description}
+                            </p>
+                          </div>
+                          
+                          <div className="mt-auto pt-3 border-t border-white/30">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <div className={`p-1 rounded-md ${
+                                  isActive 
+                                    ? 'bg-[#66388C]/20 border border-[#66388C]/30' 
+                                    : 'bg-white/20 border border-white/30'
+                                }`}>
+                                  <i className={`fas fa-hashtag ${isActive ? 'text-[#66388C]' : 'text-gray-700'} text-xs`}></i>
+                                </div>
+                                <span className={`text-sm font-semibold ${
+                                  isActive ? 'text-[#66388C]' : 'text-gray-700'
+                                }`}>
+                                  Projeto {project.id}
+                                </span>
+                              </div>
+                              
+                              {isActive && (
+                                <div className="absolute top-3 right-3 bg-[#66388C] text-white text-xs px-2 py-1 rounded-full shadow-md">
+                                  <i className="fas fa-check mr-1"></i>
+                                  Ativo
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    )
+                  })}
                 </div>
 
-                {/* Navigation Dots */}
-                <div className="flex justify-center gap-3 mt-8">
-                  {projects.map((project, index) => (
+                <div className="flex justify-center gap-2">
+                  {projects.map((_, index) => (
                     <button
-                      key={project.id}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 ${
+                      key={index}
+                      onClick={() => handleSlideChange(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
                         currentSlide === index 
-                          ? 'bg-[#66388C] text-white shadow-lg scale-105' 
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          ? 'bg-[#66388C] scale-125' 
+                          : 'bg-gray-300 hover:bg-gray-400'
                       }`}
-                    >
-                      <div className={`w-2 h-2 rounded-full ${
-                        currentSlide === index ? 'bg-white' : 'bg-gray-400'
-                      }`} />
-                      <span className="text-sm font-medium">{project.title.split(' ')[0]}</span>
-                    </button>
+                    />
                   ))}
                 </div>
               </div>
 
-              {/* Right Side - Featured Content */}
-              <div className="bg-gradient-to-br from-[#66388C] to-[#7A45A3] p-6 sm:p-8 md:p-12 text-white relative overflow-hidden group">
-                {/* Background Pattern */}
+              <div className="bg-gradient-to-br from-[#66388C] to-[#7A45A3] p-8 text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 right-4 w-20 h-20 bg-white rounded-full transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-[#FAB900] rounded-full transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#FAB900] rounded-full opacity-20 blur-xl" />
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full" />
+                  <div className="absolute bottom-4 left-4 w-12 h-12 bg-[#FAB900] rounded-full" />
                 </div>
 
-                {/* Main Content */}
-                <div className="relative z-10 h-full flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="bg-[#FAB900] p-2 rounded-lg transition-transform duration-300 group-hover:scale-110">
-                      <currentProject.featured.icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-500">
-                      {currentProject.featured.title}
-                    </h3>
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm mb-4 self-start">
+                    <i className="fas fa-crown"></i>
+                    <span>Projeto em Destaque</span>
                   </div>
 
-                  <p className="text-base sm:text-lg md:text-xl leading-relaxed text-white/90 mb-6 transition-all duration-500">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="bg-white/20 p-3 rounded-lg flex-shrink-0">
+                      <i className={`${currentProject.featured.icon} text-xl`}></i>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-1">
+                        {currentProject.featured.title}
+                      </h3>
+                      <p className="text-white/70 text-sm flex items-center gap-1">
+                        <i className="fas fa-tag"></i>
+                        {projects[currentSlide].title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-white/90 text-base mb-6 flex-grow leading-relaxed">
                     {currentProject.featured.description}
                   </p>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 mb-6">
+                    <h4 className="font-semibold text-white/80 text-sm flex items-center gap-2">
+                      <i className="fas fa-medal"></i>
+                      Principais Benefícios:
+                    </h4>
                     {currentProject.featured.benefits.map((benefit, index) => (
-                      <div 
-                        key={index}
-                        className="flex items-center gap-3 transition-transform duration-300 group-hover:translate-x-2"
-                        style={{ transitionDelay: `${index * 100}ms` }}
-                      >
-                        <div className="flex-shrink-0 w-2 h-2 bg-[#FAB900] rounded-full" />
-                        <span className="text-white/90 text-sm sm:text-base">{benefit}</span>
+                      <div key={index} className="flex items-start gap-3 p-2 bg-white/10 rounded-lg">
+                        <div className="w-6 h-6 rounded-full bg-[#FAB900]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <i className="fas fa-check text-[#FAB900] text-xs"></i>
+                        </div>
+                        <span className="text-white/90 text-sm flex-1">{benefit}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Progress Indicator */}
-                  <div className="flex items-center gap-2 mt-8 pt-6 border-t border-white/20">
-                    <div className="flex items-center gap-2 text-white/70">
-                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
-                        {currentSlide + 1}
+                  <div className="pt-4 border-t border-white/20 mt-auto">
+                    <div className="flex items-center justify-between text-sm text-white/80 mb-2">
+                      <div className="flex items-center gap-2">
+                        <i className="fas fa-arrow-right-arrow-left"></i>
+                        <span>Projeto {currentSlide + 1} de {projects.length}</span>
                       </div>
-                      <span className="text-sm">de {projects.length}</span>
+                      <div className="flex items-center gap-2">
+                        <i className="fas fa-project-diagram"></i>
+                        <span className="font-medium">{currentProject.title}</span>
+                      </div>
                     </div>
-                    <div className="flex-1 h-1 bg-white/20 rounded-full">
+                    <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-[#FAB900] rounded-full transition-all duration-500 ease-out"
+                        className="h-full bg-gradient-to-r from-[#FAB900] to-[#FFD166] rounded-full transition-all duration-700"
                         style={{ width: `${((currentSlide + 1) / projects.length) * 100}%` }}
                       />
                     </div>
@@ -240,96 +338,63 @@ export function ActionsProjects() {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 z-20 group"
-              aria-label="Slide anterior"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 z-20 group"
-              aria-label="Próximo slide"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="lg:hidden flex justify-between items-center p-4 border-t border-gray-100">
+              <button
+                onClick={prevSlide}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 text-sm"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span>Anterior</span>
+              </button>
+              
+              <div className="flex items-center gap-1">
+                {projects.map((_, index) => (
+                  <div 
+                    key={index}
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      currentSlide === index ? 'bg-[#66388C]' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={nextSlide}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 text-sm"
+              >
+                <span>Próximo</span>
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
+
+          <div className="hidden lg:flex items-center justify-between mt-6 px-2">
+            <div className="flex items-center gap-3 text-sm text-gray-500">
+              <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`} />
+              <i className={`fas ${isAutoPlaying ? 'fa-sync-alt animate-spin' : 'fa-pause'} text-gray-400`}></i>
+              <span>{isAutoPlaying ? 'Rotação automática ativa' : 'Rotação pausada'}</span>
+            </div>
+            
+            <div className="flex gap-3">
+              <button
+                onClick={prevSlide}
+                className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors flex items-center gap-2 px-4"
+              >
+                <i className="fas fa-chevron-left"></i>
+                <span className="text-sm">Anterior</span>
+              </button>
+              <button
+                onClick={nextSlide}
+                className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors flex items-center gap-2 px-4"
+              >
+                <span className="text-sm">Próximo</span>
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
-  )
-}
-
-// Project Card Component
-function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
-  const Icon = project.icon
-
-  const getCardPosition = () => {
-    if (isActive) {
-      return "z-30 scale-100 opacity-100 translate-x-0 cursor-default"
-    }
-    return "z-10 scale-75 opacity-30 translate-x-0 cursor-pointer hover:opacity-50"
-  }
-
-  return (
-    <div
-      className={`
-        absolute inset-0 transition-all duration-500 ease-out cursor-pointer
-        ${getCardPosition()}
-      `}
-      onClick={onClick}
-    >
-      <div className={`
-        bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-2 h-full
-        transition-all duration-300
-        ${isActive 
-          ? 'border-[#66388C] shadow-xl cursor-default' 
-          : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
-        }
-      `}>
-        {/* Icon */}
-        <div className={`
-          w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r flex items-center justify-center mb-4
-          transition-transform duration-300
-          ${isActive ? 'scale-110' : 'scale-100'}
-          ${project.color}
-        `}>
-          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-        </div>
-
-        {/* Content */}
-        <h3 className={`
-          text-xl sm:text-2xl font-bold mb-3 transition-colors duration-300
-          ${isActive ? 'text-gray-900' : 'text-gray-600'}
-        `}>
-          {project.title}
-        </h3>
-        
-        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-          {project.description}
-        </p>
-
-        {/* Active Indicator */}
-        {isActive && (
-          <div className="absolute bottom-4 right-4 animate-pulse">
-            <div className="bg-[#66388C] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-              ATUAL
-            </div>
-          </div>
-        )}
-
-        {/* Hover Arrow for inactive cards */}
-        {!isActive && (
-          <div className="absolute bottom-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <div className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded-full">
-              <ChevronRight className="w-3 h-3 inline" />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
   )
 }

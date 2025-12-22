@@ -1,4 +1,3 @@
-// components/sections/Footer.tsx
 "use client"
 
 import { useState } from "react"
@@ -67,30 +66,22 @@ export function Footer() {
       text: "projeto.vemcomigooficial@gmail.com", 
       href: "mailto:projeto.vemcomigooficial@gmail.com" 
     },
-
     { 
       icon: Phone, 
       text: "61 99254-0195 - Prof. Especialista Márcia Delgado", 
       href: "https://wa.me/5561992540195" 
     },
-
     { 
       icon: Phone, 
       text: "61 99635-9100 - Prof. Doutoranda Rita de Cássia Rezende", 
       href: "https://wa.me/5561996359100" 
     },
-
     { 
       icon: MapPin, 
       text: "Horário de Atendimento: 08h às 18h", 
       href: "#" 
     }
   ]
-
-
-  // ------------------------------------------------------------
-  // 🔥 SEÇÃO DA EQUIPE DO SITE (MODERNA E ELEGANTE)
-  // ------------------------------------------------------------
 
   const team = [
     {
@@ -115,23 +106,19 @@ export function Footer() {
     }
   ]
 
-
   return (
     <footer className="bg-[#0d0d0f] text-white border-t border-white/5">
       <div className="relative">
-
-        {/* BACKGROUND LIGHTS */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="w-72 h-72 bg-purple-600/20 blur-3xl rounded-full absolute -top-10 -left-10" />
-          <div className="w-72 h-72 bg-yellow-500/20 blur-3xl rounded-full absolute bottom-0 right-0" />
+          <div className="w-72 h-72 bg-[#66388C]/20 blur-3xl rounded-full absolute -top-10 -left-10" />
+          <div className="w-72 h-72 bg-[#FAB900]/20 blur-3xl rounded-full absolute bottom-0 right-0" />
         </div>
 
-        <div className="relative container mx-auto px-6 max-w-7xl py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="relative container mx-auto px-6 max-w-6xl py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          {/* BRAND */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#66388C] to-[#8B5DAF] rounded-xl flex items-center justify-center shadow-lg">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -168,18 +155,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* QUICK LINKS */}
           <div>
             <h3 className="text-lg font-semibold mb-6 tracking-wide">
               Links Rápidos
-              <div className="w-12 h-1 bg-purple-600 rounded-full mt-1" />
+              <div className="w-12 h-1 bg-[#66388C] rounded-full mt-1" />
             </h3>
 
             <ul className="space-y-3">
               {quickLinks.map((link, i) => (
                 <li key={i}>
                   <a href={link.href} className="flex items-center gap-2 text-gray-300 hover:text-white transition group text-sm">
-                    <ArrowRight className="w-4 h-4 text-purple-500 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#66388C] group-hover:translate-x-1 transition-transform" />
                     {link.name}
                   </a>
                 </li>
@@ -187,18 +173,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* SERVICES */}
           <div>
             <h3 className="text-lg font-semibold mb-6 tracking-wide">
               Nossos Serviços
-              <div className="w-12 h-1 bg-yellow-500 rounded-full mt-1" />
+              <div className="w-12 h-1 bg-[#FAB900] rounded-full mt-1" />
             </h3>
 
             <ul className="space-y-4">
               {services.map(({ name, icon: Icon }, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm group">
-                    <div className="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-yellow-500/20 transition">
+                    <div className="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center group-hover:bg-[#FAB900]/20 transition">
                       <Icon className="w-5 h-5" />
                     </div>
                     {name}
@@ -208,11 +193,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* NEWSLETTER + CONTATO */}
           <div>
             <h3 className="text-lg font-semibold mb-6 tracking-wide">
               Contato & Newsletter
-              <div className="w-12 h-1 bg-purple-600 rounded-full mt-1" />
+              <div className="w-12 h-1 bg-[#66388C] rounded-full mt-1" />
             </h3>
 
             <p className="text-gray-300/80 text-sm mb-4">
@@ -227,12 +211,12 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="seu@email.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-600 outline-none transition"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-[#66388C] outline-none transition"
                 />
 
                 <button
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 bg-purple-700 hover:bg-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 bg-[#66388C] hover:bg-[#8B5DAF] text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -260,7 +244,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition"
                 >
-                  <Icon className="w-4 h-4 text-yellow-500" />
+                  <Icon className="w-4 h-4 text-[#FAB900]" />
                   <span className="hover:underline">{text}</span>
                 </a>
               ))}
@@ -268,12 +252,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* ------------------------------------------------------- */}
-        {/* 🔥 SEÇÃO DA EQUIPE — MODERNA, CENTRALIZADA E ELEGANTE */}
-        {/* ------------------------------------------------------- */}
-
-        <div className="container mx-auto max-w-7xl px-6 mb-10">
-          <h3 className="text-center text-xl font-semibold mb-12 tracking-wide ">
+        <div className="container mx-auto max-w-6xl px-6 mb-10">
+          <h3 className="text-center text-xl font-semibold mb-12 tracking-wide">
             Equipe de Desenvolvimento
           </h3>
 
@@ -299,14 +279,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
         <div className="border-t border-white/10 bg-black/20">
-          <div className="container mx-auto px-6 max-w-7xl py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="container mx-auto px-6 max-w-6xl py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-xs">&copy; Vem Comigo. Todos os direitos reservados.</p>
 
             <button
               onClick={scrollToTop}
-              className="bg-purple-700 hover:bg-purple-600 text-white p-2 rounded-full shadow-lg hover:shadow-xl transition"
+              className="bg-[#66388C] hover:bg-[#8B5DAF] text-white p-2 rounded-full shadow-lg hover:shadow-xl transition"
             >
               <ChevronUp className="w-5 h-5" />
             </button>

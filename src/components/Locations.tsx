@@ -1,3 +1,4 @@
+"use client"
 import {
   ExternalLink,
   School,
@@ -69,7 +70,7 @@ export function Locations() {
       since: "2024",
       coordinates: { top: "27%", left: "59%" },
       googleMapsUrl:
-        "https://www.google.com/maps/search/CED+04+GUARÁ+Quadra+4+Guará+DF",
+        "https://www.google.com/maps/search/CED+04+GUARÁ+Quadra 4+Guará+DF",
     },
     {
       id: 7,
@@ -88,27 +89,87 @@ export function Locations() {
   return (
     <section
       id="Locais"
-      className="bg-gradient-to-br from-[#66388C] via-[#7A45A3] to-[#FAB900] relative overflow-hidden py-10 md:py-12 scroll-mt-12 md:scroll-mt-20"
+      className="relative overflow-hidden py-16 md:py-24 scroll-mt-20"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl" />
-        <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#FAB900]/20 rounded-full blur-2xl" />
-        <div className="absolute top-1/2 left-1/3 w-14 h-14 bg-white/5 rounded-full blur-lg" />
-        <div className="absolute bottom-20 left-20 w-20 h-20 bg-[#FAB900]/15 rounded-full blur-xl" />
+      {/* Fundo muito mais bonito e complexo */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradiente principal com animação sutil */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/95 via-indigo-900/90 to-amber-500/90" />
+        
+        {/* Padrão geométrico de fundo */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(250,185,0,0.15)_0%,transparent_50%),radial-gradient(circle_at_70%_70%,rgba(102,56,140,0.2)_0%,transparent_50%),radial-gradient(circle_at_90%_20%,rgba(255,255,255,0.1)_0%,transparent_40%)] animate-pulse" style={{animationDuration: '6s'}} />
+        
+        {/* Círculos decorativos grandes com animações */}
+        <div className="absolute -top-40 -right-20 w-[500px] h-[500px] bg-gradient-to-br from-purple-600/20 to-amber-500/20 rounded-full blur-3xl animate-float" style={{animationDuration: '20s'}} />
+        <div className="absolute -bottom-40 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-700/15 to-amber-400/15 rounded-full blur-3xl animate-float-slow" style={{animationDuration: '25s'}} />
+        <div className="absolute top-1/4 -left-32 w-[400px] h-[400px] bg-gradient-to-r from-purple-500/10 to-transparent rounded-full blur-2xl" />
+        <div className="absolute bottom-1/4 -right-32 w-[450px] h-[450px] bg-gradient-to-l from-amber-400/10 to-transparent rounded-full blur-2xl" />
+        
+        {/* Círculos médios flutuantes */}
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-br from-white/5 to-purple-300/5 rounded-full blur-xl animate-float" style={{animationDuration: '15s', animationDelay: '2s'}} />
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-gradient-to-tr from-amber-300/10 to-white/5 rounded-full blur-xl animate-float-slow" style={{animationDuration: '18s', animationDelay: '1s'}} />
+        
+        {/* Círculos pequenos decorativos */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-purple-400/10 to-amber-300/10 rounded-full blur-lg animate-pulse" style={{animationDuration: '4s'}} />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-l from-amber-400/15 to-purple-400/15 rounded-full blur-lg animate-pulse" style={{animationDuration: '5s'}} />
+        
+        {/* Pontos luminosos flutuantes */}
+        <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-amber-300/40 rounded-full animate-bounce" style={{animationDelay: '0.5s'}} />
+        <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-purple-300/50 rounded-full animate-bounce" style={{animationDelay: '1s'}} />
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-white/60 rounded-full animate-bounce" style={{animationDelay: '1.5s'}} />
+        <div className="absolute top-3/4 right-1/4 w-2.5 h-2.5 bg-amber-200/50 rounded-full animate-bounce" style={{animationDelay: '0.8s'}} />
+        
+        {/* Linhas diagonais decorativas */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rotate-12" />
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber-300/50 to-transparent -rotate-6" />
+          <div className="absolute top-3/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-300/50 to-transparent rotate-45" />
+        </div>
+        
+        {/* Efeito de partículas finas */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,theme(colors.purple.400/0.1),transparent)]" />
+
+        {/* Efeito de brilho no centro */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-transparent via-purple-500/5 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-8 md:mb-10">
-          <SectionTitle prefix="Onde" highlighted="Atuamos" />
+        {/* Header com efeitos especiais */}
+        <div className="text-center mb-12 md:mb-16 relative">
+          {/* Elemento decorativo atrás do título */}
+          <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-amber-400/10 rounded-full blur-xl -z-10" />
+          <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-gradient-to-tr from-amber-400/10 to-purple-500/10 rounded-full blur-xl -z-10" />
+          
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-center mb-4 relative">
+            <span className="relative inline-block">
+              Onde{" "}
+              <span className="bg-gradient-to-r from-white via-amber-200 to-[#FAB900] bg-clip-text text-transparent">
+                Atuamos
+              </span>
+              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full" />
+            </span>
+          </h2>
+          
+          <div className="relative w-48 h-1 mx-auto overflow-hidden rounded-full bg-gradient-to-r from-transparent via-white/50 to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 to-transparent animate-shimmer" style={{animationDuration: '3s'}} />
+          </div>
+          
+          <p className="text-white/80 text-lg md:text-xl mt-6 max-w-2xl mx-auto">
+            Conheça as escolas públicas do Guará que estão transformando vidas através da educação emocional
+          </p>
         </div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-5 md:gap-6">
-          <div className="space-y-4">
-            <div className="mb-4">
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <div className="mb-6 relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/5 to-amber-500/5 rounded-2xl blur-xl -z-10" />
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-br from-white/20 to-white/10 rounded-lg backdrop-blur-sm">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
                 Nossa Presença no Guará
               </h3>
-              <p className="text-sm text-white/90 leading-relaxed">
+              <p className="text-white/90 leading-relaxed text-lg backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10">
                 Estamos presentes em escolas públicas do Distrito Federal,
                 levando nosso projeto para comunidades que mais precisam de
                 apoio. Atualmente atendemos 7 escolas no Guará, incluindo
@@ -123,7 +184,7 @@ export function Locations() {
             />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             <InteractiveMapCard
               schools={schools}
               selectedSchool={selectedSchool}
@@ -132,27 +193,48 @@ export function Locations() {
           </div>
         </div>
       </div>
-    </section>
-  );
-}
 
-function SectionTitle({
-  prefix,
-  highlighted,
-}: {
-  prefix: string;
-  highlighted: string;
-}) {
-  return (
-    <div className="inline-block">
-      <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight text-center">
-        {prefix}{" "}
-        <span className="bg-gradient-to-r from-white to-[#FAB900] bg-clip-text text-transparent">
-          {highlighted}
-        </span>
-      </h2>
-      <div className="h-0.5 w-28 md:w-36 mx-auto bg-gradient-to-r from-white/50 to-[#FAB900]/50 rounded-full mt-2" />
-    </div>
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+        
+        @keyframes float-slow {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(90deg);
+          }
+        }
+        
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        
+        .animate-float {
+          animation: float ease-in-out infinite;
+        }
+        
+        .animate-float-slow {
+          animation: float-slow ease-in-out infinite;
+        }
+        
+        .animate-shimmer {
+          animation: shimmer linear infinite;
+        }
+      `}</style>
+    </section>
   );
 }
 
@@ -166,80 +248,75 @@ function SchoolList({
   onSchoolSelect: (school: any) => void;
 }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-3">
-      <div className="flex items-center gap-2 mb-3">
-        <School className="w-4 h-4 text-white" />
-        <h4 className="text-sm md:text-base font-bold text-white">
-          Escolas Atendidas
-        </h4>
-        <span className="bg-[#FAB900] text-white text-xs font-bold rounded-full px-2 py-0.5 ml-auto flex-shrink-0">
-          {schools.length} escolas
-        </span>
-      </div>
+    <div className="relative">
+      <div className="absolute -inset-4 bg-gradient-to-br from-purple-500/10 via-transparent to-amber-500/10 rounded-2xl blur-xl -z-10" />
+      <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-4 shadow-2xl">
+        <div className="flex items-center justify-between mb-3 px-2">
+          <div className="flex items-center gap-2">
+            <div className="p-1.5 bg-gradient-to-br from-white/20 to-white/10 rounded-lg">
+              <School className="w-4 h-4 text-white" />
+            </div>
+            <h4 className="text-base font-bold text-white">
+              Escolas Atendidas
+            </h4>
+          </div>
+          <span className="bg-gradient-to-r from-[#FAB900] to-amber-400 text-white text-xs font-bold rounded-full px-2.5 py-1 shadow-lg">
+            {schools.length} escolas
+          </span>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-        {schools.map((school) => (
-          <button
-            key={school.id}
-            onClick={() => onSchoolSelect(school)}
-            className={`
-              flex items-start gap-2 p-2.5 rounded-lg transition-all duration-300 cursor-pointer
-              backdrop-blur-sm border relative overflow-hidden group w-full
-              ${
-                selectedSchool.id === school.id
-                  ? "bg-white/20 border-white/30 shadow-lg"
-                  : "bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/30"
-              }
-              text-left
-            `}
-          >
-            {selectedSchool.id === school.id && (
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-[#FAB900]/10 to-transparent animate-pulse" />
-            )}
-
-            <div
-              className={`
-              w-7 h-7 rounded-full flex-shrink-0 relative z-10
-              flex items-center justify-center transition-all duration-300
-              ${
-                selectedSchool.id === school.id
-                  ? "bg-[#FAB900] text-white shadow-md shadow-[#FAB900]/30"
-                  : "bg-white/20 text-white group-hover:bg-white/30"
-              }
-            `}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          {schools.map((school) => (
+            <button
+              key={school.id}
+              onClick={() => onSchoolSelect(school)}
+              className={`group relative flex items-center gap-3 p-3 rounded-lg transition-all duration-200 cursor-pointer w-full text-left ${selectedSchool.id === school.id
+                  ? "bg-gradient-to-r from-white/30 to-white/20 border-white/40 shadow-md"
+                  : "bg-white/10 border-white/15 hover:bg-gradient-to-r hover:from-white/15 hover:to-white/10 hover:border-white/25"
+                } border backdrop-blur-sm overflow-hidden`}
             >
-              <span className="font-bold text-xs">
-                {school.id}
-              </span>
-            </div>
-
-            <div className="relative z-10 flex-1 min-w-0">
-              <span className="text-white font-semibold block text-sm">
-                {school.name}
-              </span>
               {selectedSchool.id === school.id && (
-                <span className="text-white/70 text-xs block mt-0.5">
-                  {school.address}
-                </span>
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-[#FAB900]/20 to-transparent" />
+                  <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#FAB900]/20 to-transparent rounded-bl-full" />
+                </>
               )}
-              <div className="flex items-center gap-1.5 mt-1 text-xs text-white/60 flex-wrap">
-                <Users className="w-3 h-3 flex-shrink-0" />
-                <span>{school.students} alunos</span>
-                <span className="flex-shrink-0">•</span>
-                <Calendar className="w-3 h-3 flex-shrink-0" />
-                <span>Desde {school.since}</span>
-              </div>
-            </div>
 
-            {selectedSchool.id === school.id && (
-              <div className="relative z-10 flex-shrink-0">
-                <div className="bg-[#FAB900] rounded-full p-1">
-                  <MapPin className="w-3 h-3 text-white" />
-                </div>
+              <div className={`relative z-10 w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-200 ${selectedSchool.id === school.id
+                  ? "bg-gradient-to-br from-[#FAB900] to-amber-400 text-white shadow-md shadow-[#FAB900]/40"
+                  : "bg-white/20 text-white group-hover:bg-gradient-to-br group-hover:from-white/30 group-hover:to-white/20"
+                }`}
+              >
+                <span className="font-bold text-xs">{school.id}</span>
               </div>
-            )}
-          </button>
-        ))}
+
+              <div className="relative z-10 flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-white font-semibold text-sm truncate">
+                    {school.name}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs text-white/70">
+                    <Users className="w-3 h-3 flex-shrink-0" />
+                    <span>{school.students}</span>
+                  </div>
+                </div>
+                {selectedSchool.id === school.id && (
+                  <span className="text-white/80 text-xs block mt-1 truncate">
+                    {school.address}
+                  </span>
+                )}
+              </div>
+
+              {selectedSchool.id === school.id && (
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="bg-gradient-to-br from-[#FAB900] to-amber-400 rounded-full p-1.5 shadow-md">
+                    <MapPin className="w-3.5 h-3.5 text-white" />
+                  </div>
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -265,97 +342,101 @@ function InteractiveMapCard({
   };
 
   return (
-    <div className="space-y-3">
-      <div className="flex justify-between items-center">
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <button
           onClick={handleViewMap}
-          className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#66388C] rounded-full px-2.5 py-1.5 border border-white/50 hover:border-[#FAB900] hover:text-[#FAB900] hover:scale-105 transition-all duration-300 group/btn text-xs font-bold shadow-lg"
+          className="group/btn inline-flex items-center gap-2 bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-md text-[#66388C] rounded-full px-5 py-3 border border-white/50 hover:border-[#FAB900] hover:from-[#FAB900] hover:to-amber-400 hover:text-white hover:scale-105 transition-all duration-300 text-sm font-bold shadow-xl hover:shadow-2xl hover:shadow-[#FAB900]/30 w-full sm:w-auto"
         >
-          <Navigation className="w-3 h-3 group-hover/btn:rotate-45 transition-transform duration-300" />
+          <Navigation className="w-5 h-5 group-hover/btn:rotate-45 transition-transform duration-300" />
           <span>Ver no Google Maps</span>
-          <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+          <ExternalLink className="w-3 h-3 opacity-70 group-hover/btn:opacity-100" />
         </button>
 
-        <div className="bg-white/95 backdrop-blur-sm rounded-lg px-2 py-1 text-[#66388C] text-xs font-bold border border-white/30 shadow-lg flex items-center gap-1">
-          <MapPin className="w-3 h-3" />
-          Guará/DF
+        <div className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-md rounded-xl px-4 py-3 text-[#66388C] text-sm font-bold border border-white/30 shadow-xl flex items-center gap-2 w-full sm:w-auto justify-center">
+          <MapPin className="w-5 h-5" />
+          <span className="bg-gradient-to-r from-[#66388C] to-purple-600 bg-clip-text text-transparent">
+            Guará/DF
+          </span>
         </div>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl transition-all duration-500 border border-white/20 relative h-56 md:h-72 w-full group">
-        <div className="absolute inset-0 overflow-hidden bg-gray-100">
-          <img
-            src={mapaGuara}
-            alt="Mapa das escolas no Guará"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#66388C]/20 via-transparent to-[#FAB900]/10 pointer-events-none" />
-        </div>
-
-        <div className="absolute inset-0 pointer-events-auto">
-          {schools.map((school) => (
-            <LocationPin
-              key={school.id}
-              school={school}
-              isSelected={selectedSchool.id === school.id}
-              onClick={(e) => handleSchoolPinClick(school, e)}
+      <div className="relative group">
+        <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-transparent to-amber-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+        <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 border border-white/20 relative h-72 w-full">
+          <div className="absolute inset-0 overflow-hidden bg-gray-100">
+            <img
+              src={mapaGuara}
+              alt="Mapa das escolas no Guará"
+              className="w-full h-full object-cover object-center"
             />
-          ))}
-        </div>
-
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <div className="bg-black/80 backdrop-blur-sm rounded-full px-2.5 py-1 text-white text-xs font-medium border border-white/20 shadow-lg flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 text-[#FAB900]" />
-            Clique nos pinos
+            <div className="absolute inset-0 bg-gradient-to-br from-[#66388C]/30 via-transparent to-[#FAB900]/20 pointer-events-none" />
           </div>
+
+          <div className="absolute inset-0 pointer-events-auto">
+            {schools.map((school) => (
+              <LocationPin
+                key={school.id}
+                school={school}
+                isSelected={selectedSchool.id === school.id}
+                onClick={(e) => handleSchoolPinClick(school, e)}
+              />
+            ))}
+          </div>
+          
+          {/* Overlay de brilho */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none" />
         </div>
       </div>
 
-      <div className="bg-white backdrop-blur-md rounded-xl p-3 shadow-2xl border-2 border-[#FAB900] transition-all duration-500">
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="bg-[#66388C] rounded-full p-1.5">
-                <School className="w-3.5 h-3.5 text-white" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-[10px] font-bold text-[#66388C] uppercase tracking-wider">
-                  Escola Selecionada
+      <div className="relative group/card">
+        <div className="absolute -inset-3 bg-gradient-to-r from-[#FAB900]/30 via-purple-500/20 to-[#FAB900]/30 rounded-2xl blur-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 -z-10" />
+        <div className="bg-gradient-to-br from-white via-white/95 to-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border-2 border-[#FAB900] transition-all duration-500">
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-gradient-to-br from-[#66388C] to-purple-600 rounded-xl p-2 shadow-lg">
+                  <School className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-sm md:text-base font-bold text-gray-900 mt-0.5">
-                  {selectedSchool.name}
-                </h3>
+                <div className="min-w-0">
+                  <div className="text-xs font-bold bg-gradient-to-r from-[#66388C] to-purple-600 bg-clip-text text-transparent uppercase tracking-wider">
+                    Escola Selecionada
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-1">
+                    {selectedSchool.name}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-sm mb-3 flex items-start gap-2">
+                <MapPin className="w-5 h-5 text-[#66388C] flex-shrink-0 mt-0.5" />
+                <span>{selectedSchool.address}</span>
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 text-gray-700 bg-gradient-to-r from-gray-100 to-gray-50 rounded-full px-4 py-2 shadow-sm border border-gray-200">
+                  <Users className="w-5 h-5 text-[#66388C] flex-shrink-0" />
+                  <span className="text-sm font-medium">
+                    {selectedSchool.students.toLocaleString()} alunos
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700 bg-gradient-to-r from-gray-100 to-gray-50 rounded-full px-4 py-2 shadow-sm border border-gray-200">
+                  <Calendar className="w-5 h-5 text-[#66388C] flex-shrink-0" />
+                  <span className="text-sm font-medium">
+                    Desde {selectedSchool.since}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <p className="text-gray-600 text-xs mb-2 flex items-start gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0 mt-0.5" />
-              <span>{selectedSchool.address}</span>
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              <div className="flex items-center gap-1.5 text-gray-700 bg-gray-100 rounded-full px-2.5 py-1">
-                <Users className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0" />
-                <span className="text-xs font-medium">
-                  {selectedSchool.students.toLocaleString()} alunos
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 text-gray-700 bg-gray-100 rounded-full px-2.5 py-1">
-                <Calendar className="w-3.5 h-3.5 text-[#66388C] flex-shrink-0" />
-                <span className="text-xs font-medium">
-                  Desde {selectedSchool.since}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-shrink-0">
-            <div className="bg-gradient-to-br from-[#FAB900] to-[#f5a600] text-white rounded-xl px-2.5 py-2 text-center shadow-lg">
-              <div className="text-[10px] font-bold">
-                {selectedSchool.name.includes("CED") ? "CED" : selectedSchool.name.includes("CEM") ? "CEM" : "CEF"}
-              </div>
-              <div className="text-xl font-black leading-none">
-                {selectedSchool.id.toString().padStart(2, "0")}
+            <div className="flex-shrink-0">
+              <div className="bg-gradient-to-br from-[#FAB900] via-amber-400 to-[#f5a600] text-white rounded-xl px-4 py-3 text-center shadow-xl border border-amber-300">
+                <div className="text-xs font-bold tracking-wider">
+                  {selectedSchool.name.includes("CED") ? "CED" : selectedSchool.name.includes("CEM") ? "CEM" : "CEF"}
+                </div>
+                <div className="text-2xl md:text-3xl font-black leading-none mt-1">
+                  {selectedSchool.id.toString().padStart(2, "0")}
+                </div>
               </div>
             </div>
           </div>
@@ -376,14 +457,8 @@ function LocationPin({
 }) {
   return (
     <div
-      className={`
-        absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-500
-        ${
-          isSelected
-            ? "z-40 scale-125"
-            : "z-30 scale-100 hover:scale-110"
-        }
-      `}
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-500 ${isSelected ? "z-40 scale-125" : "z-30 scale-100 hover:scale-110"
+        }`}
       style={{
         top: school.coordinates.top,
         left: school.coordinates.left,
@@ -391,52 +466,33 @@ function LocationPin({
       onClick={onClick}
     >
       <div className="relative group/pin">
-        <div
-          className={`
-          absolute -inset-2 rounded-full transition-all duration-300
-          ${
-            isSelected
-              ? "bg-[#FAB900] animate-pulse opacity-40"
-              : "bg-[#66388C]/30 opacity-0 group-hover/pin:opacity-40"
-          }
-        `}
+        {/* Efeito de pulso para escola selecionada */}
+        {isSelected && (
+          <>
+            <div className="absolute -inset-3 bg-gradient-to-r from-[#FAB900]/40 to-amber-400/40 rounded-full blur-md animate-ping" style={{animationDuration: '2s'}} />
+            <div className="absolute -inset-3 bg-gradient-to-r from-[#FAB900]/20 to-amber-400/20 rounded-full blur-md animate-pulse" style={{animationDuration: '1.5s'}} />
+          </>
+        )}
+
+        {/* Anel externo */}
+        <div className={`absolute -ins-2 rounded-full transition-all duration-300 ${isSelected
+            ? "bg-gradient-to-r from-[#FAB900] to-amber-400 animate-pulse opacity-30"
+            : "bg-gradient-to-r from-[#66388C]/30 to-purple-600/30 opacity-0 group-hover/pin:opacity-30"
+          }`}
         />
 
-        <div className="relative filter drop-shadow-lg">
+        {/* Pino do mapa */}
+        <div className="relative filter drop-shadow-xl">
           <MapPin
-            className={`
-            w-7 h-7 md:w-8 md:h-8 transition-all duration-300
-            ${
-              isSelected
-                ? "text-[#FAB900] fill-[#FAB900]"
-                : "text-[#66388C] fill-[#66388C] group-hover/pin:text-[#7A45A3] group-hover/pin:fill-[#7A45A3]"
-            }
-          `}
+            className={`w-10 h-10 transition-all duration-300 ${isSelected
+                ? "text-[#FAB900] fill-[#FAB900] drop-shadow-[0_0_10px_rgba(250,185,0,0.5)]"
+                : "text-[#66388C] fill-[#66388C] group-hover/pin:text-purple-500 group-hover/pin:fill-purple-500 group-hover/pin:drop-shadow-[0_0_8px_rgba(102,56,140,0.3)]"
+              }`}
           />
 
-          <div
-            className="
-            absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[70%] 
-            text-white font-black text-[10px] pointer-events-none
-            drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]
-          "
-          >
+          {/* Número dentro do pino */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[70%] text-white font-black text-xs pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             {school.id}
-          </div>
-        </div>
-
-        <div className="hidden md:block absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none z-50">
-          <div className="bg-gray-900 text-white text-xs rounded-lg py-2 px-3 whitespace-nowrap shadow-2xl border border-white/10 max-w-[200px]">
-            <div className="font-bold text-[#FAB900]">
-              {school.name}
-            </div>
-            <div className="text-white/80 text-[10px] mt-1 flex items-center gap-1">
-              <Users className="w-3 h-3 text-[#FAB900]" />
-              {school.students.toLocaleString()} alunos
-            </div>
-          </div>
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px">
-            <div className="border-[6px] border-transparent border-t-gray-900" />
           </div>
         </div>
       </div>

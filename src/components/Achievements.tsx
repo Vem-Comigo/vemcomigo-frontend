@@ -1,4 +1,3 @@
-// components/sections/Achievements.tsx
 "use client";
 
 import { Users, School, Calendar, Heart, Sparkles } from "lucide-react";
@@ -15,10 +14,10 @@ export function Achievements() {
       number: "200", 
       suffix: "+",
       label: "Alunos Participantes",
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-gradient-to-br from-purple-50 to-white",
-      borderColor: "border-purple-200",
-      textColor: "text-purple-800",
+      color: "from-[#66388C] to-[#8B5DAF]",
+      bgColor: "bg-gradient-to-br from-[#66388C]/5 to-[#8B5DAF]/5",
+      borderColor: "border-[#66388C]/20",
+      textColor: "text-[#66388C]",
       iconColor: "#66388C",
       description: "Jovens impactados diretamente"
     },
@@ -27,10 +26,10 @@ export function Achievements() {
       number: "7", 
       suffix: "",
       label: "Escolas Participantes",
-      color: "from-yellow-500 to-amber-600",
-      bgColor: "bg-gradient-to-br from-amber-50 to-white",
-      borderColor: "border-amber-200",
-      textColor: "text-amber-800",
+      color: "from-[#FAB900] to-[#FFD166]",
+      bgColor: "bg-gradient-to-br from-[#FAB900]/5 to-[#FFD166]/5",
+      borderColor: "border-[#FAB900]/20",
+      textColor: "text-[#FAB900]",
       iconColor: "#FAB900",
       description: "Instituições parceiras"
     },
@@ -39,10 +38,10 @@ export function Achievements() {
       number: "20", 
       suffix: "+",
       label: "Eventos Realizados",
-      color: "from-purple-600 to-purple-700",
-      bgColor: "bg-white",
-      borderColor: "border-purple-100",
-      textColor: "text-purple-900",
+      color: "from-[#8B5DAF] to-[#66388C]",
+      bgColor: "bg-gradient-to-br from-[#8B5DAF]/5 to-[#66388C]/5",
+      borderColor: "border-[#8B5DAF]/20",
+      textColor: "text-[#8B5DAF]",
       iconColor: "#8B5DAF",
       description: "Atividades desenvolvidas"
     },
@@ -51,46 +50,41 @@ export function Achievements() {
       number: "95", 
       suffix: "%",
       label: "Satisfação",
-      color: "from-yellow-600 to-orange-600",
-      bgColor: "bg-gradient-to-br from-orange-50 to-white",
-      borderColor: "border-orange-200",
-      textColor: "text-orange-800",
-      iconColor: "#FF8C00",
+      color: "from-[#66388C] to-[#FAB900]",
+      bgColor: "bg-gradient-to-br from-[#66388C]/5 to-[#FAB900]/5",
+      borderColor: "border-[#66388C]/20",
+      textColor: "text-[#66388C]",
+      iconColor: "#66388C",
       description: "Feedback positivo"
     }
   ];
 
-  // Animações de entrada - MAIS RÁPIDAS
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animação do título - delay reduzido de 0.2 para 0
       gsap.from(".section-title", {
         y: 50,
         opacity: 0,
-        duration: 0.6, // reduzido de 1
+        duration: 0.8,
         ease: "power3.out",
-        delay: 0 // reduzido de 0.2
       });
 
-      // Animação da descrição - delay reduzido
       gsap.from(".section-description", {
         y: 30,
         opacity: 0,
-        duration: 0.5, // reduzido de 0.8
-        delay: 0.15, // reduzido de 0.5
+        duration: 0.6,
+        delay: 0.2,
         ease: "power2.out"
       });
 
-      // Animação dos cards com stagger - delay reduzido
       gsap.from(".achievement-card", {
         y: 60,
         opacity: 0,
         scale: 0.8,
-        stagger: 0.08, // reduzido de 0.15
-        duration: 0.5, // reduzido de 0.8
-        delay: 0.3, // reduzido de 0.8
+        stagger: 0.1,
+        duration: 0.6,
+        delay: 0.4,
         ease: "back.out(1.4)"
       });
 
@@ -103,14 +97,14 @@ export function Achievements() {
     <section 
       ref={sectionRef}
       id="Conquistas" 
-      className="relative py-20 md:py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+      className="relative py-16 md:py-24 bg-gradient-to-b from-white to-[#F8F9FA] scroll-mt-20"
     >
-      {/* Elementos decorativos de fundo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/30 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-amber-100/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#66388C]/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-64 h-64 bg-gradient-to-tr from-[#FAB900]/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-bl from-[#8B5DAF]/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-gradient-to-tr from-[#66388C]/10 to-transparent rounded-full blur-3xl" />
         
-        {/* Grid sutil */}
         <div 
           className="absolute inset-0 opacity-5"
           style={{
@@ -123,9 +117,8 @@ export function Achievements() {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Cabeçalho da seção */}
-        <div className="text-center mb-16 md:mb-24">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+        <div className="text-center mb-16 md:mb-20">
           <h2 className="section-title text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="text-gray-900">Nossas</span>{" "}
             <span className="relative">
@@ -136,13 +129,12 @@ export function Achievements() {
             </span>
           </h2>
           
-          <p className="section-description text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="section-description text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
             Resultados que mostram o impacto positivo do nosso trabalho na comunidade escolar
           </p>
         </div>
 
-        {/* Grid de conquistas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <AchievementCard
               key={index}
@@ -156,14 +148,11 @@ export function Achievements() {
             />
           ))}
         </div>
-
-       
       </div>
     </section>
   );
 }
 
-// Componente Achievement Card
 function AchievementCard({ 
   stat, 
   isAnimated,
@@ -180,17 +169,15 @@ function AchievementCard({
   useEffect(() => {
     if (!cardRef.current) return;
 
-    // Animar número quando entrar na viewport - threshold reduzido para começar mais cedo
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isAnimated) {
             onAnimate();
             
-            // Animar contagem - MAIS RÁPIDO
             const targetNumber = parseInt(stat.number);
             let current = 0;
-            const increment = targetNumber / 40; // reduzido de 50 para 40 para ser mais rápido
+            const increment = targetNumber / 40;
             
             const timer = setInterval(() => {
               current += increment;
@@ -206,16 +193,15 @@ function AchievementCard({
                 : Math.floor(current).toString();
               
               setDisplayNumber(displayValue);
-            }, 25); // reduzido de 40 para 25ms para animação mais rápida
+            }, 25);
           }
         });
       },
-      { threshold: 0.2 } // reduzido de 0.5 para 0.2 - inicia animação mais cedo
+      { threshold: 0.2 }
     );
 
     observer.observe(cardRef.current);
 
-    // Efeito de hover com GSAP - MAIS RÁPIDO
     const card = cardRef.current;
     
     const handleMouseEnter = () => {
@@ -223,7 +209,7 @@ function AchievementCard({
       gsap.to(card, {
         y: -10,
         scale: 1.05,
-        duration: 0.2, // reduzido de 0.3
+        duration: 0.2,
         ease: "power2.out"
       });
     };
@@ -233,7 +219,7 @@ function AchievementCard({
       gsap.to(card, {
         y: 0,
         scale: 1,
-        duration: 0.2, // reduzido de 0.3
+        duration: 0.2,
         ease: "power2.out"
       });
     };
@@ -253,78 +239,64 @@ function AchievementCard({
       ref={cardRef}
       className="achievement-card group relative"
     >
-      {/* Cartão principal */}
       <div className={`relative ${stat.bgColor} rounded-2xl p-6 md:p-8 text-center shadow-lg 
-        hover:shadow-2xl transition-all duration-300 border ${stat.borderColor} 
-        hover:border-opacity-50 overflow-hidden`}>
+        hover:shadow-2xl transition-all duration-300 border-2 ${stat.borderColor} 
+        hover:border-opacity-70 overflow-hidden`}>
         
-        {/* Efeito de brilho no hover - MAIS RÁPIDO */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent 
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
           -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
-        {/* Ícone decorativo superior - MAIS RÁPIDO */}
         <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-white/80 to-transparent 
           flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
           <Sparkles className="w-6 h-6" style={{ color: stat.iconColor }} />
         </div>
 
-        {/* Conteúdo */}
         <div className="relative z-10 space-y-6">
-          {/* Ícone principal */}
           <div className="flex justify-center">
-            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.color} p-1`}>
-              <div className={`w-full h-full rounded-2xl ${stat.bgColor.includes('gradient') ? 'bg-white' : stat.bgColor} flex items-center justify-center 
-                transition-transform duration-200 ${isHovered ? 'scale-110' : ''}`}>
-                <stat.icon className="w-10 h-10" 
-                  style={{ 
-                    color: stat.iconColor
-                  }} 
-                />
+            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.color} p-1 shadow-lg`}>
+              <div className={`w-full h-full rounded-2xl ${stat.bgColor.includes('gradient') ? 'bg-white/90' : stat.bgColor} flex items-center justify-center 
+                transition-transform duration-200 ${isHovered ? 'scale-110' : ''} backdrop-blur-sm`}>
+                <stat.icon className="w-10 h-10" style={{ color: stat.iconColor }} />
               </div>
             </div>
           </div>
 
-          {/* Número animado */}
           <div className="space-y-2">
             <div className="text-4xl md:text-5xl lg:text-6xl font-bold">
-              <span className={`bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}>
+              <span className={`bg-gradient-to-br ${stat.color} bg-clip-text text-transparent drop-shadow-sm`}>
                 {isAnimated ? displayNumber : `0${stat.suffix}`}
               </span>
             </div>
             
-            {/* Título */}
             <h3 className={`text-lg md:text-xl font-bold ${stat.textColor}`}>
               {stat.label}
             </h3>
             
-            {/* Descrição */}
-            <p className={`text-sm ${stat.textColor.includes('purple') ? 'text-purple-700' : stat.textColor.includes('amber') ? 'text-amber-700' : 'text-orange-700'}`}>
+            <p className={`text-sm font-medium opacity-90 ${stat.textColor}`}>
               {stat.description}
             </p>
           </div>   
         </div>
 
-        {/* Decoração dos cantos - cores personalizadas */}
         <div className={`absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 ${stat.borderColor} rounded-tl-2xl`} />
         <div className={`absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 ${stat.borderColor} rounded-tr-2xl`} />
         <div className={`absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 ${stat.borderColor} rounded-bl-2xl`} />
         <div className={`absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 ${stat.borderColor} rounded-br-2xl`} />
       </div>
 
-      {/* Sombra projetada personalizada - MAIS RÁPIDA */}
       <div className={`absolute inset-0 rounded-2xl -z-10 transition-all duration-300 ${
         isHovered 
-          ? 'bg-gradient-to-br opacity-100 translate-y-4' 
+          ? 'opacity-100 translate-y-4' 
           : 'opacity-0'
       }`}
         style={{ 
-          background: stat.bgColor.includes('purple') 
-            ? 'linear-gradient(135deg, #66388C10, #8B5DAF20)' 
-            : stat.bgColor.includes('amber') 
-            ? 'linear-gradient(135deg, #FAB90010, #FFC10720)'
-            : stat.bgColor.includes('orange')
-            ? 'linear-gradient(135deg, #FF8C0010, #FFA50020)'
-            : 'linear-gradient(135deg, #66388C10, #8B5DAF20)'
+          background: stat.bgColor.includes('[#66388C]') 
+            ? 'linear-gradient(135deg, #66388C20, #8B5DAF30)'
+            : stat.bgColor.includes('[#FAB900]') 
+            ? 'linear-gradient(135deg, #FAB90020, #FFD16630)'
+            : stat.bgColor.includes('[#8B5DAF]')
+            ? 'linear-gradient(135deg, #8B5DAF20, #66388C30)'
+            : 'linear-gradient(135deg, #66388C20, #FAB90030)'
         }}
       />
     </div>
