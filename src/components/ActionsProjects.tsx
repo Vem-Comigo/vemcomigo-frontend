@@ -121,12 +121,7 @@ export function ActionsProjects() {
   return (
     <section id="Ações" className="py-16 md:py-24 bg-white scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#66388C]/10 to-[#FAB900]/10 px-4 py-2 rounded-full mb-4">
-            <i className="fas fa-bullseye text-[#66388C]"></i>
-            <span className="text-sm font-medium text-[#66388C]">4 Projetos Ativos</span>
-          </div>
-          
+        <div className="text-center mb-12 md:mb-16">          
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4">
             Ações &{" "}
             <span className="bg-gradient-to-r from-[#66388C] to-[#FAB900] bg-clip-text text-transparent">
