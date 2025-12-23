@@ -11,28 +11,10 @@ import {
   Shield,
   Users,
   BookOpen,
-  ChevronUp,
 } from "lucide-react"
 
 export function Footer() {
   const [email, setEmail] = useState("")
-  const [isSubscribed, setIsSubscribed] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-
-    setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    setIsSubscribed(true)
-    setEmail("")
-    setIsSubmitting(false)
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
 
   const quickLinks = [
     { name: "Início", href: "#Início" },
@@ -203,11 +185,11 @@ export function Footer() {
               Receba novidades sobre projetos, campanhas e ações sociais.
             </p>
 
-            
             <div className="mt-6 space-y-3">
-              {contactInfo.map(({ icon: Icon, text}, i) => (
+              {contactInfo.map(({ icon: Icon, text, href }, i) => (
                 <a 
                   key={i} 
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition"
