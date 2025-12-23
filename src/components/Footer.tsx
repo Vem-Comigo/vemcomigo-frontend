@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import {
   Instagram,
   Mail,
@@ -14,8 +13,6 @@ import {
 } from "lucide-react"
 
 export function Footer() {
-  const [email, setEmail] = useState("")
-
   const quickLinks = [
     { name: "Início", href: "#Início" },
     { name: "Sobre o Vem Comigo", href: "#Sobre" },
