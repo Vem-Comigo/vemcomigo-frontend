@@ -17,7 +17,7 @@ const heroImages = [
   { src: img5, alt: "Foto da equipe vemcomigo."},
 ]
 
-export function Hero() {
+export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
@@ -104,14 +104,14 @@ export function Hero() {
       <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-white/40 rounded-full" />
 
       <div className="container relative mx-auto px-4 md:px-6 max-w-7xl min-h-[calc(100vh-64px)] flex items-center pt-4">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full py-8 md:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full py-6 md:py-8 lg:py-12">
           
           {/* Coluna de conteúdo */}
-          <div className={`relative z-20 space-y-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`relative z-20 space-y-4 md:space-y-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
             {/* Título principal - ajustado conforme a imagem */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">
                 <span className="block text-white">
                   Educação
                 </span>
@@ -127,27 +127,27 @@ export function Hero() {
               </h1>
 
               {/* Linha decorativa */}
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-yellow-400 rounded-full" />
+              <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-purple-600 to-yellow-400 rounded-full" />
             </div>
 
             {/* Descrição */}
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg lg:text-xl text-gray-800 leading-relaxed max-w-xl">
               Um projeto dedicado ao combate ao bullying e à promoção da saúde mental 
               em escolas públicas do Distrito Federal.
             </p>
 
             {/* CTA Buttons - ajustado conforme imagem */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-1 md:pt-2">
               <button
-                className="group relative bg-purple-700 text-white px-8 py-4 hover:bg-purple-800 active:scale-[0.98] transition-all duration-200 rounded-xl text-base font-semibold shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                className="group relative bg-purple-700 text-white px-6 md:px-8 py-3 md:py-4 hover:bg-purple-800 active:scale-[0.98] transition-all duration-200 rounded-xl text-sm md:text-base font-semibold shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 onClick={() => scrollToSection("Sobre")}
               >
                 Conheça nossas ações
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
-                className="group relative bg-white text-purple-700 px-8 py-4 border-2 border-purple-300 hover:border-purple-500 hover:bg-purple-50 active:scale-[0.98] transition-all duration-200 rounded-xl text-base font-semibold shadow-sm"
+                className="group relative bg-white text-purple-700 px-6 md:px-8 py-3 md:py-4 border-2 border-purple-300 hover:border-purple-500 hover:bg-purple-50 active:scale-[0.98] transition-all duration-200 rounded-xl text-sm md:text-base font-semibold shadow-sm"
                 onClick={() => scrollToSection("Contato")}
               >
                 Participe do Projeto
@@ -155,22 +155,22 @@ export function Hero() {
             </div>
 
             {/* Stats - redesenhado para ficar mais clean */}
-            <div className="grid grid-cols-3 gap-4 pt-6">
+            <div className="grid grid-cols-3 gap-2 md:gap-4 pt-4 md:pt-6">
               {stats.map((stat, idx) => {
                 const Icon = stat.icon
                 return (
                   <div
                     key={idx}
-                    className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white hover:shadow-lg transition-all duration-300"
+                    className="group relative bg-white/80 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 hover:bg-white hover:shadow-lg transition-all duration-300"
                     style={{ transitionDelay: `${idx * 100}ms` }}
                   >
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <div className="p-2 rounded-lg bg-gradient-to-br from-purple-100 to-yellow-100">
-                        <Icon className="w-6 h-6 text-purple-600" />
+                    <div className="flex flex-col items-center text-center gap-1 md:gap-2">
+                      <div className="p-1.5 md:p-2 rounded-lg bg-gradient-to-br from-purple-100 to-yellow-100">
+                        <Icon className="w-4 md:w-6 h-4 md:h-6 text-purple-600" />
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-purple-900">{stat.value}</div>
-                        <div className="text-sm text-purple-800/80 leading-tight mt-1">{stat.label}</div>
+                        <div className="text-lg md:text-2xl font-bold text-purple-900">{stat.value}</div>
+                        <div className="text-xs md:text-sm text-purple-800/80 leading-tight mt-0.5 md:mt-1">{stat.label}</div>
                       </div>
                     </div>
                   </div>
@@ -182,12 +182,12 @@ export function Hero() {
           {/* Coluna da imagem - totalmente responsiva */}
           <div className={`relative z-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div 
-              className="relative overflow-hidden rounded-3xl shadow-2xl group w-full h-full max-h-[600px] transition-all duration-500 hover:shadow-3xl"
+              className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl group w-full h-full max-h-[400px] md:max-h-[500px] lg:max-h-[600px] transition-all duration-500 hover:shadow-3xl"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
               {/* Imagem principal - altura máxima definida */}
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] xl:aspect-[3/4] overflow-hidden rounded-3xl bg-gradient-to-br from-purple-100 to-yellow-100">
+              <div className="relative aspect-[4/3] sm:aspect-[4/4] md:aspect-[3/4] lg:aspect-[4/5] xl:aspect-[3/4] overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-br from-purple-100 to-yellow-100">
                 {heroImages.map((image, idx) => (
                   <div
                     key={idx}
@@ -196,78 +196,70 @@ export function Hero() {
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-full object-cover  transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading={idx === 0 ? "eager" : "lazy"}
                     />
                   </div>
                 ))}
 
-                {/* Barra de navegação - ajustada ao tamanho da imagem */}
-                <div className="absolute bottom-0 left-0 right-0">
-                  <div className="bg-gradient-to-t from-black/70 via-black/50 to-transparent pt-16 pb-4 px-4">
-                    <div className="flex items-center justify-between max-w-[90%] mx-auto">
-                      {/* Botão anterior */}
-                      <button
-                        onClick={prevSlide}
-                        className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg"
-                        aria-label="Imagem anterior"
-                      >
-                        <ChevronRight className="w-5 h-5 text-purple-700 rotate-180" />
-                      </button>
+                {/* Overlay suave */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none" />
+              </div>
+            </div>
 
-                      {/* Indicadores centralizados */}
-                      <div className="flex items-center gap-3">
-                        {heroImages.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => goToSlide(idx)}
-                            className={`transition-all duration-300 ${idx === currentIndex ? "w-3 h-3 bg-white rounded-full shadow-md" : "w-2.5 h-2.5 bg-white/60 rounded-full hover:bg-white hover:scale-125"}`}
-                            aria-label={`Ir para imagem ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
+            {/* Navegação minimalista abaixo da imagem */}
+            <div className="mt-4 md:mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
+              {/* Indicadores de slides */}
+              <div className="flex items-center gap-2 md:gap-2.5">
+                {heroImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToSlide(idx)}
+                    className={`transition-all duration-300 ${
+                      idx === currentIndex 
+                        ? "w-10 md:w-12 h-1.5 md:h-2 bg-purple-700 rounded-full" 
+                        : "w-2 h-2 bg-purple-300 rounded-full hover:bg-purple-500 hover:scale-110"
+                    }`}
+                    aria-label={`Ir para imagem ${idx + 1}`}
+                  />
+                ))}
+              </div>
 
-                      {/* Controles do lado direito */}
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={() => setIsPlaying(!isPlaying)}
-                          className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg"
-                          aria-label={isPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
-                        >
-                          {isPlaying ? (
-                            <Pause className="w-5 h-5 text-purple-700" />
-                          ) : (
-                            <Play className="w-5 h-5 text-purple-700 ml-0.5" />
-                          )}
-                        </button>
+              {/* Controles */}
+              <div className="flex items-center gap-2 md:gap-3">
+                <button
+                  onClick={prevSlide}
+                  className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-purple-100 hover:bg-purple-200 active:scale-95 flex items-center justify-center transition-all duration-200 shadow-sm hover:shadow-md"
+                  aria-label="Imagem anterior"
+                >
+                  <ChevronRight className="w-5 h-5 md:w-5 md:h-5 text-purple-700 rotate-180" />
+                </button>
 
-                        <button
-                          onClick={nextSlide}
-                          className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg"
-                          aria-label="Próxima imagem"
-                        >
-                          <ChevronRight className="w-5 h-5 text-purple-700" />
-                        </button>
-                      </div>
-                    </div>
-                    
-                    {/* Texto sobre a barra de navegação */}
-                    <div className="text-center mt-4">
-                      <p className="text-white/90 text-sm font-medium">
-                        Educação que transforma vidas
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <button
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-purple-700 hover:bg-purple-800 active:scale-95 flex items-center justify-center transition-all duration-200 shadow-md hover:shadow-lg"
+                  aria-label={isPlaying ? "Pausar" : "Reproduzir"}
+                >
+                  {isPlaying ? (
+                    <Pause className="w-5 h-5 text-white" />
+                  ) : (
+                    <Play className="w-5 h-5 text-white ml-0.5" />
+                  )}
+                </button>
 
-                {/* Overlay suave no topo da imagem */}
-                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/30 to-transparent" />
+                <button
+                  onClick={nextSlide}
+                  className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-purple-100 hover:bg-purple-200 active:scale-95 flex items-center justify-center transition-all duration-200 shadow-sm hover:shadow-md"
+                  aria-label="Próxima imagem"
+                >
+                  <ChevronRight className="w-5 h-5 md:w-5 md:h-5 text-purple-700" />
+                </button>
               </div>
             </div>
 
             {/* Info adicional abaixo da imagem em telas grandes */}
-            <div className="hidden lg:block text-center mt-6">
-              <p className="text-sm text-purple-900/70 font-medium">
+            <div className="hidden lg:block text-center mt-4 md:mt-6">
+              <p className="text-xs md:text-sm text-purple-900/70 font-medium">
                 Projeto Vem Comigo - Transformando o futuro através da educação emocional
               </p>
             </div>
@@ -276,72 +268,13 @@ export function Hero() {
       </div>
 
       {/* Responsividade para mobile */}
-      <div className="lg:hidden container px-4">
-        <div className="text-center mt-6">
-          <p className="text-sm text-purple-900/70 font-medium">
+      <div className="lg:hidden container px-4 pb-6">
+        <div className="text-center mt-4">
+          <p className="text-xs md:text-sm text-purple-900/70 font-medium">
             Projeto Vem Comigo - Transformando o futuro através da educação emocional
           </p>
         </div>
       </div>
-
-      <style>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        
-        @media (max-width: 768px) {
-          .grid-cols-2 {
-            grid-template-columns: 1fr;
-          }
-          
-          .coluna-imagem {
-            order: -1;
-            margin-bottom: 2rem;
-          }
-        }
-        
-        @media (max-width: 640px) {
-          .text-5xl {
-            font-size: 2.5rem;
-          }
-          
-          .grid-cols-3 {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-          }
-          
-          .stats-grid div {
-            padding: 1rem;
-          }
-          
-          .stats-grid .text-2xl {
-            font-size: 1.5rem;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .flex-col {
-            flex-direction: column;
-          }
-          
-          button {
-            width: 100%;
-            justify-content: center;
-          }
-          
-          .stats-grid {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-          }
-          
-          .stats-grid div {
-            flex-direction: row;
-            text-align: left;
-            padding: 1rem;
-          }
-        }
-      `}</style>
     </section>
   )
 }

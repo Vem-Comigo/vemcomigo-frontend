@@ -161,6 +161,14 @@ export function Locations() {
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
+            <InteractiveMapCard
+              schools={schools}
+              selectedSchool={selectedSchool}
+              onSchoolSelect={setSelectedSchool}
+            />
+          </div>
+
+          <div className="space-y-6">
             <div className="mb-6 relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/5 to-amber-500/5 rounded-2xl blur-xl -z-10" />
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
@@ -178,14 +186,6 @@ export function Locations() {
             </div>
 
             <SchoolList
-              schools={schools}
-              selectedSchool={selectedSchool}
-              onSchoolSelect={setSelectedSchool}
-            />
-          </div>
-
-          <div className="space-y-6">
-            <InteractiveMapCard
               schools={schools}
               selectedSchool={selectedSchool}
               onSchoolSelect={setSelectedSchool}

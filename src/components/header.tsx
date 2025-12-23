@@ -43,7 +43,7 @@ export function Header() {
           </a>
 
           {/* NAVIGATION */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
             {["Início", "Sobre", "Locais", "Parceiros", "Ações", "Contato"].map((item) => (
               <button
                 key={item}
@@ -57,7 +57,7 @@ export function Header() {
 
           {/* CTA BUTTON - Desktop */}
           <button
-            className="hidden lg:block bg-[#FAB900] text-[#63348C] hover:bg-[#FAB900]/90 shadow-sm hover:shadow-md transition-all font-semibold rounded-lg px-6 py-2"
+            className="hidden lg:block bg-[#FAB900] text-[#63348C] hover:bg-[#FAB900]/90 shadow-sm hover:shadow-md transition-all font-semibold rounded-lg px-6 py-2 flex-shrink-0"
             onClick={() => IrAteSecao("Contato")}
           >
             Fale Conosco
@@ -65,7 +65,7 @@ export function Header() {
 
           {/* MENU HAMBURGER - Mobile */}
           <button
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 relative z-50"
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 relative z-50 ml-auto flex-shrink-0 -mr-2"
             onClick={() => setMenuAberto(!menuAberto)}
             aria-label="Menu"
           >
@@ -88,12 +88,7 @@ export function Header() {
                 {item}
               </button>
             ))}
-            <button
-              className="bg-[#FAB900] text-[#63348C] hover:bg-[#FAB900]/90 shadow-sm hover:shadow-md transition-all font-semibold rounded-lg px-4 py-3 mt-2"
-              onClick={() => IrAteSecao("Contato")}
-            >
-              Fale Conosco
-            </button>
+           
           </nav>
         </div>
       </div>
