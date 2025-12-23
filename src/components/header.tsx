@@ -12,12 +12,15 @@ export function Header() {
       const scrollTop = window.scrollY
       
       const totalScrollableHeight = documentHeight - windowHeight
-      const progress = (scrollTop / totalScrollableHeight) * 100
+      const progress = totalScrollableHeight > 0 ? (scrollTop / totalScrollableHeight) * 100 : 0
       
       setScrollProgress(progress)
     }
 
     window.addEventListener('scroll', handleScroll)
+    // Chama uma vez para inicializar
+    handleScroll()
+    
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -30,7 +33,7 @@ export function Header() {
   }
 
   return (
-    <header className="bg-[#63348C] text-white sticky top-0 z-50 shadow-md">
+    <header className="fixed top-0 left-0 right-0 bg-[#63348C] text-white z-50 shadow-md ">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-4">
           
@@ -43,7 +46,7 @@ export function Header() {
           </a>
 
           {/* NAVIGATION */}
-          <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
+          <nav className="hidden lg:flex items-center gap-1">
             {["Início", "Sobre", "Locais", "Parceiros", "Ações", "Contato"].map((item) => (
               <button
                 key={item}
@@ -57,7 +60,7 @@ export function Header() {
 
           {/* CTA BUTTON - Desktop */}
           <button
-            className="hidden lg:block bg-[#FAB900] text-[#63348C] hover:bg-[#FAB900]/90 shadow-sm hover:shadow-md transition-all font-semibold rounded-lg px-6 py-2 flex-shrink-0"
+            className="hidden lg:block bg-[#FAB900] text-[#63348C] hover:bg-[#FAB900]/90 shadow-sm hover:shadow-md transition-all font-semibold rounded-lg px-6 py-2"
             onClick={() => IrAteSecao("Contato")}
           >
             Fale Conosco
@@ -65,7 +68,7 @@ export function Header() {
 
           {/* MENU HAMBURGER - Mobile */}
           <button
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 relative z-50 ml-auto flex-shrink-0 -mr-2"
+            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 relative z-50"
             onClick={() => setMenuAberto(!menuAberto)}
             aria-label="Menu"
           >
@@ -88,7 +91,6 @@ export function Header() {
                 {item}
               </button>
             ))}
-           
           </nav>
         </div>
       </div>

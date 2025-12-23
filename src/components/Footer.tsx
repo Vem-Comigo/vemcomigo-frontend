@@ -203,43 +203,11 @@ export function Footer() {
               Receba novidades sobre projetos, campanhas e ações sociais.
             </p>
 
-            {!isSubscribed ? (
-              <form onSubmit={handleSubscribe} className="space-y-3">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="seu@email.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-[#66388C] outline-none transition"
-                />
-
-                <button
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 bg-[#66388C] hover:bg-[#8B5DAF] text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition disabled:opacity-50"
-                >
-                  {isSubmitting ? (
-                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <Mail className="w-4 h-4" />
-                      Inscrever
-                    </>
-                  )}
-                </button>
-              </form>
-            ) : (
-              <div className="bg-green-700/20 border border-green-600 rounded-xl p-4 text-center">
-                <Mail className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                <p className="text-green-200 text-sm font-semibold">Inscrição realizada!</p>
-              </div>
-            )}
-
+            
             <div className="mt-6 space-y-3">
-              {contactInfo.map(({ icon: Icon, text, href }, i) => (
+              {contactInfo.map(({ icon: Icon, text}, i) => (
                 <a 
                   key={i} 
-                  href={href} 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition"
@@ -282,13 +250,6 @@ export function Footer() {
         <div className="border-t border-white/10 bg-black/20">
           <div className="container mx-auto px-6 max-w-6xl py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-xs">&copy; Vem Comigo. Todos os direitos reservados.</p>
-
-            <button
-              onClick={scrollToTop}
-              className="bg-[#66388C] hover:bg-[#8B5DAF] text-white p-2 rounded-full shadow-lg hover:shadow-xl transition"
-            >
-              <ChevronUp className="w-5 h-5" />
-            </button>
           </div>
         </div>
       </div>

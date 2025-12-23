@@ -73,14 +73,14 @@ export default function Hero() {
   return (
     <section
       id="Início"
-      className="relative min-h-[calc(100vh-64px)] bg-[#FAB900] overflow-hidden scroll-mt-16"
+      className="relative min-h-[calc(100vh-64px)] bg-[#FAB900] overflow-hidden scroll-mt-16 pt-10"
     >
       {/* Círculos de fundo - inspirados na imagem */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Círculo grande amarelo no canto superior direito */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl" />
         
-        {/* Círculo roxo no canto inferior esquerdo */}
+        {/* Círculo roxo no canto inferior esquerdo */} 
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-purple-400/20 rounded-full blur-3xl" />
         
         {/* Círculo amarelo menor no centro esquerdo */}
