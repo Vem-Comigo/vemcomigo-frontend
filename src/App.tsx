@@ -11,7 +11,6 @@ import { ContactSection } from "./components/ContactSection";
 import "./components/ChatCard.css";
 import { Footer } from "./components/Footer";
 import { N8NChat } from "./components/N8NChat";
-
 function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">

@@ -138,3 +138,19 @@
 @theme {
   --font-inter: Inter, "sans-serif"
 }
+/* Posiciona o botão do VLibras no canto inferior esquerdo */
+[vw-access-button] {
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 1rem !important;
+  right: auto !important;
+  z-index: 9999 !important;
+}
+
+/* Ajusta a posição do player quando aberto */
+[vw-plugin-wrapper] {
+  position: fixed !important;
+  bottom: 5rem !important;
+  left: 1rem !important;
+  right: auto !important;
+}

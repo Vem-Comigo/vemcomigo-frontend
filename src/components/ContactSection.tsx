@@ -229,34 +229,33 @@ export function ContactSection() {
           <div className="lg:col-span-2 bg-white rounded-2xl md:rounded-3xl shadow-xl p-6 md:p-8 border border-gray-100 backdrop-blur-sm">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8">Envie sua Mensagem</h3>
 
-            <div className="space-y-5 md:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
 
               {/* NAME + EMAIL */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
 
                 {/* NAME */}
                 <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className={`absolute left-3 md:left-4 transition-all duration-200 pointer-events-none
+                      ${formData.name 
+                        ? 'top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1' 
+                        : 'top-2.5 md:top-3 text-sm md:text-base text-gray-500'
+                      }`}
+                  >
+                    Nome Completo *
+                  </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder=" "
-                    className={`peer w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
                        focus:ring-2 focus:ring-[#66388C] outline-none
                        ${errors.name ? "border-red-500" : "border-gray-300"}`}
                   />
-                  <label
-                    htmlFor="name"
-                    className="absolute left-3 md:left-4 top-2.5 md:top-3 text-sm md:text-base text-gray-500 peer-placeholder-shown:text-gray-400
-                      peer-placeholder-shown:top-2.5 md:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm md:peer-placeholder-shown:text-base
-                      peer-focus:top-[-10px] peer-focus:text-xs md:peer-focus:text-sm peer-focus:text-[#66388C]
-                      transition-all bg-white px-1 rounded pointer-events-none"
-                  >
-                    Nome Completo *
-                  </label>
-
                   {errors.name && (
                     <p className="text-red-500 text-xs md:text-sm mt-1 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" /> {errors.name}
@@ -266,27 +265,26 @@ export function ContactSection() {
 
                 {/* EMAIL */}
                 <div className="relative">
+                  <label
+                    htmlFor="email"
+                    className={`absolute left-3 md:left-4 transition-all duration-200 pointer-events-none
+                      ${formData.email 
+                        ? 'top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1' 
+                        : 'top-2.5 md:top-3 text-sm md:text-base text-gray-500'
+                      }`}
+                  >
+                    E-mail *
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder=" "
-                    className={`peer w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
                        focus:ring-2 focus:ring-[#66388C] outline-none
                        ${errors.email ? "border-red-500" : "border-gray-300"}`}
                   />
-                  <label
-                    htmlFor="email"
-                    className="absolute left-3 md:left-4 top-2.5 md:top-3 text-sm md:text-base text-gray-500 peer-placeholder-shown:text-gray-400
-                      peer-placeholder-shown:top-2.5 md:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm md:peer-placeholder-shown:text-base
-                      peer-focus:top-[-10px] peer-focus:text-xs md:peer-focus:text-sm peer-focus:text-[#66388C]
-                      transition-all bg-white px-1 rounded pointer-events-none"
-                  >
-                    E-mail *
-                  </label>
-
                   {errors.email && (
                     <p className="text-red-500 text-xs md:text-sm mt-1 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" /> {errors.email}
@@ -300,27 +298,26 @@ export function ContactSection() {
 
                 {/* PHONE */}
                 <div className="relative">
+                  <label
+                    htmlFor="phone"
+                    className={`absolute left-3 md:left-4 transition-all duration-200 pointer-events-none
+                      ${formData.phone 
+                        ? 'top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1' 
+                        : 'top-2.5 md:top-3 text-sm md:text-base text-gray-500'
+                      }`}
+                  >
+                    Telefone
+                  </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder=" "
-                    className={`peer w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
                        focus:ring-2 focus:ring-[#66388C] outline-none
                        ${errors.phone ? "border-red-500" : "border-gray-300"}`}
                   />
-                  <label
-                    htmlFor="phone"
-                    className="absolute left-3 md:left-4 top-2.5 md:top-3 text-sm md:text-base text-gray-500 peer-placeholder-shown:text-gray-400
-                      peer-placeholder-shown:top-2.5 md:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm md:peer-placeholder-shown:text-base
-                      peer-focus:top-[-10px] peer-focus:text-xs md:peer-focus:text-sm peer-focus:text-[#66388C]
-                      transition-all bg-white px-1 rounded pointer-events-none"
-                  >
-                    Telefone
-                  </label>
-
                   {errors.phone && (
                     <p className="text-red-500 text-xs md:text-sm mt-1 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" /> {errors.phone}
@@ -330,14 +327,21 @@ export function ContactSection() {
 
                 {/* SUBJECT */}
                 <div className="relative">
+                  <label
+                    htmlFor="subject"
+                    className="absolute left-3 md:left-4 top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1 rounded z-10"
+                  >
+                    Assunto *
+                  </label>
                   <select
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     className={`w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
-                      focus:ring-2 focus:ring-[#66388C] outline-none
-                      ${errors.subject ? "border-red-500" : "border-gray-300"}`}
+                      focus:ring-2 focus:ring-[#66388C] outline-none appearance-none cursor-pointer
+                      ${errors.subject ? "border-red-500" : "border-gray-300"}
+                      ${!formData.subject ? "text-gray-500" : "text-gray-900"}`}
                   >
                     <option value="">Selecione um assunto</option>
                     {subjects.map((subject, index) => (
@@ -346,14 +350,12 @@ export function ContactSection() {
                       </option>
                     ))}
                   </select>
-
-                  <label
-                    htmlFor="subject"
-                    className="absolute left-3 md:left-4 top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1 rounded"
-                  >
-                    Assunto *
-                  </label>
-
+                  {/* Custom dropdown arrow */}
+                  <div className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                   {errors.subject && (
                     <p className="text-red-500 text-xs md:text-sm mt-1 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" /> {errors.subject}
@@ -364,28 +366,26 @@ export function ContactSection() {
 
               {/* MESSAGE */}
               <div className="relative">
+                <label
+                  htmlFor="message"
+                  className={`absolute left-3 md:left-4 transition-all duration-200 pointer-events-none
+                    ${formData.message 
+                      ? 'top-[-10px] text-xs md:text-sm text-[#66388C] bg-white px-1' 
+                      : 'top-2.5 md:top-3 text-sm md:text-base text-gray-500'
+                    }`}
+                >
+                  Mensagem *
+                </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  placeholder=" "
-                  className={`peer w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
+                  className={`w-full px-3 md:px-4 py-2.5 md:py-3 border rounded-xl bg-gray-50 focus:bg-white transition-all text-sm md:text-base
                     focus:ring-2 focus:ring-[#66388C] outline-none resize-none
                     ${errors.message ? "border-red-500" : "border-gray-300"}`}
                 />
-
-                <label
-                  htmlFor="message"
-                  className="absolute left-3 md:left-4 top-2.5 md:top-3 text-sm md:text-base text-gray-500 peer-placeholder-shown:text-gray-400
-                    peer-placeholder-shown:top-2.5 md:peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm md:peer-placeholder-shown:text-base
-                    peer-focus:top-[-10px] peer-focus:text-xs md:peer-focus:text-sm peer-focus:text-[#66388C]
-                    transition-all bg-white px-1 rounded pointer-events-none"
-                >
-                  Mensagem *
-                </label>
-
                 {errors.message && (
                   <p className="text-red-500 text-xs md:text-sm mt-1 flex items-center gap-1">
                     <AlertCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" /> {errors.message}
@@ -395,12 +395,12 @@ export function ContactSection() {
 
               {/* SUBMIT */}
               <button
-                type="button"
-                onClick={handleSubmit}
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full py-3 md:py-4 px-6 rounded-xl font-semibold text-white bg-[#66388C] text-sm md:text-base
                   hover:bg-[#7A45A3] transition-all duration-300 shadow-lg
-                  flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed
+                  hover:shadow-xl active:scale-[0.98]"
               >
                 {isSubmitting ? (
                   <>
@@ -416,7 +416,7 @@ export function ContactSection() {
               </button>
 
               <p className="text-center text-xs md:text-sm text-gray-500">* Campos obrigatórios</p>
-            </div>
+            </form>
           </div>
         </div>
 
