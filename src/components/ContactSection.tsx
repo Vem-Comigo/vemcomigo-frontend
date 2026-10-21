@@ -116,7 +116,7 @@ export function ContactSection() {
               no navegador nem em banco de dados e não usa rastreadores.
             </p>
             <p>
-              O envio utiliza o Resend. A proteção contra abuso usa contadores
+              O envio utiliza o Gmail. A proteção contra abuso usa contadores
               temporários no Upstash, sem armazenar o texto da mensagem. Este
               canal não oferece atendimento de urgência.
             </p>

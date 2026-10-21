@@ -39,7 +39,7 @@ O build gera `dist/`. `preview` é uma inspeção local, não servidor de produ�
 - `docs/responsiveness.md`: revisão de enquadramento, cenários de tela e comparação antes/depois.
 - `scripts/responsive-qa.mjs`: roteiro de navegador local, executável com `npm.cmd run test:responsive` após preparar o Edge/Chromium dedicado conforme a documentação.
 
-Nenhuma variável pública de ambiente é necessária no navegador. A função de servidor do projeto Vercel precisa de `CONTACT_API_URL`, `CONTACT_ORIGIN` e `CONTACT_PROXY_KEY`, conforme `.env.example` e [docs/contact-vercel.md](docs/contact-vercel.md). Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. A chave do Resend fica somente no backend.
+Nenhuma variável pública de ambiente é necessária no navegador. A função de servidor do projeto Vercel precisa de `CONTACT_API_URL`, `CONTACT_ORIGIN` e `CONTACT_PROXY_KEY`, conforme `.env.example` e [docs/contact-vercel.md](docs/contact-vercel.md). Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. As credenciais Gmail SMTP ficam somente no backend.
 
 As fotos, logos institucionais e demais assets herdados foram preservados, mas não publicados sem confirmação de contexto e autorização. Atividades e depoimentos ficam ocultos enquanto os arrays correspondentes estiverem vazios. Para publicar, adicione apenas registros com autorização, texto alternativo, fonte e dados reais. Use imagens otimizadas com dimensões coerentes com o componente.
 
