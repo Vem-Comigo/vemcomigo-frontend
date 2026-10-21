@@ -136,6 +136,7 @@ export function Communities() {
           </p>
         </div>
         <div className="care-steps">
+          <span className="care-connection" aria-hidden="true" />
           {[
             {
               verb: "Acolher.",
