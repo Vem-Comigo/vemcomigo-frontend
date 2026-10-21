@@ -1,0 +1,4 @@
+# Ambiente e domínio de produção ainda não confirmados.
+# Ao publicar, remover a restrição e adicionar o sitemap com a URL real.
+User-agent: *
+Disallow: /
