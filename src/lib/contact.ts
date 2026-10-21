@@ -73,7 +73,7 @@ export async function sendContact(
       headers: { "Content-Type": "application/json" },
       credentials: "same-origin",
       body: JSON.stringify({ ...data, website }),
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(20000),
     });
   } catch {
     throw new Error(

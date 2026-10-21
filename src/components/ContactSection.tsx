@@ -72,7 +72,7 @@ export function ContactSection() {
       await sendContact(data, website);
       setStatus("success");
       setMessage(
-        "Mensagem recebida pelo serviço de envio. Obrigado por iniciar essa conversa!",
+        "Mensagem aceita pelo serviço para envio à equipe. Obrigado por iniciar essa conversa!",
       );
       setData({ ...emptyContact });
     } catch (error) {
@@ -116,9 +116,9 @@ export function ContactSection() {
               no navegador nem em banco de dados e não usa rastreadores.
             </p>
             <p>
-              O tratamento pelo serviço de e-mail e pela equipe depende da
-              configuração institucional. Este canal não oferece atendimento de
-              urgência.
+              O envio utiliza o Resend. A proteção contra abuso usa contadores
+              temporários no Upstash, sem armazenar o texto da mensagem. Este
+              canal não oferece atendimento de urgência.
             </p>
           </div>
         </div>
