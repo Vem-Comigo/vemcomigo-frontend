@@ -34,6 +34,8 @@ O build gera `dist/`. `preview` é uma inspeção local, não servidor de produ�
 - `public/images/`: logo fornecida, sem alteração de proporção; favicon original em `public/favicon.svg`.
 - `tests/contact.test.mjs`: validação, falha de rede, indisponibilidade e confirmação de envio.
 - `docs/validation.md`: evidências e limites da verificação.
+- `docs/responsiveness.md`: revisão de enquadramento, cenários de tela e comparação antes/depois.
+- `scripts/responsive-qa.mjs`: roteiro de navegador local, executável com `npm.cmd run test:responsive` após preparar o Edge/Chromium dedicado conforme a documentação.
 
 Nenhuma variável de ambiente é necessária no front-end. Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. Configure o e-mail exclusivamente no backend, conforme o README dele.
 
