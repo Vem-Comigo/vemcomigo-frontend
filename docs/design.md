@@ -20,3 +20,18 @@ Telas: About Headspace (`a8f000dd-7203-4626-84d1-bc2437a2c40a`, imagem inspecion
 Tokens em `src/index.css`. Rejeitados: gradientes genéricos, sombras fortes, fotos sintéticas documentais, números e credibilidade inventados, redesenho da marca. Logo original copiada sem alterar proporção. O SVG original contém trechos rasterizados: solicitar arquivo vetorial de melhor qualidade para usos ampliados.
 
 Nenhuma prévia visual adicional foi encontrada nos anexos, apenas dois pedidos textuais equivalentes. Construção direta autorizada pelo briefing; sem reabrir a escolha de estilo.
+
+## Revisão de tipografia e movimento
+
+Nova pesquisa no Refero para a revisão visual: estilos [Headspace](https://refero.design/pages/a8f000dd-7203-4626-84d1-bc2437a2c40a), [Duolingo](https://duolingo.com) e [August Health](https://www.augusthealth.com), mais telas de Headspace About e [Playbook para escolas](https://refero.design/pages/9e0413e6-6582-466a-a5fe-ea2273cd5cb5). O Headspace permanece a direção principal: espaço entre seções, formas suaves, tipografia humana e ilustração contida. Duolingo contribuiu apenas com a presença de ilustrações junto à mensagem; August Health, com o uso moderado de círculos em uma composição de cuidado. Não foram importadas suas paletas ou fontes. A tela do Playbook mostrou uma hierarquia de educação e comunidade, mas seus números, parceiros e depoimentos não foram incorporados.
+
+| Decisão | Base | Aplicação |
+| --- | --- | --- |
+| Corpo 17–19 px e descrições 16–18 px | Pedido do usuário + hierarquia Headspace | Tokens fluidos em `src/index.css`, com entrelinha e largura de leitura confortáveis |
+| Títulos maiores e controles legíveis | Pedido do usuário + tipografia de referência | Escala `clamp()`; navegação, botões, FAQ e formulário ampliados sem uniformizar todos os papéis |
+| Linha entre “Acolher, Escutar, Ajudar” | Conceito do projeto | Desenho progressivo apenas quando a seção aparece; nenhuma nova alegação factual |
+| Formas discretas entre seções | Headspace/August Health | Círculos leves em abordagem e contato; roxo na identidade, amarelo no destaque |
+| Revelação e intervalos curtos | Pedido do usuário | Movimento de entrada de 580 ms com transform/opacity; nenhuma referência estática foi tratada como prova de animação |
+| Menu e FAQ suaves | Pedido do usuário | Transição do menu mobile; `details` nativo com transição do conteúdo onde o navegador suporta |
+
+A implementação mantém o conteúdo visível mesmo sem IntersectionObserver. Em `prefers-reduced-motion: reduce`, as animações e transições são removidas e a linha decorativa aparece pronta. Não há dependência de biblioteca de animação. O formulário e o backend de contato não foram alterados nesta revisão.
