@@ -33,11 +33,13 @@ O build gera `dist/`. `preview` é uma inspeção local, não servidor de produ�
 - `src/index.css`: tokens, estilos responsivos e preferência por movimento reduzido.
 - `public/images/`: logo fornecida, sem alteração de proporção; favicon original em `public/favicon.svg`.
 - `tests/contact.test.mjs`: validação, falha de rede, indisponibilidade e confirmação de envio.
+- `api/contact.ts` e `server/contact-proxy.ts`: função de servidor da Vercel que encaminha o contato à API Express autenticada.
+- `tests/contact-proxy.test.mjs`: origem, tamanho, autenticação, resposta e falhas do proxy, com mocks.
 - `docs/validation.md`: evidências e limites da verificação.
 - `docs/responsiveness.md`: revisão de enquadramento, cenários de tela e comparação antes/depois.
 - `scripts/responsive-qa.mjs`: roteiro de navegador local, executável com `npm.cmd run test:responsive` após preparar o Edge/Chromium dedicado conforme a documentação.
 
-Nenhuma variável de ambiente é necessária no front-end. Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. Configure o e-mail exclusivamente no backend, conforme o README dele.
+Nenhuma variável pública de ambiente é necessária no navegador. A função de servidor do projeto Vercel precisa de `CONTACT_API_URL`, `CONTACT_ORIGIN` e `CONTACT_PROXY_KEY`, conforme `.env.example` e [docs/contact-vercel.md](docs/contact-vercel.md). Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. A chave do Resend fica somente no backend.
 
 As fotos, logos institucionais e demais assets herdados foram preservados, mas não publicados sem confirmação de contexto e autorização. Atividades e depoimentos ficam ocultos enquanto os arrays correspondentes estiverem vazios. Para publicar, adicione apenas registros com autorização, texto alternativo, fonte e dados reais. Use imagens otimizadas com dimensões coerentes com o componente.
 
@@ -45,16 +47,16 @@ As fotos, logos institucionais e demais assets herdados foram preservados, mas n
 
 O cliente não salva mensagens em armazenamento local nem registra seu conteúdo em console. Não renderiza HTML recebido. Campos têm limites e instrução para não informar nomes de estudantes ou casos sensíveis. A mensagem só é confirmada após resposta explícita do servidor; aceitação pelo serviço não garante entrega na caixa de entrada.
 
-`public/_headers` prepara CSP, proteção contra enquadramento, `nosniff`, política de referência e permissões. **Só são aplicados por hospedagens que interpretam esse arquivo**; em outros provedores, configurar no proxy/CDN e verificar as respostas. CSP de produção não deve ser aplicada ao servidor Vite de desenvolvimento, que usa HMR. Fontes e ilustrações são locais; a fonte de corpo é a do sistema para evitar um download adicional de 875 KB.
+Na Vercel, `vercel.json` prepara CSP, proteção contra enquadramento, `nosniff`, política de referência e permissões; a API também define seus cabeçalhos. `public/_headers` fica disponível para provedores que interpretam esse outro formato. Verificar os cabeçalhos efetivamente servidos após configurar a hospedagem. CSP de produção não deve ser aplicada ao servidor Vite de desenvolvimento, que usa HMR. Fontes e ilustrações são locais; a fonte de corpo é a do sistema para evitar um download adicional de 875 KB.
 
 Antes de publicar:
 
-1. Configurar a API no mesmo domínio, encaminhando `/api` ao backend; fallback de SPA apenas para navegação, nunca para rotas da API.
+1. Configurar o proxy `/api/contact` e os dois projetos Vercel conforme [o guia de contato](docs/contact-vercel.md). Não substituir respostas de API por HTML de fallback.
 2. Configurar HTTPS e os cabeçalhos no provedor. Definir HSTS somente após confirmar domínio, subdomínios e HTTPS operacional.
 3. Definir a URL de produção real. Só então adicionar canonical, `og:url`, imagem social absoluta e sitemap, e liberar `robots.txt`, hoje bloqueado para ambiente não confirmado. Para staging, preferir também `X-Robots-Tag: noindex` no provedor.
-4. Confirmar responsável institucional, destinatário e canais públicos reais. Não foram reaproveitados contatos antigos sem confirmação.
+4. O destinatário do formulário foi confirmado como `contatovmc3567@gmail.com` e fixado no backend. Confirmar responsável institucional e demais canais públicos reais.
 5. Revisar a política institucional de privacidade, o serviço de e-mail e o tratamento/retenção das mensagens. Nenhum prazo ou declaração de conformidade foi presumido.
 6. Confirmar a relação com Sistema de Apoio Entre Iguais / GPEM ou GEPEM / Unicamp, grafias, números e uso de marcas. Não são exibidos como parceiros confirmados.
 7. Obter fotos e relatos autorizados e, se possível, uma logo vetorial melhor: o SVG fornecido contém partes rasterizadas e margens grandes.
 
-Nenhum push ou deploy foi realizado.
+Nesta etapa de contato não houve push, deploy ou envio real de e-mail.
