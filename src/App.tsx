@@ -11,6 +11,7 @@ import {
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { useSectionReveal } from "./lib/useSectionReveal";
+import { ProjectGallery } from "./components/gallery/ProjectGallery";
 
 export default function App() {
   useSectionReveal();
@@ -24,6 +25,7 @@ export default function App() {
         <Hero />
         <AboutProject />
         <Approach />
+        <ProjectGallery />
         <TeacherTraining />
         <Communities />
         <SchoolInvitation />

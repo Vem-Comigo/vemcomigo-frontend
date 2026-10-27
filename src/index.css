@@ -987,16 +987,6 @@ fieldset:disabled {
 .form-status.success {
   color: #28613f;
 }
-.records-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-.records-grid img {
-  aspect-ratio: 3/2;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
 .site-footer {
   background: var(--paper);
   padding: 44px 0 20px;
@@ -1550,9 +1540,6 @@ fieldset:disabled {
   }
   .footer-bottom span {
     display: block;
-  }
-  .records-grid {
-    grid-template-columns: 1fr;
   }
 }
 @media (prefers-reduced-motion: reduce) {

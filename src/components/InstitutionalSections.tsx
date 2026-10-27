@@ -8,7 +8,6 @@ import {
   Plus,
 } from "lucide-react";
 import {
-  activities,
   approaches,
   questions,
   testimonials,
@@ -161,37 +160,12 @@ export function Communities() {
 }
 
 export function ProjectRecords() {
-  if (!activities.length && !testimonials.length) return null;
+  if (!testimonials.length) return null;
   return (
     <section
       className="section container"
-      id="em-acao"
       aria-label="Registros do projeto"
     >
-      {activities.length > 0 && (
-        <>
-          <p className="eyebrow">PROJETO EM AÇÃO</p>
-          <h2>O cuidado acontece no encontro.</h2>
-          <div className="records-grid">
-            {activities.map((item) => (
-              <figure key={item.title}>
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <h3>{item.title}</h3>
-                  <time>{item.date}</time>
-                  <p>{item.description}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </>
-      )}
       {testimonials.length > 0 && (
         <>
           <h2>Relatos e transformações</h2>
