@@ -14,7 +14,7 @@ import {
   testimonials,
 } from "../content/institutional";
 import { CareJourney } from "./motion/CareJourney";
-import { OrganicButton } from "./motion/OrganicButton";
+import { ContactCta } from "./motion/ContactCta";
 import { SquiggleArrow } from "./motion/ConnectionShapes";
 import { TextAnimate } from "./motion/TextAnimate";
 
@@ -232,7 +232,7 @@ export function SchoolInvitation() {
               possibilidades de participação.
             </p>
             <div className="invitation-action">
-              <OrganicButton href="#contato">Tenho interesse</OrganicButton>
+              <ContactCta href="#contato">Tenho interesse</ContactCta>
               <SquiggleArrow />
             </div>
           </div>

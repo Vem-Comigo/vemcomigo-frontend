@@ -1,5 +1,15 @@
 # Animações e interações — Cult UI
 
+## Revisão dos botões após feedback
+
+O botão recortado Organic Button foi substituído por `ContactCta` no hero e no convite à escola. Nova pesquisa ao vivo no Refero: **Quizlet**, estilo `d6523b05-a53f-4a2a-8829-d65a5c3724e9` ([origem](https://quizlet.com)), e **Duolingo**, estilo `9457a848-2905-4fe8-bb58-e168049120cf` ([origem](https://duolingo.com)), com leitura dos estilos completos.
+
+Direção fixada: a clareza do CTA de superfície única do Quizlet é a base; do Duolingo, apenas a sombra inferior discreta e o estado pressionado. A identidade existente determina roxo, amarelo e tipografia. O novo botão tem raio de 18 px, texto branco, seta amarela integrada e espaçamento próprio; não há extremidade SVG ou bloco amarelo sobreposto. O texto tem largura natural e pode quebrar quando o espaço ou a ampliação exigirem. Hover e foco deslocam a seta levemente; movimento reduzido preserva cor e foco sem deslocamento.
+
+A descrição abaixo registra a implementação inicial; as menções ao Organic Button são históricas. Os demais componentes Cult UI permanecem em uso, com a licença preservada. O roteiro `motion-qa.mjs` acompanha o novo componente e continua verificando teclado, toque e contato mockado.
+
+Validação desta revisão: lint, tipos, build, `motion-qa.mjs` e `test:responsive` passaram. Abertura inspecionada em 1440 × 1000 e 390 × 844, sem sobreposição no botão. A bateria de responsividade incluiu paisagem, texto a 200% e refluxo equivalente a zoom, mantendo os limites de navegador e dispositivos descritos abaixo. Nenhuma dependência adicionada.
+
 Revisão de 27/10/2026. Implementação no portal existente: React 19.2.0 (lockfile), Tailwind 4, Vite 7, TypeScript 5.9. Nenhuma dependência adicionada; `package.json` e lockfile preservados. Conferir a versão exata pelo lockfile ao atualizar o projeto.
 
 ## Pesquisa e direção fixada

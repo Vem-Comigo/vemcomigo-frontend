@@ -33,33 +33,37 @@
 @keyframes line-arrive { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 .art-bubble { animation: none; }
 .hero-visual.enter { animation-delay: var(--motion-art-delay); }
-.organic-button {
-  --organic-surface: var(--purple);
-  position: relative;
-  padding: 0 0 0 24px;
-  gap: 8px;
-  background: transparent;
-  border: 0;
-  isolation: isolate;
-  box-shadow: none;
+.contact-cta {
+  width: fit-content;
+  gap: 16px;
+  padding: 18px 24px;
+  min-height: 60px;
+  border-radius: 18px;
+  background: var(--purple);
+  box-shadow: 0 3px 0 var(--purple-dark);
+  font-weight: 700;
+  transition: background-color var(--motion-fast),
+    box-shadow var(--motion-fast),
+    transform var(--motion-fast) var(--motion-ease);
 }
-.organic-button::before {
-  content: "";
-  position: absolute;
-  inset: 0 44px 0 0;
-  z-index: -1;
-  background: var(--organic-surface);
-  border-radius: 30px 12px 12px 30px;
-  transition: background-color var(--motion-fast);
+.contact-cta-label { min-width: 0; }
+.contact-cta-arrow {
+  flex-shrink: 0;
+  color: var(--yellow);
+  transition: transform var(--motion-fast) var(--motion-ease);
 }
-.organic-label { padding-block: 16px; padding-inline-end: 16px; }
-.organic-end { position: relative; align-self: stretch; display: grid; place-items: center; flex: 0 0 54px; color: var(--purple); }
-.organic-end::before { content: ""; position: absolute; inset: 0; border-radius: 12px 30px 30px 12px; z-index: -1; background: var(--yellow); }
-.organic-wall { position: absolute; left: -14px; height: 100%; width: 26px; fill: var(--yellow); z-index: -1; }
-.organic-end > svg:last-child { transition: transform var(--motion-fast) var(--motion-ease); }
-.organic-button:hover, .organic-button:focus-visible { --organic-surface: var(--purple-dark); background: transparent; }
-.organic-button:is(:hover, :focus-visible) .organic-end > svg:last-child { transform: rotate(45deg) scale(1.12); }
-.organic-button:active { transform: scale(.97); }
+.contact-cta:is(:hover, :focus-visible) {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #3b1a55;
+}
+.contact-cta:is(:hover, :focus-visible) .contact-cta-arrow {
+  transform: translateX(var(--motion-nudge));
+}
+.contact-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--purple-dark);
+}
 .approach-grid { gap: 18px; align-items: stretch; }
 .approach-item { padding: clamp(22px, 2vw, 32px); background: #f4edf9; border: 1px solid #e9ddf1; border-radius: var(--radius); }
 .approach-1 { background: #fff5cd; border-color: #f4e8b5; }
@@ -109,7 +113,7 @@
 .contact-form .submit-button { box-shadow: 0 4px 0 #d1bce1; }
 .contact-form .submit-button:focus-visible { background: var(--purple-dark); }
 @media (max-width: 700px) {
-  .actions .organic-button { padding: 0 0 0 24px; }
+  .actions .contact-cta { padding: 18px 24px; }
 }
 @media (max-width: 550px) {
   .approach-grid { grid-template-columns: 1fr; }
@@ -140,7 +144,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .animated-word, .organic-button:is(:hover, :active, :focus-visible), .organic-button .organic-end > svg:last-child { transform: none; }
+  .animated-word, .contact-cta:is(:hover, :active, :focus-visible), .contact-cta-arrow { transform: none; }
   .journey-symbol { transform: none; }
   .journey-symbol.is-current { outline: 3px solid var(--purple); outline-offset: 4px; }
 }

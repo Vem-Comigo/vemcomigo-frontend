@@ -1,7 +1,7 @@
 import { ArrowDown, Heart } from "lucide-react";
 import { CommunityArt } from "./CommunityArt";
 import { TextAnimate } from "./motion/TextAnimate";
-import { OrganicButton } from "./motion/OrganicButton";
+import { ContactCta } from "./motion/ContactCta";
 import { ConnectionShapes } from "./motion/ConnectionShapes";
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
             transformar a convivência na escola.
           </p>
           <div className="actions">
-            <OrganicButton href="#contato">Leve para sua escola</OrganicButton>
+            <ContactCta href="#contato">Leve para sua escola</ContactCta>
             <a className="text-link" href="#projeto">
               Conheça o projeto <ArrowDown size={17} aria-hidden="true" />
             </a>

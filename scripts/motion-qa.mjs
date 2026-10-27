@@ -71,8 +71,8 @@ try {
   await capture("hero");
   // Verify the coordinated entry has ended quickly, with no indefinite animations.
   assert.equal(await evaluate("document.getAnimations().some(a=>a.effect.getTiming().iterations===Infinity)"), false);
-  await evaluate("document.querySelector('.organic-button').focus()");
-  evidence.focusTransform = await evaluate("new Promise(r=>setTimeout(()=>r(getComputedStyle(document.querySelector('.organic-end > svg:last-child')).transform),300))");
+  await evaluate("document.querySelector('.contact-cta').focus()");
+  evidence.focusTransform = await evaluate("new Promise(r=>setTimeout(()=>r(getComputedStyle(document.querySelector('.contact-cta-arrow')).transform),300))");
   assert.notEqual(evidence.focusTransform, "none");
   await press("Enter", "Enter", 13);
   await until("location.hash==='#contato'");
@@ -113,8 +113,8 @@ try {
   }
   await command("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
   await command("Emulation.setTouchEmulationEnabled", { enabled: true });
-  await evaluate("document.querySelector('.organic-button').scrollIntoView({behavior:'instant',block:'center'})");
-  const point = await evaluate("(()=>{const r=document.querySelector('.organic-button').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
+  await evaluate("document.querySelector('.contact-cta').scrollIntoView({behavior:'instant',block:'center'})");
+  const point = await evaluate("(()=>{const r=document.querySelector('.contact-cta').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
   await command("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [point] });
   await command("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
   await until("location.hash==='#contato'");
