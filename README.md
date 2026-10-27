@@ -2,6 +2,8 @@
 
 React 19, TypeScript e Vite. Conteúdo atualizado diretamente no código; sem login, CMS, chatbot ou rastreadores. A direção e as referências pesquisadas estão em [docs/design.md](docs/design.md).
 
+As adaptações animadas do Cult UI, referências do Refero, licença e validação estão em [docs/cult-ui-motion.md](docs/cult-ui-motion.md). Para testar as transições em movimento e o envio com mocks, execute `node scripts/motion-qa.mjs` no perfil dedicado de navegador descrito nesse documento.
+
 ## Executar
 
 Requisito: **Node.js 24 LTS** e npm. No PowerShell, use `npm.cmd` se a política local impedir a execução de `npm.ps1`.
