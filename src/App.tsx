@@ -10,8 +10,10 @@ import {
 } from "./components/InstitutionalSections";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { useSectionReveal } from "./lib/useSectionReveal";
 
 export default function App() {
+  useSectionReveal();
   return (
     <>
       <a className="skip-link" href="#conteudo">

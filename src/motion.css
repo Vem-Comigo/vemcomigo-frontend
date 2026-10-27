@@ -1,0 +1,150 @@
+/* Native CSS adaptations of Cult UI. See docs/cult-ui-motion.md. */
+:root {
+  --motion-word-gap: 26ms;
+  --motion-stagger: 85ms;
+  --motion-draw: 900ms;
+  --motion-distance: 18px;
+  --motion-art: 720ms;
+  --motion-art-delay: 120ms;
+  --motion-note-delay: 320ms;
+  --motion-nudge: 4px;
+}
+.animated-word { display: inline-block; white-space: pre-wrap; }
+.hero .animated-word,
+.section.is-visible .animated-word {
+  animation: word-arrive var(--motion-base) var(--motion-ease) both;
+  animation-delay: calc(var(--word) * var(--motion-word-gap));
+}
+@keyframes word-arrive {
+  from { opacity: .35; transform: translateY(.22em) rotate(2deg); }
+  to { opacity: 1; transform: none; }
+}
+.hero-copy > h1 { animation: none; }
+.hero-copy > .eyebrow,
+.hero-copy > .hero-note { animation: enter var(--motion-base) var(--motion-ease) both; }
+.hero-copy > .hero-note { animation-delay: var(--motion-note-delay); }
+.connection-shapes { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--purple); opacity: .3; }
+.connection-shapes .draw-line { stroke: currentColor; stroke-width: 1.5; }
+.connection-dot { fill: var(--yellow); }
+.hero-visual .community-art { position: relative; }
+.draw-line { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.hero-visual .draw-line,
+.section.is-visible .squiggle-arrow .draw-line { animation: line-arrive var(--motion-draw) var(--motion-ease) both; }
+@keyframes line-arrive { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.art-bubble { animation: none; }
+.hero-visual.enter { animation-delay: var(--motion-art-delay); }
+.contact-cta {
+  width: fit-content;
+  gap: 16px;
+  padding: 18px 24px;
+  min-height: 60px;
+  border-radius: 18px;
+  background: var(--purple);
+  box-shadow: 0 3px 0 var(--purple-dark);
+  font-weight: 700;
+  transition: background-color var(--motion-fast),
+    box-shadow var(--motion-fast),
+    transform var(--motion-fast) var(--motion-ease);
+}
+.contact-cta-label { min-width: 0; }
+.contact-cta-arrow {
+  flex-shrink: 0;
+  color: var(--yellow);
+  transition: transform var(--motion-fast) var(--motion-ease);
+}
+.contact-cta:is(:hover, :focus-visible) {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #3b1a55;
+}
+.contact-cta:is(:hover, :focus-visible) .contact-cta-arrow {
+  transform: translateX(var(--motion-nudge));
+}
+.contact-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--purple-dark);
+}
+.approach-grid { gap: 18px; align-items: stretch; }
+.approach-item { padding: clamp(22px, 2vw, 32px); background: #f4edf9; border: 1px solid #e9ddf1; border-radius: var(--radius); }
+.approach-1 { background: #fff5cd; border-color: #f4e8b5; }
+.approach-2 { background: #fceee7; border-color: #f3dfd3; }
+.approach-3 { background: #eef2e5; border-color: #e0e7d1; }
+.approach-icon { background: white; transition: transform var(--motion-base) var(--motion-ease); }
+.approach-item.is-visible { animation: enter var(--motion-base) var(--motion-ease) both; animation-delay: calc(var(--step, 0) * var(--motion-stagger)); }
+@media (hover: hover) and (pointer: fine) {
+  .approach-item:hover .approach-icon { transform: rotate(8deg) translateY(calc(-1 * var(--motion-nudge))); }
+}
+.communities-section { background: var(--lavender); }
+.communities-heading { max-width: 820px; }
+.care-journey { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 90px); align-items: start; margin: 64px 0; }
+.care-journey > * { min-width: 0; }
+.journey-aside { position: static; }
+.journey-art { position: relative; aspect-ratio: 1.25; background: #e1d2ef; border-radius: 40% 40% 30px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; overflow: hidden; transition: background-color var(--motion-art) var(--motion-ease), border-radius var(--motion-art) var(--motion-ease); }
+.journey-art-1 { background: #f8df83; border-radius: 30px 45% 30px 45%; }
+.journey-art-2 { background: #f3d5c4; border-radius: 45% 30px 45% 30px; }
+.journey-orbits { position: absolute; inset: 0; width: 100%; height: 100%; stroke: var(--purple); stroke-width: 1; opacity: .35; pointer-events: none; }
+.journey-symbols { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; gap: 10px; }
+.journey-symbol { display: grid; place-items: center; width: clamp(64px, 7vw, 105px); aspect-ratio: 1; background: var(--paper); color: var(--purple); border-radius: 50%; transform: scale(.75) rotate(-12deg); transition: transform var(--motion-art) var(--motion-ease), background-color var(--motion-art), color var(--motion-art); }
+.journey-symbol.is-current { background: var(--purple); color: white; transform: scale(1.1) rotate(7deg); }
+.journey-note { position: relative; margin-top: 28px; color: var(--purple-dark); font: 800 clamp(1.5rem, 2.5vw, 2.5rem)/1.2 var(--font-display); text-align: center; animation: word-arrive var(--motion-base) var(--motion-ease); }
+.journey-counter { position: relative; margin-top: 20px; color: var(--purple-dark); font-size: var(--text-small); letter-spacing: .15em; }
+.journey-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.journey-nav a { display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 10px 14px; border: 1px solid #bda3ce; border-radius: var(--pill); color: var(--purple-dark); text-decoration: none; font-size: 1rem; }
+.journey-nav a span { font-size: .75rem; }
+.journey-nav a[aria-current] { background: var(--purple); color: white; border-color: var(--purple); }
+.journey-panels { position: relative; display: grid; gap: 24px; }
+.journey-panels::before { content: ""; position: absolute; left: 32px; top: 40px; bottom: 40px; border-left: 2px dashed #b89bcf; }
+.journey-step { position: relative; padding: clamp(26px, 3vw, 44px); background: #fffcf7; border-radius: var(--radius); border: 2px solid transparent; scroll-margin-top: calc(var(--header-height) + 24px); transition: border-color var(--motion-base); }
+.journey-step.is-current { border-color: #8a60a8; }
+.journey-step .care-shape { width: 72px; height: 72px; margin: 0 0 28px; box-shadow: none; }
+.journey-step-1 .care-shape { background: #d8c4e9; border-radius: 24px; transform: rotate(8deg); }
+.journey-step-2 .care-shape { background: var(--peach); border-radius: 50% 50% 20% 50%; }
+.journey-step-number { position: absolute; right: 28px; top: 20px; color: #a78abc; font: 750 2.5rem var(--font-display); }
+.journey-step .eyebrow { letter-spacing: .05em; margin-bottom: 12px; }
+.journey-step h3 { font-size: clamp(2.5rem, 3.8vw, 3.75rem); margin-bottom: 18px; color: var(--purple-dark); }
+.journey-step p:last-child { font-size: var(--text-lead); }
+.journey-step.is-visible .care-shape { animation: shape-arrive var(--motion-base) var(--motion-ease); }
+@keyframes shape-arrive { from { transform: rotate(-20deg) scale(.8); } }
+.invitation-action { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.invitation-action .button { margin-top: 0; }
+.squiggle-arrow { flex: 0 1 135px; color: var(--purple); transform: rotate(170deg); pointer-events: none; }
+.contact-icon { transform: rotate(-8deg); border-radius: 40% 40% 25% 40%; }
+.contact-form { animation: none !important; }
+.contact-form .submit-button { box-shadow: 0 4px 0 #d1bce1; }
+.contact-form .submit-button:focus-visible { background: var(--purple-dark); }
+@media (max-width: 700px) {
+  .actions .contact-cta { padding: 18px 24px; }
+}
+@media (max-width: 550px) {
+  .approach-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 1100px) and (min-height: 760px) {
+  .journey-aside { position: sticky; top: calc(var(--header-height) + 32px); }
+  .journey-step { min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
+}
+@media (max-width: 1099px), (max-height: 759px) {
+  .care-journey { grid-template-columns: 1fr; gap: 32px; }
+  .journey-aside { display: none; }
+  .journey-panels { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .journey-panels::before { display: none; }
+  .journey-step { padding: 24px; border-color: transparent; }
+  .journey-step p:last-child { font-size: var(--text-support); }
+  .journey-step .eyebrow { max-width: 22ch; }
+}
+@media (max-width: 700px) {
+  .approach-grid { gap: 16px; }
+  .approach-item { padding: 24px; }
+  .journey-panels { grid-template-columns: 1fr; gap: 22px; }
+  .care-journey { margin-block: 36px; }
+  .journey-step { padding: 28px; }
+  .journey-step .care-shape { margin-bottom: 20px; }
+  .journey-step h3 { font-size: 2.5rem; }
+  .squiggle-arrow { display: none; }
+  .hero-visual .draw-line { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .animated-word, .contact-cta:is(:hover, :active, :focus-visible), .contact-cta-arrow { transform: none; }
+  .journey-symbol { transform: none; }
+  .journey-symbol.is-current { outline: 3px solid var(--purple); outline-offset: 4px; }
+}
