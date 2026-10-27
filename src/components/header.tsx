@@ -57,16 +57,11 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           <img
-            src="/images/vem-comigo-logo.svg"
-            width="88"
-            height="88"
-            alt="Vem Comigo"
+            src="/images/vem-comigo-wordmark.png"
+            width="225"
+            height="110"
+            alt=""
           />
-          <span className="brand-description">
-            Escuta que aproxima.
-            <br />
-            Cuidado que transforma.
-          </span>
         </a>
         <button
           className="menu-toggle"
