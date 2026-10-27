@@ -1,6 +1,7 @@
 export const navigation = [
   { href: "#projeto", label: "O projeto" },
   { href: "#atuacao", label: "Como atuamos" },
+  { href: "#em-acao", label: "Em ação" },
   { href: "#formacao", label: "Formação" },
   { href: "#ccas", label: "As CCAs" },
 ] as const;
@@ -65,19 +66,10 @@ export const questions = [
 ] as const;
 
 // Publicar somente registros com autorização de uso e relatos com fonte verificável.
-export type Activity = {
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
-  date: string;
-  authorized: true;
-};
 export type Testimonial = {
   quote: string;
   attribution: string;
   source: string;
   authorized: true;
 };
-export const activities: Activity[] = [];
 export const testimonials: Testimonial[] = [];

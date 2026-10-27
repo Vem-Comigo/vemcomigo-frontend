@@ -28,7 +28,9 @@ O build gera `dist/`. `preview` é uma inspeção local, não servidor de produ�
 
 ## Organização
 
-- `src/content/institutional.ts`: navegação, atuação, FAQ e listas de atividades/relatos autorizados.
+- `src/content/institutional.ts`: navegação, atuação, FAQ e lista de relatos autorizados.
+- `src/content/projectRecords.ts`: categorias e registros tipados da galeria “Vem Comigo em ação”. Veja [como adicionar fotos locais](docs/project-gallery.md).
+- `src/components/gallery/`: mosaico com filtros, placeholders e modal acessível; `scripts/gallery-qa.mjs` verifica suas interações no navegador.
 - `src/components/`: cabeçalho, abertura, história, seções institucionais, formulário e rodapé.
 - `src/components/CommunityArt.tsx`: ilustração vetorial original e decorativa, sem representar evento real.
 - `src/lib/contact.ts`: validação de experiência e integração de mesma origem. O backend valida independentemente.
@@ -43,7 +45,7 @@ O build gera `dist/`. `preview` é uma inspeção local, não servidor de produ�
 
 Nenhuma variável pública de ambiente é necessária no navegador. A função de servidor do projeto Vercel precisa de `CONTACT_API_URL`, `CONTACT_ORIGIN` e `CONTACT_PROXY_KEY`, conforme `.env.example` e [docs/contact-vercel.md](docs/contact-vercel.md). Segredos nunca devem usar prefixo `VITE_` nem ser colocados em `public/`. As credenciais Gmail SMTP ficam somente no backend.
 
-As fotos, logos institucionais e demais assets herdados foram preservados, mas não publicados sem confirmação de contexto e autorização. Atividades e depoimentos ficam ocultos enquanto os arrays correspondentes estiverem vazios. Para publicar, adicione apenas registros com autorização, texto alternativo, fonte e dados reais. Use imagens otimizadas com dimensões coerentes com o componente.
+As fotos, logos institucionais e demais assets herdados foram preservados, mas não publicados sem confirmação de contexto e autorização. A galeria mostra exemplos identificados como demonstrativos, com placeholders; substitua-os por registros autorizados conforme [o guia](docs/project-gallery.md). Depoimentos continuam ocultos enquanto a lista estiver vazia. Use imagens locais otimizadas, com texto alternativo, legendas e dimensões reais.
 
 ## Segurança e publicação
 
