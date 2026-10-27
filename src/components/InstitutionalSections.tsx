@@ -13,6 +13,10 @@ import {
   questions,
   testimonials,
 } from "../content/institutional";
+import { CareJourney } from "./motion/CareJourney";
+import { OrganicButton } from "./motion/OrganicButton";
+import { SquiggleArrow } from "./motion/ConnectionShapes";
+import { TextAnimate } from "./motion/TextAnimate";
 
 const icons = {
   book: BookOpen,
@@ -33,7 +37,7 @@ export function Approach() {
           <div>
             <p className="eyebrow">DO DIÁLOGO À AÇÃO</p>
             <h2 id="titulo-atuacao">
-              Pequenos encontros.
+              <TextAnimate text="Pequenos encontros." />
               <br />
               Novas possibilidades.
             </h2>
@@ -135,34 +139,7 @@ export function Communities() {
             confiança e acompanhadas por professores tutores.
           </p>
         </div>
-        <div className="care-steps">
-          <span className="care-connection" aria-hidden="true" />
-          {[
-            {
-              verb: "Acolher.",
-              text: "Fazer o colega se sentir parte. Criar um espaço de respeito, presença e pertencimento.",
-              icon: Heart,
-            },
-            {
-              verb: "Escutar.",
-              text: "Estar disponível para ouvir as dificuldades dos colegas com atenção e cuidado.",
-              icon: MessageCircle,
-            },
-            {
-              verb: "Ajudar.",
-              text: "Comunicar situações aos professores tutores e aproximar o colega da rede de apoio.",
-              icon: Users,
-            },
-          ].map(({ verb, text, icon: Icon }, index) => (
-            <article className={`care-step care-${index}`} key={verb}>
-              <span className="care-shape">
-                <Icon size={43} strokeWidth={1.5} aria-hidden="true" />
-              </span>
-              <h3>{verb}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
+        <CareJourney />
         <div className="care-responsibility">
           <p>
             <strong>Escolhidos pelos colegas. Preparados para cuidar.</strong>
@@ -254,9 +231,10 @@ export function SchoolInvitation() {
               primeiro passo para conhecer o contexto e verificar as
               possibilidades de participação.
             </p>
-            <a className="button" href="#contato">
-              Tenho interesse <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            <div className="invitation-action">
+              <OrganicButton href="#contato">Tenho interesse</OrganicButton>
+              <SquiggleArrow />
+            </div>
           </div>
           <div className="invitation-art" aria-hidden="true">
             <MessageCircle />

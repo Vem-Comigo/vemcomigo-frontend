@@ -438,9 +438,6 @@ p + p {
 .hero-visual.enter {
   animation-delay: 150ms;
 }
-.art-bubble {
-  animation: bob 5s ease-in-out 2;
-}
 @keyframes enter {
   from {
     opacity: 0;
@@ -450,9 +447,6 @@ p + p {
     opacity: 1;
     transform: translateY(0);
   }
-}
-.hero-copy > :nth-child(2) {
-  animation: enter var(--motion-base) var(--motion-ease) 80ms both;
 }
 .hero-copy > :nth-child(3) {
   animation: enter var(--motion-base) var(--motion-ease) 170ms both;
@@ -464,16 +458,10 @@ p + p {
 .section.is-visible .section-copy,
 .section.is-visible .communities-heading,
 .section.is-visible .contact-copy,
-.section.is-visible .contact-form,
 .section.is-visible .invitation-panel,
 .section.is-visible .faq-list,
 .section.is-visible .purpose-art {
   animation: enter var(--motion-base) var(--motion-ease) both;
-}
-.section.is-visible .approach-item,
-.section.is-visible .care-step {
-  animation: enter var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(var(--step, 0) * 85ms);
 }
 .approach-item:nth-child(2),
 .care-step:nth-child(3) {
@@ -485,11 +473,6 @@ p + p {
 }
 .approach-item:nth-child(4) {
   --step: 3;
-}
-@keyframes bob {
-  50% {
-    transform: translateY(-6px);
-  }
 }
 .about-grid {
   display: grid;
@@ -709,35 +692,6 @@ p + p {
   max-width: 510px;
   margin: 25px auto 0;
 }
-.care-steps {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 65px;
-  max-width: 950px;
-  margin: 60px auto 50px;
-}
-.care-connection {
-  position: absolute;
-  top: 56px;
-  left: 17%;
-  right: 17%;
-  height: 3px;
-  background: repeating-linear-gradient(90deg, var(--purple) 0 12px, transparent 12px 23px);
-  opacity: 0.6;
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-.communities-section.is-visible .care-connection {
-  animation: draw-connection 1.25s var(--motion-ease) 190ms forwards;
-}
-@keyframes draw-connection {
-  to { transform: scaleX(1); }
-}
-.care-step {
-  position: relative;
-  text-align: center;
-}
 .care-shape {
   display: grid;
   place-items: center;
@@ -749,23 +703,6 @@ p + p {
   color: var(--purple);
   transform: rotate(-8deg);
   box-shadow: 0 0 0 8px #f7f0e9;
-}
-.care-1 .care-shape {
-  border-radius: 32px;
-  background: #d8c4e9;
-  transform: rotate(8deg);
-}
-.care-2 .care-shape {
-  background: var(--peach);
-  border-radius: 50% 50% 20% 50%;
-}
-.care-step h3 {
-  font-size: clamp(2rem, 2.8vw, 2.75rem);
-  margin-bottom: 14px;
-}
-.care-step p {
-  font-size: var(--text-support);
-  line-height: 1.65;
 }
 .care-responsibility {
   border-top: 1px solid #ddd0c8;

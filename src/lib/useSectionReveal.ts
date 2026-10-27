@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function useSectionReveal() {
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>(
-      "main .section, main .values-strip",
+      "main .section, main .values-strip, main .approach-item, main .journey-step",
     );
     if (!("IntersectionObserver" in window)) return;
 
@@ -15,7 +15,7 @@ export function useSectionReveal() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px -7% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" },
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();

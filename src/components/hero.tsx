@@ -1,23 +1,24 @@
-import { ArrowRight, ArrowDown, Heart } from "lucide-react";
+import { ArrowDown, Heart } from "lucide-react";
 import { CommunityArt } from "./CommunityArt";
+import { TextAnimate } from "./motion/TextAnimate";
+import { OrganicButton } from "./motion/OrganicButton";
+import { ConnectionShapes } from "./motion/ConnectionShapes";
 
 export default function Hero() {
   return (
     <section className="hero" id="inicio" aria-labelledby="titulo-principal">
       <div className="container hero-grid">
-        <div className="hero-copy enter">
+        <div className="hero-copy">
           <p className="eyebrow">
             <span className="little-sun" /> JUNTOS PELA CONVIVÊNCIA ESCOLAR
           </p>
-          <h1 id="titulo-principal">Uma escola melhor começa com escuta.</h1>
+          <h1 id="titulo-principal"><TextAnimate text="Uma escola melhor começa com escuta." /></h1>
           <p className="hero-description">
             Formamos professores e fortalecemos redes de cuidado para
             transformar a convivência na escola.
           </p>
           <div className="actions">
-            <a className="button" href="#contato">
-              Leve para sua escola <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            <OrganicButton href="#contato">Leve para sua escola</OrganicButton>
             <a className="text-link" href="#projeto">
               Conheça o projeto <ArrowDown size={17} aria-hidden="true" />
             </a>
@@ -28,6 +29,7 @@ export default function Hero() {
           </p>
         </div>
         <div className="hero-visual enter">
+          <ConnectionShapes />
           <span className="art-note">
             Toda voz merece
             <br />

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { ArrowUpRight, HeartHandshake } from "lucide-react";
+import { TextAnimate } from "./motion/TextAnimate";
 import {
   emptyContact,
   interests,
@@ -98,7 +99,7 @@ export function ContactSection() {
             <HeartHandshake size={34} aria-hidden="true" />
           </span>
           <p className="eyebrow">ESTAMOS ABERTOS AO DIÁLOGO</p>
-          <h2 id="titulo-contato">Toda mudança começa com uma conversa.</h2>
+          <h2 id="titulo-contato"><TextAnimate text="Toda mudança começa com uma conversa." /></h2>
           <p>
             Quer conhecer o Vem Comigo ou conversar sobre as possibilidades para
             sua escola? Conte para a gente.
