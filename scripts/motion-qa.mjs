@@ -108,7 +108,8 @@ try {
   assert.equal(await evaluate("[...document.querySelectorAll('main *')].some(e=>getComputedStyle(e).animationName!=='none')"), false);
   for (const [width, height] of [[390,844],[844,390],[768,1024],[1920,600]]) {
     await command("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
-    assert.equal(await evaluate("getComputedStyle(document.querySelector('.journey-aside')).display"), "none");
+    assert.equal(await evaluate("getComputedStyle(document.querySelector('.journey-aside')).position"), "static");
+    assert.equal(await evaluate("document.querySelector('.care-journey').dataset.static"), "true");
     assert.equal(await evaluate("document.documentElement.scrollWidth>innerWidth"), false);
   }
   await command("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
