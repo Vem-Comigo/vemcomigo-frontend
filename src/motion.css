@@ -118,18 +118,37 @@
 @media (max-width: 550px) {
   .approach-grid { grid-template-columns: 1fr; }
 }
-@media (min-width: 1100px) and (min-height: 760px) {
-  .journey-aside { position: sticky; top: calc(var(--header-height) + 32px); }
-  .journey-step { min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
-}
-@media (max-width: 1099px), (max-height: 759px) {
-  .care-journey { grid-template-columns: 1fr; gap: 32px; }
-  .journey-aside { display: none; }
-  .journey-panels { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+/* The articles form the scroll track; the visual has an independent natural height.
+   Tune the journey here, without stretching the illustration. */
+.care-journey { --journey-step-travel: 72svh; --journey-top: calc(var(--header-height) + 24px); }
+.journey-aside { position: sticky; top: var(--journey-top); }
+.journey-art { aspect-ratio: auto; min-height: clamp(260px, 42svh, 480px); transition: none; }
+.journey-symbol { transition: none; }
+.journey-notes, .journey-counters { display: grid; width: 100%; text-align: center; }
+.journey-note, .journey-counter { grid-area: 1 / 1; animation: none; }
+.journey-note:not(:first-child), .journey-counter:not(:first-child) { opacity: 0; }
+.journey-step { min-height: var(--journey-step-travel); display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 1600px) { .care-journey { --journey-step-travel: 68svh; } }
+@media (max-width: 959px) {
+  .care-journey { --journey-step-travel: 58svh; --journey-top: calc(var(--header-height) - 2px); grid-template-columns: 1fr; gap: 20px; }
+  /* Overlap the header edge to cover fractional pixels on mobile displays. */
+  .journey-aside { z-index: 2; padding-block: 0 6px; background: var(--lavender); }
+  .journey-aside::before { content: ""; position: absolute; inset: -4px 0 0; z-index: -1; background: var(--lavender); pointer-events: none; }
+  .journey-art { min-height: 0; padding: 16px; border-radius: 40% 40% 8% 8%; }
+  .journey-symbol { width: clamp(44px, 7vw, 64px); }
+  .journey-symbol svg { width: 28px; height: 28px; }
+  .journey-note { margin-top: 12px; font-size: 1.5rem; }
+  .journey-counter { margin-top: 6px; font-size: .75rem; }
+  .journey-nav { display: none; }
   .journey-panels::before { display: none; }
-  .journey-step { padding: 24px; border-color: transparent; }
-  .journey-step p:last-child { font-size: var(--text-support); }
-  .journey-step .eyebrow { max-width: 22ch; }
+  .journey-step { scroll-margin-top: calc(var(--header-height) + 240px); }
+}
+/* Natural flow when the visual cannot fit; no inner scroller or clipped content. */
+.care-journey[data-static="true"] .journey-aside { position: static; }
+.care-journey[data-static="true"] .journey-step { min-height: 0; }
+@media (max-height: 559px), (prefers-reduced-motion: reduce) {
+  .journey-aside { position: static; }
+  .journey-step { min-height: 0; }
 }
 @media (max-width: 700px) {
   .approach-grid { gap: 16px; }
